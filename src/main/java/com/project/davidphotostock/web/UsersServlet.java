@@ -3,7 +3,6 @@ package com.project.davidphotostock.web;
 import com.project.davidphotostock.domain.Users;
 import com.project.davidphotostock.service.UsersService;
 import jakarta.ejb.EJB;
-import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,7 +14,7 @@ import java.io.IOException;
 public class UsersServlet extends HttpServlet {
 
     @EJB
-    public UsersService us;
+    UsersService us;
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
