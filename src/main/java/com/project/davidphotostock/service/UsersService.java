@@ -7,7 +7,7 @@ import java.util.List;
 @Local
 public interface UsersService {
     
-    public Boolean createUser(Users u);
+    Boolean createUser(Users u);
 
     void updateUser(Users u);
 
