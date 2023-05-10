@@ -1,0 +1,342 @@
+:root{
+    --color1: #010101;
+    --color2: #ffffff;
+    --color3: #ff9933; /*rgb(255, 153, 51)*/
+    --color4: #001fcf;
+    --color5: #191a30;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    user-select: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-size: cover;
+    background-image: url('../img/flowers\(3\).jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+/*----- HEADER -----*/
+.header-admin{
+    position: relative;
+    background-size: cover;
+    background-image: url('../img/landscape\(2\).jpg');
+    background-position: center center;
+    display: flex;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+.title-admin{
+    height: 150px;
+    width: 100%;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color2);
+    backdrop-filter: brightness(60%);
+    -webkit-backdrop-filter: brightness(60%);
+}
+.title-admin h1{
+    flex-grow: 1;
+    text-align: center;
+}
+.logout-admin{
+    grid-column-start: 3;
+    justify-self: end;
+    padding-right: 25px;
+    color: var(--color2);
+    user-select: none;
+    text-decoration: none;
+}
+.logout-admin:hover{
+    color: var(--color2);
+    text-shadow: 0 0 5px var(--color2);
+}
+@media (max-width:700px) {
+    .title-admin h1{
+        font-size: 2.5em;
+    }
+}
+/*----- MENU -----*/
+.row-admin {
+    display: flex;
+}
+.row-menu {
+    flex: 0 0 250px;
+    padding: 15px 0;
+    background-color: #242424;
+}
+.row-menu h2 {
+    padding-left: 8px;
+    color: var(--color2);
+}
+.title-menu{
+    margin-bottom: 15px;
+}
+.page-content {
+    display: none;
+    flex-grow: 1;
+    padding: 15px;
+    background-color: #7e7e7e;
+}
+.page-content:first-of-type {
+  display: block;
+}
+.search-admin {
+    width: 100%;
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #242424;
+    color: var(--color2);
+}
+.menu-admin {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.menu-admin li a {
+    padding: 12px;
+    text-decoration: none;
+    color: var(--color2);
+    display: block
+}
+.menu-admin li a:hover {
+    background-color: #424242;
+}
+
+/*----- CRUD -----*/
+.page-content h2{
+    font-size: 30px;
+    margin: 15px;
+}
+.table-admin{
+    margin: 0 10px 30px 10px;
+}
+table{
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+th{
+    color: var(--color2);
+    background-color: #242424;  
+}
+th, td{
+    text-align: left;
+    padding: 16px;
+}
+tr:nth-child(even) {
+    background-color: #979797;
+}
+/*----- Users -----*/
+.users-page{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.content-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top: 2px solid #000;
+}
+.content-wrapper > .container-user{
+    order: 2;
+    flex-grow: 1;
+    padding: 16px;
+    background-color: #7e7e7e;
+    margin: 2% 10px 2% 10px;
+    border: 1px solid #bebebe;
+    width: 70%; /* Tamaño del formulario */
+    max-width: 700px;
+}
+.add-search{
+    flex: 1;
+    order: 1;
+    width: 100%;
+    display: flex;
+    margin: 2% 10px 2% 10px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.add-new{
+    background-color: var(--color1);
+    color: var(--color2);
+    padding: 15px 0;
+    margin: 0 0 12px 0;
+    border: 1.5px solid var(--color2);
+    cursor: pointer;
+    width: 180px;
+}
+.add-new:hover {
+    background-color: #161616;
+}
+.search-data {
+    width: 180px;
+    font-size: 18px;
+    padding: 11px;
+    border: 1px solid #242424;
+    color: var(--color2);
+}
+.search-data:focus{
+    background-color: #4e4e4e;
+}
+.surnames, .passwords{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.surnames > div, .passwords > div{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+.container-user > input[type=text], 
+.container-user > input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #222222;
+    color: var(--color2);
+    display: inline-block;
+    border: 1.5px solid var(--color2);
+    box-sizing: border-box;
+}
+input[type=text]:focus,
+input[type=password]:focus {
+    border: 1.5px solid var(--color2);
+    outline-color: var(--color1);
+    background-color: #4e4e4e;
+}
+.surnames > div > input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #222222;
+    color: var(--color2);
+    display: inline-block;
+    border: 1.5px solid var(--color2);
+    box-sizing: border-box;
+}
+.surnames > div > input[type=text]:focus{
+    border: 1.5px solid var(--color2);
+    outline-color: var(--color1);
+    background-color: #4e4e4e;
+}
+.button-ud{
+    background-color: var(--color1);
+    color: var(--color2);
+    padding: 15px 0;
+    margin: 12px 20px 12px 0;
+    border: 1.5px solid var(--color2);
+    cursor: pointer;
+    width: 25%;
+}
+.button-ud:hover {
+    background-color: #161616;
+}
+.u-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+.container-user a{
+    font-weight: bold;
+    color: var(--color5);
+}
+.section-list {
+    order: 3;
+    width: 100%;
+    margin-top: 30px;
+    border-top: 2px solid #000;
+}
+.section-list h3{
+    padding: 15px 0;
+    font-size: 25px;
+    margin: 10px;
+}
+.button-list{
+    margin: 0 0 15px 10px;
+}
+.button-list > .list{
+    background-color: var(--color1);
+    color: var(--color2);
+    padding: 15px 0;
+    margin: 0 0 12px 0;
+    border: 1.5px solid var(--color2);
+    cursor: pointer;
+    width: 180px;
+}
+.button-list > .list:hover {
+    background-color: #161616;
+}
+
+/*----- Product -----*/
+.product-page{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.content-wrapper > .container-product{
+    order: 2;
+    flex-grow: 1;
+    padding: 16px;
+    background-color: #7e7e7e;
+    margin: 2% 10px 2% 10px;
+    border: 1px solid #bebebe;
+    width: 70%; /* Tamaño del formulario */
+    max-width: 700px;
+}
+.container-product{
+    padding: 16px;
+}
+.contain-product{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contain-product > div{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+.container-product > input[type=text], 
+.container-product > input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #222222;
+    color: var(--color2);
+    display: inline-block;
+    border: 1.5px solid var(--color2);
+    box-sizing: border-box;
+}
+.container-product > input[type=text]:focus,
+.container-product > input[type=number]:focus {
+    border: 1.5px solid var(--color2);
+    outline-color: var(--color1);
+    background-color: #4e4e4e;
+}
+.contain-product > div > input[type=text],
+.contain-product > div > input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #222222;
+    color: var(--color2);
+    display: inline-block;
+    border: 1.5px solid var(--color2);
+    box-sizing: border-box;
+}
+.contain-product > div > input[type=text]:focus,
+.contain-product > div > input[type=number]:focus {
+    border: 1.5px solid var(--color2);
+    outline-color: var(--color1);
+    background-color: #4e4e4e;
+}

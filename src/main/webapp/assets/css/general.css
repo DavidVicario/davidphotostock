@@ -1,0 +1,254 @@
+:root{
+    --color1: #010101;
+    --color2: #ffffff;
+    --color3: #ff9933; /*rgb(255, 153, 51)*/
+    --color4: #001fcf;
+    --color5: #131d53;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    user-select: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/*----- FORMS -----*/
+.image-form{
+    text-align: center;
+    margin: 24px 0 1px 0;
+    position: relative;
+}
+.image-form > .close-x {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: var(--color1);
+    font-size: 35px;
+    font-weight: bold;
+}
+.image-form > .logo-form{
+    width: 40%;
+    padding: 20px;
+    background-color: var(--color1);
+    border: 1.5px solid var(--color2);
+    border-radius: 50%;
+}
+.close-x:hover,.close-x:focus{
+    color: red;
+    cursor: pointer;
+}
+/*----- Login -----*/
+.section-login{
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+}
+.section-login > .content-login{
+    background-color: #7e7e7e;
+    margin: 5% auto 15% auto;
+    border: 1px solid #bebebe;
+    width: 450px; /* Tamaño del formulario */
+}
+.container-login{
+    padding: 16px;
+}
+.container-login > input[type=text], 
+.container-login > input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #222222;
+    color: var(--color2);
+    display: inline-block;
+    border: 1.5px solid var(--color2);
+    box-sizing: border-box;
+}
+input[type="text"]:focus, 
+input[type="password"]:focus {
+    border: 1.5px solid var(--color2);
+    outline-color: var(--color1);
+    background-color: #4e4e4e;
+}
+input[type="checkbox"] + label:before {
+	content: "";
+	width: 12px;
+	height: 12px;
+	float: left;
+	margin: 2px 5px 0 0;
+	border: 1.5px solid var(--color1);
+	background-color: var(--color2);
+}
+input[type="checkbox"]:checked + label:before {
+	border: 1.5px solid var(--color2);
+    background-color: #161616;
+}
+input[type="checkbox"]{
+    display: none;
+}
+input[type="checkbox"]:checked + label:after{
+    content: "";
+    width: 6px;
+    height: 3px;
+    border: 2px solid var(--color2);
+    float: left;
+    margin-left: -1.2em;
+    border-right: 0;
+    border-top: 0;
+    margin-top: 5.5px;
+    transform: rotate(-55deg);
+}
+input[type="checkbox"] + label {
+    line-height: 1.5em;
+    font-size: 13px;
+    cursor: pointer;
+}
+.forgot{
+    float: right;
+    margin: 0 0 5px;
+    font-size: 13px;
+}
+.btn-login{
+    background-color: var(--color1);
+    color: var(--color2);
+    padding: 15px 0;
+    margin: 12px 0 12px 0;
+    border: 1.5px solid var(--color2);
+    cursor: pointer;
+    width: 100%;
+}
+.btn-login:hover {
+    background-color: #161616;
+}
+.no-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+.container-login a{
+    font-weight: bold;
+    color: var(--color5);
+}
+
+/*----- Sign Up -----*/
+.section-signup{
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 60px;
+}
+.section-signup > .content-signup{
+    background-color: #7e7e7e;
+    margin: 5% auto 15% auto;
+    border: 1px solid #bebebe;
+    width: 600px; /* Tamaño del formulario */
+}
+.container-signup{
+    padding: 16px;
+}
+.surnames, .passwords{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.surnames > div, .passwords > div{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+.container-signup > input[type=text], 
+.container-signup > input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #222222;
+    color: var(--color2);
+    display: inline-block;
+    border: 1.5px solid var(--color2);
+    box-sizing: border-box;
+}
+input[type="text"]:focus, 
+input[type="password"]:focus {
+    border: 1.5px solid var(--color2);
+    outline-color: var(--color1);
+    background-color: #4e4e4e;
+}
+.surnames > div > input[type=text], 
+.passwords > div > input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #222222;
+    color: var(--color2);
+    display: inline-block;
+    border: 1.5px solid var(--color2);
+    box-sizing: border-box;
+}
+.surnames > div > input[type=text]:focus, 
+.passwords > div > input[type=password]:focus {
+    border: 1.5px solid var(--color2);
+    outline-color: var(--color1);
+    background-color: #4e4e4e;
+}
+.btn-signup{
+    background-color: var(--color1);
+    color: var(--color2);
+    padding: 15px 0;
+    margin: 30px 0 12px 0;
+    border: 1.5px solid var(--color2);
+    cursor: pointer;
+    width: 100%;
+}
+.btn-signup:hover {
+    background-color: #161616;
+}
+.u-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+.container-signup a{
+    font-weight: bold;
+    color: var(--color5);
+}
+@media screen and (max-width: 1132px) {
+    .section-login{
+        z-index: 100;
+    }
+    .section-signup{
+        z-index: 100;
+    }
+}
+@media screen and (max-width: 750px) {
+    .section-signup > .content-signup{
+        width: 450px;
+    }
+}
+.ani-form{
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+  @-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+  @keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}

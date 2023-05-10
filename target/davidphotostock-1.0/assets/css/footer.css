@@ -1,0 +1,73 @@
+:root{
+    --color1: #010101;
+    --color2: #ffffff;
+    --color3: #ff9933; /*rgb(255, 153, 51)*/
+    --color4: #001fcf;
+    --color5: #191a30;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/*----- FOOTER -----*/
+footer{
+    background-size: cover;
+    background-image: url('../img/landscape\(2\).jpg');
+    background-position: center bottom;
+}
+.footer-container{
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+/*----- FOOTER -----*/
+.footer-container > .footer-logo{
+    display: flex;
+    padding: 0 10px 0 10px;
+}
+.footer-logo img{
+    width: auto;
+    height: 60px;
+    margin: 10px;
+}
+/*----- COPYRIGHT -----*/
+.footer-container p{
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--color2);
+}
+/*----- REDES -----*/
+.networks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.networks ul{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.networks ul li{
+    margin: 0 10px;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    color: var(--color3);
+    transition: border-bottom 0.3s ease-in-out;
+}
+.networks ul li a{
+    color: var(--color2);
+    font-size: 1.8em;
+}
+.networks ul li:hover{
+    border-bottom: 1px solid var(--color3);
+    text-shadow: 0 0 10px var(--color3);
+}
+.networks ul li:hover a{
+    color: var(--color3);
+}

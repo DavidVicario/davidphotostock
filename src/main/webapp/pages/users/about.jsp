@@ -1,0 +1,37 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <link rel="shortcut icon" href="/assets/img/DV-logo-favicon2.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/assets/img/negro-2k.png" type="image/png">
+    <link rel="stylesheet" href="/assets/icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/css/general.css">
+    <link rel="stylesheet" href="/assets/css/about_style.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/subheader.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+</head>
+<body>
+    <jsp:include page="/includes/components/header.jsp"/>
+    <jsp:include page="/includes/components/subheader.jsp">
+        <jsp:param name="title" value="ABOUT" />
+        <jsp:param name="description1" value="Texto de prueba" />
+        <jsp:param name="description2" value="" />
+        <jsp:param name="description3" value="" />
+        <jsp:param name="image" value="/assets/img/header3.jpg" />
+    </jsp:include>
+    <main>
+        <jsp:include page="/includes/forms/login.jsp"/>
+        <jsp:include page="/includes/forms/signup.jsp"/>
+    </main>
+    <jsp:include page="/includes/components/footer.jsp"/>
+    <script src="/assets/js/header.js"></script>
+    <script src="/assets/js/forms.js"></script>
+</body>
+</html>

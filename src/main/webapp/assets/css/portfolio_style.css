@@ -1,0 +1,15 @@
+:root{
+    --color1: #010101;
+    --color2: #ffffff;
+    --color3: #ff9933; /*rgb(255, 153, 51)*/
+    --color4: #001fcf;
+    --color5: #191a30;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}

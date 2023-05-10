@@ -1,0 +1,292 @@
+:root{
+    --color1: #010101;
+    --color2: #ffffff;
+    --color3: #ff9933; /*rgb(255, 153, 51)*/
+    --color4: #001fcf;
+    --color5: #191a30;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    user-select: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/*----- SLIDER -----*/
+.section-slider{
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+.section-slider > .wrapper-slider{
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+/*----- Img -----*/
+.wrapper-slider > .image-slider{
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    -webkit-background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.image-slider.landscape {
+    background-image: url('../img/landscape\(1\).jpg');
+}
+.image-slider.flowers {
+    background-image: url('../img/flowers\(1\).jpg');
+}
+.image-slider.insect {
+    background-image: url('../img/insect\(4\).jpg');
+}
+.image-slider.social {
+    background-image: url('../img/social\(2\).jpg');
+}
+/*----- Txt -----*/
+.wrapper-slider > .content-slider{
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    color: var(--color1);
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.content-slider > .head-slider{
+    font-size: 50px;
+    line-height: 80px;
+    letter-spacing: -1px;
+    display: block;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+.content-slider > .subhead-slider{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 300;
+}
+/*----- Btn -----*/
+.content-slider > .buttons{
+    position:relative;
+    padding-top: 30px;
+    letter-spacing: 0.5px;
+}
+.buttons > .button{
+    display: inline-block;
+    padding: 8px;
+    margin: 0 0 0 0;
+}
+.buttons > .transparent a{
+    padding: 9px 10px;
+    border: 2px solid var(--color1);
+}
+.button a{
+    color: var(--color1);
+    letter-spacing: 2px;
+    font-size: 12px;
+    display: block;
+}
+/*----- ARROWS -----*/
+.arrow{
+    padding: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin: -40px 70px 0px 70px;
+    color: var(--color1);
+    font-size: 20px;
+    font-weight: bold;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.arrow p{
+    transform: scale(2,3.5);
+    font-family:'Lucida Sans';
+}
+.left{
+    border: 1px solid transparent;
+    color: var(--color1);
+    opacity: 0.6;
+    transition: 0.4s;
+}
+.right{
+    right: 0;
+    border: 1px solid transparent;
+    color: var(--color1);
+    opacity: 0.6;
+    transition: 0.4s;
+}
+.left:hover{
+    transition: 0.4s ease-in-out;
+    margin-left: 60px;
+    opacity: 0.9;
+    text-shadow: 0 0 5px var(--color2);
+}
+.right:hover{
+    transition: 0.4s ease-in-out;
+    margin-right: 60px;
+    opacity: 0.9;
+    text-shadow: 0 0 5px var(--color2);
+}
+/*----- MOBILE -----*/
+@media screen and (max-width: 900px) {
+    .arrow{
+        padding: 30px;
+        margin: -40px 30px 0px 30px;
+        font-size: 15px;
+    }
+    .left:hover{
+        transition: 0.4s ease-in-out;
+        margin-left: 20px;
+        opacity: 0.9;
+        text-shadow: 0 0 5px var(--color2);
+    }
+    .right:hover{
+        transition: 0.4s ease-in-out;
+        margin-right: 20px;
+        opacity: 0.9;
+        text-shadow: 0 0 5px var(--color2);
+    }
+}
+@media screen and (max-width: 620px) {
+    .arrow{
+        padding: 30px;
+        margin: -40px 5px 0px 5px;
+        font-size: 15px;
+    }
+    .left:hover{
+        margin-left: 10px;
+        opacity: 0.9;
+        text-shadow: 0 0 5px var(--color2);
+    }
+    .right:hover{
+        margin-right: 10px;
+        opacity: 0.9;
+        text-shadow: 0 0 5px var(--color2);
+    }
+}
+/*----- ANIMATIONS -----*/
+.ani-slider{
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade{
+    from {opacity: .4}
+    to {opacity: 1}
+    /*
+    from {transform: translateX(0%);}
+    from {transform: translateX(100%);}
+    */
+}
+
+
+
+
+
+
+
+
+/*
+html, body, div, span, applet, object, iframe, table, caption, tbody, tfoot, thead, tr, th, td, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, dl, dt, dd, ol, ul, li, fieldset, form, label, legend {
+    vertical-align: baseline;
+    font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.section-slider{
+    position: relative;
+    display: flex;
+    width: 1903px;
+    height: 100vh;
+    overflow: hidden;
+    animation: slide 16s infinite alternate ease-in-out;
+}
+.image-slider{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+.image-slider > img{
+    position: absolute;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.content-slider{
+    position: absolute;
+    color: var(--color1);
+    width: 100%;
+    z-index: 100;
+    left: 0px;
+    visibility: visible;
+}
+.content-slider > .head-slider{
+    font-size: 60px;
+    line-height: 80px;
+    letter-spacing: -1px;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+.content-slider > .subhead-slider{
+    font-size: 24px;
+    text-align: center;
+    font-weight: 300;
+}
+.content-slider > .buttons{
+    position:relative;
+    padding-top: 30px;
+    letter-spacing: 0.5px;
+}
+.buttons > .button{
+    display: inline-block;
+    padding: 8px;
+    margin: 0 0 0 0;
+}
+.button > a{
+    text-decoration: none;
+    letter-spacing: 2px;
+    line-height: 1.1em;
+    font-size: 12px;
+    display: block;
+}
+
+@keyframes slide {
+    0% {margin-left: 0%;}
+    20% {margin-left: 0%;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+
+    75% {margin-left: -300%;}
+    95% {margin-left: -300%;}
+}
+
+*/
