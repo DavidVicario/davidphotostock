@@ -9,14 +9,15 @@ import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 import java.util.List;
 
-@Stateless
 //Implementamos en la clase su Service correspondiente donde estan los metodos a usar.
 public class UsersServiceImpl implements UsersService {
 
-    
     //Declaramos el interfaz Dao para poder usar la implementacion de sus metodos.
-    @EJB
     private IUsersDao iud;
+    
+    public UsersServiceImpl(IUsersDao iud) {
+        this.iud = iud;
+    }
 
     //Metodo para crear un nuevo registro en la base de datos si este no existe, lo comprobamos con dos campos unicos.
     @Override

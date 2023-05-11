@@ -32,8 +32,7 @@ import javax.persistence.Table;
     @NamedQuery(name = "Users.findBySecondSurname", query = "SELECT u FROM Users u WHERE u.secondSurname = :secondSurname"),
     @NamedQuery(name = "Users.findByMail", query = "SELECT u FROM Users u WHERE u.mail = :mail"),
     @NamedQuery(name = "Users.findByUsername", query = "SELECT u FROM Users u WHERE u.username = :username"),
-    @NamedQuery(name = "Users.findByPassword", query = "SELECT u FROM Users u WHERE u.password = :password"),
-    @NamedQuery(name = "Users.findByAddress", query = "SELECT u FROM Users u WHERE u.address = :address")})
+    @NamedQuery(name = "Users.findByPassword", query = "SELECT u FROM Users u WHERE u.password = :password")})
 /*
 Se implementa serializable para que los objetos de la clase puedan convertirse en secuencias 
 de bytes. Para poder enviar, guardar y almacenar objetos en la base de datos. 

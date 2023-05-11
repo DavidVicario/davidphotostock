@@ -73,7 +73,7 @@
                     <div class="section-list">
                         <h3>List</h3>
                         <div class="button-list">                        
-                            <button class="list" onclick="">All Users</button>
+                            <button class="list" action="allUsers" onclick="obtainAllUsers()">All Users</button>
                         </div>                    
                         <div class="table-admin">
                             <table>

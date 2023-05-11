@@ -67,10 +67,6 @@ public class Municipality implements Serializable {
     @ManyToOne(optional = false)
     //Almacenamos la provincia a la que pertenecen los municipios. 
     private Province idProvince;
-    //Especificamos que hay una relacion de uno a muchos con la entidad Users.
-    @OneToMany(mappedBy = "idMunicipality")
-    //Almacenamos todos los objetos Users asociados con un objeto municipality. Una municipality puede tener varios Users.
-    private Collection<Users> usersCollection;
 
     //Constructores
     public Municipality() {
@@ -134,14 +130,6 @@ public class Municipality implements Serializable {
 
     public void setIdProvince(Province idProvince) {
         this.idProvince = idProvince;
-    }
-
-    public Collection<Users> getUsersCollection() {
-        return usersCollection;
-    }
-
-    public void setUsersCollection(Collection<Users> usersCollection) {
-        this.usersCollection = usersCollection;
     }
 
     //Metodos para verificar si son iguales dos objetos según el id

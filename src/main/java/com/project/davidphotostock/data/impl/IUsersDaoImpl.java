@@ -9,7 +9,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-@Stateless
 //Incidamos que se implementa los metodos del interfaz del Dao correspondiente.
 public class IUsersDaoImpl implements IUsersDao {
 
@@ -19,9 +18,11 @@ public class IUsersDaoImpl implements IUsersDao {
     en la base de datos. 
     Lo que implica que podemos hacer las consultas de MySQL "por debajo" con objetos de Java.
      */
-    @PersistenceContext(unitName="davidphotostock-pu")
     private EntityManager em;
 
+    public IUsersDaoImpl(EntityManager em) {
+        this.em = em;
+    }
     //Definimos el metodo para crear una nueva entidad en la base de datos.
     @Override
     public void create(Users u) {
