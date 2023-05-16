@@ -20,8 +20,7 @@ public class UsersServlet extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        
+            throws ServletException, IOException {        
         doPost(request,response);
     }
 
@@ -35,8 +34,17 @@ public class UsersServlet extends HttpServlet {
                 case "create":
                     this.signUpUser(request, response);
                     break;
+                case "login":
+                    this.loginUser(request, response);
+                    break;
                 case "createAdmin":
                     this.addNewUser(request, response);
+                    break;
+                case "update":
+                    this.updateUser(request, response);
+                    break;
+                case "delete":
+                    this.deleteUser(request, response);
                     break;
                 case "allUsers":
                     this.addNewUser(request, response);
@@ -77,23 +85,55 @@ public class UsersServlet extends HttpServlet {
         
         if (!password.equals(cPassword)) {
             request.getSession().setAttribute("errorMessage", "Las contraseñas no coinciden.");
-            response.sendRedirect("index.jsp");
+            request.getSession().setAttribute("errorActive", true);
+            request.getRequestDispatcher("includes/forms/errorPage.jsp").forward(request, response);
             return;
         }
         
-        Users user = new Users(name, firstSurname, secondSurname, mail, username, password);                    
-        
-        System.out.println(user);
+        Users user = new Users(name, firstSurname, secondSurname, mail, username, password);
         
         if (!us.createUser(user)){
-            request.getSession().setAttribute("errorMessage", "Error al crear el usuario. Comprueba los datos.");
+            request.getSession().setAttribute("errorActive", true);
+            request.getRequestDispatcher("includes/forms/errorPage.jsp").forward(request, response);
         }
         response.sendRedirect("index.jsp");
         
     }
+    
+     //Metodo para login de un usuario
+    private void loginUser(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        
+        IUsersDao iud = new IUsersDaoImpl(getInstance());
+        
+        us = new UsersServiceImpl(iud);
+    }
+    
+    //Metodo para agregar un usuario desde admin
     private void addNewUser(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
         
+        IUsersDao iud = new IUsersDaoImpl(getInstance());
+        
+        us = new UsersServiceImpl(iud);
+    }
+    
+    //Metodo para actualizar un usuario desde admin
+    private void updateUser(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        
+        IUsersDao iud = new IUsersDaoImpl(getInstance());
+        
+        us = new UsersServiceImpl(iud);
+    }
+    
+    //Metodo para borrar un usuario desde admin
+    private void deleteUser(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        
+        IUsersDao iud = new IUsersDaoImpl(getInstance());
+        
+        us = new UsersServiceImpl(iud);
     }
     
 }

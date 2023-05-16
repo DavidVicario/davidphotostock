@@ -29,8 +29,18 @@ window.onclick = function(event) {
 }
 
 //Error al introducir los datos.
-var errorSpan = document.getElementById("error-message");
 
-errorSpan.innerHTML = "Rellena todos los campos con *" // plain javascript
 
-// $("#errorSpan").html("Rellena todos los campos con *");  Jquery
+//Confirmar password
+/*
+function comprobarClave() {
+    pass = document.f1.pass.value
+    cpass = document.f1.cpass.value
+
+    if (pass == cpass) {
+        alert("Las dos claves son iguales")
+    } else {
+        alert("Las dos claves son distintas")
+    }
+}
+ */

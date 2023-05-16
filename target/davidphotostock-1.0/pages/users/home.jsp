@@ -85,12 +85,23 @@
             <a class="arrow right" onclick="plusSlides(1)"><p>></p></a>
         </section>
     <a href="/pages/admin/admin.jsp" target="_blank" class="logo"><b>ADMINISTRADOR</b></a>
-        <jsp:include page="/includes/forms/login.jsp"/>
-        
-        <jsp:include page="/includes/forms/signup.jsp"/>
-        <c:if test="${not empty errorMessage}">
-            <div class="error">${errorMessage}</div>
+    
+    <jsp:include page="/includes/forms/login.jsp"/>
+    <jsp:include page="/includes/forms/signup.jsp"/>
+    
+    <!-- REVISAR -->
+    <c:if test="${not empty errorMessage}">
+        <c:if test="${sessionScope.errorActive}">
+            <div id="s-error" class="s-error">
+                <div class="image-form">
+                    <span onclick="closeError()" class="close-x">&times;</span>
+                </div>
+                <div class="c-error ani-form">${errorMessage}</div>
+            </div>
+            <c:remove var="errorActive" scope="session" />
         </c:if>
+    </c:if>
+    
     </main>
     <jsp:include page="/includes/components/footer.jsp"/>
     <script src="/assets/js/header.js"></script>
