@@ -41,13 +41,16 @@
                 
                 
                 <div id="users-page" class="page-content">
-                    <h2>Users</h2>
-                    <div class="content-wrapper">
-                        <div class="add-search">
-                            <button class="add-new" onclick="">Add New</button>
-                            <input type="type" class="search-data" name="name" placeholder="Search...">
-                        </div>                                                                  
+                    <div class="title-add">
+                        <h2>Users</h2>
+                        <button class="add-new" onclick="">Add New</button>
+                    </div>
+                    <div class="content-wrapper">                                                                
                         <div class="container-user">
+                            <div class="container-search">
+                                <input type="text" class="search-data" name="search" placeholder="Search...">
+                                <button class="bi bi-search"></button>
+                            </div>
                             <label for="name"><b>Name *</b></label>
                             <input id="name" type="text" placeholder="Enter Name" name="name" required>                    
                             <div class="surnames">
@@ -77,7 +80,7 @@
                         </div>                    
                         <div class="table-admin">
                             <table>
-                               <tr>
+                                <tr>
                                    <th>ID</th>
                                    <th>Name</th>
                                    <th>Firt Surname</th>
@@ -85,25 +88,18 @@
                                    <th>Mail</th>
                                    <th>Username</th>
                                    <th>Password</th>
-                               </tr>
-                               <tr>
-                                   <td>#id</td>
-                                   <td>#name</td>
-                                   <td>#Surname1</td>
-                                   <td>#Surname2</td>
-                                   <td>lolito@gmail.com</td>
-                                   <td>#Username</td>
-                                   <td>#pass</td>
-                               </tr>
-                               <tr>
-                                   <td>#id</td>
-                                   <td>#name</td>
-                                   <td>#Surname1</td>
-                                   <td>#Surname2</td>
-                                   <td>#Mail</td>
-                                   <td>#Username</td>
-                                   <td>#pass</td>
-                               </tr>
+                                </tr>
+                                <c:forEach var="user" items="${users}">
+                                    <tr>
+                                        <td>${user.id}</td>
+                                        <td>${user.name}</td>
+                                        <td>${user.firstSurname}</td>
+                                        <td>${user.secondSurname}</td>
+                                        <td>${user.mail}</td>
+                                        <td>${user.username}</td>
+                                        <td>${user.password}</td>
+                                    </tr>
+                                </c:forEach>
                            </table>
                         </div>
                     </div>
@@ -111,31 +107,222 @@
                 
                 
                 <div id="shipment-page" class="page-content">
-                    <h2>Shipment</h2>
-                    <p>Content for Users page...</p>
+                    <div class="title-add">
+                        <h2>Shipment</h2>
+                        <button class="add-new" onclick="">Add New</button>
+                    </div>
+                    <div class="content-wrapper">                                                                
+                        <div class="container-shipment">
+                            <div class="container-search">
+                                <input type="text" class="search-data" name="search" placeholder="Search...">
+                                <button class="bi bi-search"></button>
+                            </div>
+                            <div class="contain-address">
+                                <div>
+                                    <label for="ccaa"><b>Ccaa *</b></label>
+                                    <input id="ccaa" type="text" placeholder="Enter Ccaa" name="ccaa" required>
+                                </div>
+                                <div>
+                                    <label for="province"><b>Province *</b></label>
+                                    <input id="province" type="text" placeholder="Enter Province" name="province">
+                                </div>
+                                <div>
+                                    <label for="municipality"><b>Municipality *</b></label>
+                                    <input id="municipality" type="text" placeholder="Enter Municipality" name="municipality" required>
+                                </div>
+                            </div>
+                            <div class="contain-date">
+                                <div>
+                                    <label for="shipment-date"><b>Shipment Date *</b></label>
+                                    <input id="shipment-date" type="datetime-local" placeholder="Enter Date" name="shipment-date" required>
+                                </div>
+                                <div class="finish">
+                                    <label for="finished"><b>Finished *</b></label>
+                                    <input id="finished" type="checkbox" name="name" required>
+                                </div>                                
+                            </div>
+                            <button class="button-ud" onclick="">Update</button>
+                            <button class="button-ud" onclick="">Delete</button>
+                        </div>
+                    </div>                    
+                    <div class="section-list">
+                        <h3>List</h3>
+                        <div class="button-list">                        
+                            <button class="list" action="" onclick="">All Users</button>
+                        </div>                    
+                        <div class="table-admin">
+                            <table>
+                                <tr>
+                                   <th>ID</th>
+                                   <th>Finished</th>
+                                   <th>Address</th>
+                                   <th>Shipment Date</th>
+                                   <th>ID User</th>
+                                   <th>ID Municipality</th>
+                                </tr>
+                                <tr>
+                                    <td>${user.id}</td>
+                                    <td>${user.name}</td>
+                                    <td>${user.firstSurname}</td>
+                                    <td>${user.secondSurname}</td>
+                                    <td>${user.mail}</td>
+                                    <td>${user.username}</td>
+                                </tr>
+                           </table>
+                        </div>
+                    </div>
                 </div>
+                                    
+                                    
                 <div id="shipmentproduct-page" class="page-content">
-                    <h2>Shipment Product</h2>
-                    <p>Content for Users page...</p>
-                </div>               
-                <div id="category-page" class="page-content">
-                    <h2>Category</h2>
-                    <p>Content for Users page...</p>
+                    <div class="title-add">
+                        <h2>Users</h2>
+                        <button class="add-new" onclick="">Add New</button>
+                    </div>
+                    <div class="content-wrapper">                                                                
+                        <div class="container-shipmentproduct">
+                            <div class="container-search">
+                                <input type="text" class="search-data" name="search" placeholder="Search...">
+                                <button class="bi bi-search"></button>
+                            </div>
+                            <label for="amount"><b>Amount *</b></label>
+                            <input id="amount" type="number" placeholder="Enter Amount" name="amount" required>
+                            <label for="id-product"><b>Id Product *</b></label>
+                            <input id="id-product" type="number" placeholder="Enter Id Product" name="id-product" required>  
+                            <button class="button-ud" onclick="">Update</button>
+                            <button class="button-ud" onclick="">Delete</button>
+                        </div>
+                    </div>                    
+                    <div class="section-list">
+                        <h3>List</h3>
+                        <div class="button-list">                        
+                            <button class="list" action="allUsers" onclick="obtainAllUsers()">All Users</button>
+                        </div>                    
+                        <div class="table-admin">
+                            <input type="hidden" action="allUsers">
+                            <table>
+                                <tr>
+                                   <th>ID</th>
+                                   <th>Name</th>
+                                   <th>Firt Surname</th>
+                                   <th>Second Surname</th>
+                                   <th>Mail</th>
+                                   <th>Username</th>
+                                   <th>Password</th>
+                                </tr>
+                                <c:forEach var="user" items="${users}">
+                                    <tr>
+                                        <td>${user.id}</td>
+                                        <td>${user.name}</td>
+                                        <td>${user.firstSurname}</td>
+                                        <td>${user.secondSurname}</td>
+                                        <td>${user.mail}</td>
+                                        <td>${user.username}</td>
+                                        <td>${user.password}</td>
+                                    </tr>
+                                </c:forEach>
+                           </table>
+                        </div>
+                    </div>
+                    
                 </div>
+                                
+
+                <div id="category-page" class="page-content">                    
+                    <div class="title-add">
+                        <h2>Category</h2>
+                        <button class="add-new" onclick="">Add New</button>
+                    </div>
+                    <div class="content-wrapper">                                                                
+                        <div class="container-category">
+                            <div class="container-search">
+                                <input type="text" class="search-data" name="search" placeholder="Search...">
+                                <button class="bi bi-search"></button>
+                            </div>
+                            <label for="name"><b>Name *</b></label>
+                            <input id="name" type="text" placeholder="Enter Name" name="name" required>                            
+                            <button class="button-ud" onclick="">Update</button>
+                            <button class="button-ud" onclick="">Delete</button>
+                        </div>
+                    </div>                    
+                    <div class="section-list">
+                        <h3>List</h3>
+                        <div class="button-list">                        
+                            <button class="list" action="allUsers" onclick="obtainAllUsers()">All Users</button>
+                        </div>                    
+                        <div class="table-admin">
+                            <input type="hidden" action="allUsers">
+                            <table>
+                                <tr>
+                                   <th>ID</th>
+                                   <th>Name</th>
+                                </tr>
+                                <c:forEach var="user" items="${users}">
+                                    <tr>
+                                        <td>${user.id}</td>
+                                        <td>${user.name}</td>
+                                    </tr>
+                                </c:forEach>
+                           </table>
+                        </div>
+                    </div>
+                </div>
+                                    
+                                    
                 <div id="subcategory-page" class="page-content">
-                    <h2>Subcategory</h2>
-                    <p>Content for Users page...</p>
+                    <div class="title-add">
+                        <h2>Subcategory</h2>
+                        <button class="add-new" onclick="">Add New</button>
+                    </div>
+                    <div class="content-wrapper">                                                                
+                        <div class="container-subcategory">
+                            <div class="container-search">
+                                <input type="text" class="search-data" name="search" placeholder="Search...">
+                                <button class="bi bi-search"></button>
+                            </div>
+                            <label for="name"><b>Name *</b></label>
+                            <input id="name" type="text" placeholder="Enter Name" name="name" required>                            
+                            <button class="button-ud" onclick="">Update</button>
+                            <button class="button-ud" onclick="">Delete</button>
+                        </div>
+                    </div>                    
+                    <div class="section-list">
+                        <h3>List</h3>
+                        <div class="button-list">                        
+                            <button class="list" action="allUsers" onclick="obtainAllUsers()">All Users</button>
+                        </div>                    
+                        <div class="table-admin">
+                            <input type="hidden" action="allUsers">
+                            <table>
+                                <tr>
+                                   <th>ID</th>
+                                   <th>Name</th>
+                                   <th>ID Category</th>
+                                </tr>
+                                <c:forEach var="user" items="${users}">
+                                    <tr>
+                                        <td>${user.id}</td>
+                                        <td>${user.name}</td>
+                                        <td>${user.firstSurname}</td>
+                                    </tr>
+                                </c:forEach>
+                           </table>
+                        </div>
+                    </div>
                 </div>
                 
                 
                 <div id="product-page" class="page-content">
-                    <h2>Product</h2>
-                    <div class="content-wrapper">
-                        <div class="add-search">
-                            <button class="add-new" onclick="">Add New</button>
-                            <input type="type" class="search-data" name="name" placeholder="Search...">
-                        </div>                                                                  
+                    <div class="title-add">
+                        <h2>Product</h2>
+                        <button class="add-new" onclick="">Add New</button>
+                    </div>                    
+                    <div class="content-wrapper">                                                                  
                         <div class="container-product">
+                            <div class="container-search">
+                                <input type="text" class="search-data" name="search" placeholder="Search...">
+                                <button class="bi bi-search"></button>
+                            </div>
                             <label for="name-product"><b>Product Name *</b></label>
                             <input id="name-product" type="text" placeholder="Enter Product Name" name="name-product" required>                    
                             <div class="contain-product">
@@ -156,8 +343,7 @@
                     </div>
                     <div class="section-list">
                         <h3>Listar</h3>
-                        <div class="button-list">                        
-                            <button class="list" onclick="">All Products</button>
+                        <div class="button-list">                                                    
                             <button class="list" onclick="">Without Stock</button>
                             <button class="list" onclick="">Few Stock</button>
                             <button class="list" onclick="">By Category</button>

@@ -12,6 +12,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "UsersServlet", urlPatterns = {"/UsersServlet"})
 public class UsersServlet extends HttpServlet {
@@ -47,7 +48,7 @@ public class UsersServlet extends HttpServlet {
                     this.deleteUser(request, response);
                     break;
                 case "allUsers":
-                    this.addNewUser(request, response);
+                    this.actionDefaultAdmin(request, response);
                     break;
                 default: 
                     this.actionDefault(request, response);
@@ -64,7 +65,11 @@ public class UsersServlet extends HttpServlet {
     }
     private void actionDefaultAdmin(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
-        response.sendRedirect("pages/admin/admin.jsp");
+        IUsersDao iud = new IUsersDaoImpl(getInstance());
+        us = new UsersServiceImpl(iud);
+        List<Users> users = us.obtainAllUsers();
+        request.setAttribute("users", users);
+        request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
     }    
     
     //Metodo para dar de alta un usuario.
@@ -100,13 +105,26 @@ public class UsersServlet extends HttpServlet {
         
     }
     
-     //Metodo para login de un usuario
+    //Metodo para login de un usuario
     private void loginUser(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
         
         IUsersDao iud = new IUsersDaoImpl(getInstance());
         
         us = new UsersServiceImpl(iud);
+    }
+    
+    //Metodo para login de un usuario
+    private void listAllUsers(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        
+        IUsersDao iud = new IUsersDaoImpl(getInstance());
+        
+        us = new UsersServiceImpl(iud);
+        
+        List<Users> users = us.obtainAllUsers();
+        request.setAttribute("users", users);
+        request.getRequestDispatcher("pages/admin/usersList.jsp").forward(request, response);
     }
     
     //Metodo para agregar un usuario desde admin
@@ -116,6 +134,29 @@ public class UsersServlet extends HttpServlet {
         IUsersDao iud = new IUsersDaoImpl(getInstance());
         
         us = new UsersServiceImpl(iud);
+        
+        String name = request.getParameter("name");
+        String firstSurname = request.getParameter("fsurname");
+        String secondSurname = request.getParameter("ssurname");
+        String mail = request.getParameter("mail");
+        String username = request.getParameter("user");
+        String password = request.getParameter("pass");
+        String cPassword = request.getParameter("cpass");
+        
+        if (!password.equals(cPassword)) {
+            request.getSession().setAttribute("errorMessage", "Las contraseñas no coinciden.");
+            request.getSession().setAttribute("errorActive", true);
+            request.getRequestDispatcher("includes/forms/errorPage.jsp").forward(request, response);
+            return;
+        }
+        
+        Users user = new Users(name, firstSurname, secondSurname, mail, username, password);
+        
+        if (!us.createUser(user)){
+            request.getSession().setAttribute("errorActive", true);
+            request.getRequestDispatcher("includes/forms/errorPage.jsp").forward(request, response);
+        }
+        response.sendRedirect("pages/admin/admin.jsp");
     }
     
     //Metodo para actualizar un usuario desde admin
@@ -125,6 +166,8 @@ public class UsersServlet extends HttpServlet {
         IUsersDao iud = new IUsersDaoImpl(getInstance());
         
         us = new UsersServiceImpl(iud);
+        
+        
     }
     
     //Metodo para borrar un usuario desde admin

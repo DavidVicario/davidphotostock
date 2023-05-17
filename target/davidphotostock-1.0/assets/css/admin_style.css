@@ -109,7 +109,7 @@ body{
 }
 
 /*----- CRUD -----*/
-.page-content h2{
+.title-add h2{
     font-size: 30px;
     margin: 15px;
 }
@@ -142,12 +142,11 @@ tr:nth-child(even) {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
+  padding: 30px 0 0 0;
   justify-content: space-between;
   border-top: 2px solid #000;
 }
 .content-wrapper > .container-user{
-    order: 2;
-    flex-grow: 1;
     padding: 16px;
     background-color: #7e7e7e;
     margin: 2% 10px 2% 10px;
@@ -155,26 +154,29 @@ tr:nth-child(even) {
     width: 70%; /* Tamaño del formulario */
     max-width: 700px;
 }
-.add-search{
-    flex: 1;
-    order: 1;
-    width: 100%;
+.title-add{
     display: flex;
     margin: 2% 10px 2% 10px;
-    flex-direction: column;
-    align-items: flex-start;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
 }
 .add-new{
     background-color: var(--color1);
     color: var(--color2);
     padding: 15px 0;
-    margin: 0 0 12px 0;
     border: 1.5px solid var(--color2);
     cursor: pointer;
     width: 180px;
 }
 .add-new:hover {
     background-color: #161616;
+}
+
+.container-search {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
 }
 .search-data {
     width: 180px;
@@ -186,6 +188,25 @@ tr:nth-child(even) {
 .search-data:focus{
     background-color: #4e4e4e;
 }
+.bi-search {
+    font-size: 20px;
+    color: var(--color2);
+}
+.container-search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    background-color: var(--color1);
+    border: 1px solid var(--color1);
+    padding: 10px;
+}
+.container-search button:focus {
+    outline: none;
+}
+.container-search button:hover{
+    opacity: 0.8;
+}
+
 .surnames, .passwords{
     display: flex;
     justify-content: space-between;
@@ -277,15 +298,13 @@ input[type=password]:focus {
     background-color: #161616;
 }
 
-/*----- Product -----*/
-.product-page{
+/*----- Shipmet -----*/
+.shipment-page{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
 }
-.content-wrapper > .container-product{
-    order: 2;
-    flex-grow: 1;
+.content-wrapper > .container-shipment{
     padding: 16px;
     background-color: #7e7e7e;
     margin: 2% 10px 2% 10px;
@@ -293,8 +312,168 @@ input[type=password]:focus {
     width: 70%; /* Tamaño del formulario */
     max-width: 700px;
 }
-.container-product{
+.contain-date,
+.contain-address{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.contain-address > div{
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+}
+.contain-date > div{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+.finish{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-shipment > input[type=number],
+.container-shipment > input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #222222;
+    color: var(--color2);
+    display: inline-block;
+    border: 1.5px solid var(--color2);
+    box-sizing: border-box;
+}
+.container-shipment > input[type=number]:focus,
+.container-shipment > input[type=text]:focus {
+    border: 1.5px solid var(--color2);
+    outline-color: var(--color1);
+    background-color: #4e4e4e;
+}
+.contain-date > div > input[type=datetime-local],
+.contain-date > div > input[type=checkbox],
+.contain-address > div > input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #222222;
+    color: var(--color2);
+    display: inline-block;
+    border: 1.5px solid var(--color2);
+    box-sizing: border-box;
+}
+.contain-date > div > input[type=datetime-local]:focus,
+.contain-date > div > input[type=checkbox]:focus,
+.contain-address > div > input[type=text]:focus {
+    border: 1.5px solid var(--color2);
+    outline-color: var(--color1);
+    background-color: #4e4e4e;
+}
+
+/*----- ShipmentProduct -----*/
+shipmentproduct-page{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.content-wrapper > .container-shipmentproduct{
     padding: 16px;
+    background-color: #7e7e7e;
+    margin: 2% 10px 2% 10px;
+    border: 1px solid #bebebe;
+    width: 70%; /* Tamaño del formulario */
+    max-width: 700px;
+}
+.container-shipmentproduct > input[type=number] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #222222;
+    color: var(--color2);
+    display: inline-block;
+    border: 1.5px solid var(--color2);
+    box-sizing: border-box;
+}
+.container-shipmentproduct > input[type=number]:focus {
+    border: 1.5px solid var(--color2);
+    outline-color: var(--color1);
+    background-color: #4e4e4e;
+}
+/*----- Category -----*/
+.category-page{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.content-wrapper > .container-category{
+    padding: 16px;
+    background-color: #7e7e7e;
+    margin: 2% 10px 2% 10px;
+    border: 1px solid #bebebe;
+    width: 70%; /* Tamaño del formulario */
+    max-width: 700px;
+}
+.container-category > input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #222222;
+    color: var(--color2);
+    display: inline-block;
+    border: 1.5px solid var(--color2);
+    box-sizing: border-box;
+}
+.container-category > input[type=text]:focus {
+    border: 1.5px solid var(--color2);
+    outline-color: var(--color1);
+    background-color: #4e4e4e;
+}
+
+/*----- Subcategory -----*/
+.subcategory-page{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.content-wrapper > .container-subcategory{
+    padding: 16px;
+    background-color: #7e7e7e;
+    margin: 2% 10px 2% 10px;
+    border: 1px solid #bebebe;
+    width: 70%; /* Tamaño del formulario */
+    max-width: 700px;
+}
+.container-subcategory > input[type=number],
+.container-subcategory > input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: #222222;
+    color: var(--color2);
+    display: inline-block;
+    border: 1.5px solid var(--color2);
+    box-sizing: border-box;
+}
+.container-subcategory > input[type=number]:focus,
+.container-subcategory > input[type=text]:focus {
+    border: 1.5px solid var(--color2);
+    outline-color: var(--color1);
+    background-color: #4e4e4e;
+}
+
+/*----- Product -----*/
+.product-page{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.content-wrapper > .container-product{
+    padding: 16px;
+    background-color: #7e7e7e;
+    margin: 2% 10px 2% 10px;
+    border: 1px solid #bebebe;
+    width: 70%; /* Tamaño del formulario */
+    max-width: 700px;
 }
 .contain-product{
     display: flex;
