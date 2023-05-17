@@ -312,6 +312,7 @@ input[type=password]:focus {
     width: 70%; /* Tamaño del formulario */
     max-width: 700px;
 }
+.contain-id,
 .contain-date,
 .contain-address{
     display: flex;
@@ -323,10 +324,11 @@ input[type=password]:focus {
     flex-direction: column;
     width: 32%;
 }
+.contain-id > div,
 .contain-date > div{
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 45%;
 }
 .finish{
     display: flex;
@@ -350,6 +352,7 @@ input[type=password]:focus {
     outline-color: var(--color1);
     background-color: #4e4e4e;
 }
+.contain-id > div > input[type=number],
 .contain-date > div > input[type=datetime-local],
 .contain-date > div > input[type=checkbox],
 .contain-address > div > input[type=text] {
@@ -362,6 +365,7 @@ input[type=password]:focus {
     border: 1.5px solid var(--color2);
     box-sizing: border-box;
 }
+.contain-id > div > input[type=number]:focus,
 .contain-date > div > input[type=datetime-local]:focus,
 .contain-date > div > input[type=checkbox]:focus,
 .contain-address > div > input[type=text]:focus {
@@ -518,4 +522,23 @@ shipmentproduct-page{
     border: 1.5px solid var(--color2);
     outline-color: var(--color1);
     background-color: #4e4e4e;
+}
+/*----- CCAA -----*/
+.ccaa-page{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+/*----- Province -----*/
+.province-page{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+/*----- Municipality -----*/
+.municipality-page{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }

@@ -79,15 +79,16 @@
                             <button class="list" action="allUsers" onclick="obtainAllUsers()">All Users</button>
                         </div>                    
                         <div class="table-admin">
+                            <input type="hidden" action="allUsers">
                             <table>
                                 <tr>
-                                   <th>ID</th>
-                                   <th>Name</th>
-                                   <th>Firt Surname</th>
-                                   <th>Second Surname</th>
-                                   <th>Mail</th>
-                                   <th>Username</th>
-                                   <th>Password</th>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Firt Surname</th>
+                                    <th>Second Surname</th>
+                                    <th>Mail</th>
+                                    <th>Username</th>
+                                    <th>Password</th>
                                 </tr>
                                 <c:forEach var="user" items="${users}">
                                     <tr>
@@ -139,7 +140,17 @@
                                 <div class="finish">
                                     <label for="finished"><b>Finished *</b></label>
                                     <input id="finished" type="checkbox" name="name" required>
+                                </div>
+                            </div>
+                            <div class="contain-id">
+                                <div>
+                                    <label for="id-user"><b>Id User *</b></label>
+                                    <input id="id-user" type="number" placeholder="Enter Id User" name="id-user" required>
                                 </div>                                
+                                <div>
+                                    <label for="id-municipality"><b>Id Municipality *</b></label>
+                                    <input id="id-municipality" type="number" placeholder="Enter Id Municipality" name="id-municipality" required>
+                                </div>
                             </div>
                             <button class="button-ud" onclick="">Update</button>
                             <button class="button-ud" onclick="">Delete</button>
@@ -148,17 +159,18 @@
                     <div class="section-list">
                         <h3>List</h3>
                         <div class="button-list">                        
-                            <button class="list" action="" onclick="">All Users</button>
+                            <button class="list" action="" onclick="">All</button>
                         </div>                    
                         <div class="table-admin">
+                            <input type="hidden" action="">
                             <table>
                                 <tr>
-                                   <th>ID</th>
-                                   <th>Finished</th>
-                                   <th>Address</th>
-                                   <th>Shipment Date</th>
-                                   <th>ID User</th>
-                                   <th>ID Municipality</th>
+                                    <th>Id</th>
+                                    <th>Finished</th>
+                                    <th>Address</th>
+                                    <th>Shipment Date</th>
+                                    <th>Id User</th>
+                                    <th>Id Municipality</th>
                                 </tr>
                                 <tr>
                                     <td>${user.id}</td>
@@ -185,10 +197,16 @@
                                 <input type="text" class="search-data" name="search" placeholder="Search...">
                                 <button class="bi bi-search"></button>
                             </div>
-                            <label for="amount"><b>Amount *</b></label>
-                            <input id="amount" type="number" placeholder="Enter Amount" name="amount" required>
-                            <label for="id-product"><b>Id Product *</b></label>
-                            <input id="id-product" type="number" placeholder="Enter Id Product" name="id-product" required>  
+                            <div class="contain-id">
+                                <div>
+                                    <label for="amount"><b>Amount *</b></label>
+                                    <input id="amount" type="number" placeholder="Enter Amount" name="amount" required>
+                                </div>
+                                <div>
+                                    <label for="id-product"><b>Id Product *</b></label>
+                                    <input id="id-product" type="number" placeholder="Enter Id Product" name="id-product" required>  
+                                </div>
+                            </div>
                             <button class="button-ud" onclick="">Update</button>
                             <button class="button-ud" onclick="">Delete</button>
                         </div>
@@ -196,35 +214,26 @@
                     <div class="section-list">
                         <h3>List</h3>
                         <div class="button-list">                        
-                            <button class="list" action="allUsers" onclick="obtainAllUsers()">All Users</button>
-                        </div>                    
+                            <button class="list" action="" onclick="">All</button>
+                        </div>                       
                         <div class="table-admin">
-                            <input type="hidden" action="allUsers">
+                            <input type="hidden" action="">
                             <table>
                                 <tr>
-                                   <th>ID</th>
-                                   <th>Name</th>
-                                   <th>Firt Surname</th>
-                                   <th>Second Surname</th>
-                                   <th>Mail</th>
-                                   <th>Username</th>
-                                   <th>Password</th>
+                                    <th>Id</th>
+                                    <th>Amount</th>
+                                    <th>Id Shipment</th>
+                                    <th>Id Product</th>
                                 </tr>
-                                <c:forEach var="user" items="${users}">
-                                    <tr>
-                                        <td>${user.id}</td>
-                                        <td>${user.name}</td>
-                                        <td>${user.firstSurname}</td>
-                                        <td>${user.secondSurname}</td>
-                                        <td>${user.mail}</td>
-                                        <td>${user.username}</td>
-                                        <td>${user.password}</td>
-                                    </tr>
-                                </c:forEach>
+                                <tr>
+                                    <td>${user.id}</td>
+                                    <td>${user.name}</td>
+                                    <td>${user.firstSurname}</td>
+                                    <td>${user.secondSurname}</td>
+                                </tr>
                            </table>
                         </div>
-                    </div>
-                    
+                    </div>                    
                 </div>
                                 
 
@@ -248,21 +257,19 @@
                     <div class="section-list">
                         <h3>List</h3>
                         <div class="button-list">                        
-                            <button class="list" action="allUsers" onclick="obtainAllUsers()">All Users</button>
+                            <button class="list" action="" onclick="">All</button>
                         </div>                    
                         <div class="table-admin">
-                            <input type="hidden" action="allUsers">
+                            <input type="hidden" action="">
                             <table>
                                 <tr>
-                                   <th>ID</th>
-                                   <th>Name</th>
+                                    <th>Id</th>
+                                    <th>Name</th>
                                 </tr>
-                                <c:forEach var="user" items="${users}">
-                                    <tr>
-                                        <td>${user.id}</td>
-                                        <td>${user.name}</td>
-                                    </tr>
-                                </c:forEach>
+                                <tr>
+                                    <td>${user.id}</td>
+                                    <td>${user.name}</td>
+                                </tr>                                
                            </table>
                         </div>
                     </div>
@@ -281,7 +288,9 @@
                                 <button class="bi bi-search"></button>
                             </div>
                             <label for="name"><b>Name *</b></label>
-                            <input id="name" type="text" placeholder="Enter Name" name="name" required>                            
+                            <input id="name" type="text" placeholder="Enter Name" name="name" required>
+                            <label for="id-category"><b>Id Category *</b></label>
+                            <input id="id-category" type="number" placeholder="Enter Id Category" name="id-category" required>
                             <button class="button-ud" onclick="">Update</button>
                             <button class="button-ud" onclick="">Delete</button>
                         </div>
@@ -289,23 +298,21 @@
                     <div class="section-list">
                         <h3>List</h3>
                         <div class="button-list">                        
-                            <button class="list" action="allUsers" onclick="obtainAllUsers()">All Users</button>
-                        </div>                    
+                            <button class="list" action="" onclick="">All</button>
+                        </div>                       
                         <div class="table-admin">
-                            <input type="hidden" action="allUsers">
+                            <input type="hidden" action="">
                             <table>
                                 <tr>
-                                   <th>ID</th>
-                                   <th>Name</th>
-                                   <th>ID Category</th>
-                                </tr>
-                                <c:forEach var="user" items="${users}">
-                                    <tr>
-                                        <td>${user.id}</td>
-                                        <td>${user.name}</td>
-                                        <td>${user.firstSurname}</td>
-                                    </tr>
-                                </c:forEach>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>ID Category</th>
+                                </tr>                                
+                                <tr>
+                                    <td>${user.id}</td>
+                                    <td>${user.name}</td>
+                                    <td>${user.firstSurname}</td>
+                                </tr>                                
                            </table>
                         </div>
                     </div>
@@ -352,18 +359,18 @@
                         <div class="table-admin">
                             <table>
                                <tr>
-                                   <th>ID</th>
-                                   <th>Product Name</th>
-                                   <th>Stock</th>
-                                   <th>Price</th>
-                                   <th>Id Subcategory</th>
+                                    <th>ID</th>
+                                    <th>Product Name</th>
+                                    <th>Stock</th>
+                                    <th>Price</th>
+                                    <th>Id Subcategory</th>
                                </tr>
                                <tr>
-                                   <td>#id</td>
-                                   <td>#name</td>
-                                   <td>#stock</td>
-                                   <td>#price</td>
-                                   <td>#id sub</td>
+                                    <td>#id</td>
+                                    <td>#name</td>
+                                    <td>#stock</td>
+                                    <td>#price</td>
+                                    <td>#id sub</td>
                                </tr>
                            </table>
                         </div>
@@ -371,22 +378,92 @@
                 </div>
                 
                 
-                <div id="ccaa-page" class="page-content">
-                    <h2>CCAA</h2>
-                    <p>Content for Users page...</p>
+                <div id="ccaa-page" class="page-content">                                       
+                    <div class="title-add">
+                        <h2>CCAA</h2>
+                    </div>            
+                    <div class="section-list">
+                        <h3>List</h3>
+                        <div class="button-list">                        
+                            <button class="list" action="" onclick="">All</button>
+                        </div>                       
+                        <div class="table-admin">
+                            <input type="hidden" action="">
+                            <table>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                </tr>                
+                                <tr>
+                                    <td>${user.id}</td>
+                                    <td>${user.name}</td>
+                                </tr>                
+                           </table>
+                        </div>
+                    </div>
                 </div>
+                                
+
                 <div id="province-page" class="page-content">
-                    <h2>Province</h2>
-                    <p>Content for Users page...</p>
+                    <div class="title-add">
+                        <h2>Province</h2>                        
+                    </div>                                       
+                    <div class="section-list">
+                        <h3>List</h3>
+                        <div class="button-list">                        
+                            <button class="list" action="" onclick="">All</button>
+                        </div>                       
+                        <div class="table-admin">
+                            <input type="hidden" action="">
+                            <table>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Id Ccaa</th>
+                                </tr>                
+                                <tr>
+                                    <td>${user.id}</td>
+                                    <td>${user.name}</td>
+                                    <td>${user.name}</td>
+                                </tr>                
+                           </table>
+                        </div>
+                    </div>
                 </div>
-                <div id="municipality-page" class="page-content">
-                    <h2>Municipality</h2>
-                    <p>Content for Users page...</p>
+                                
+                <div id="municipality-page" class="page-content">                    
+                    <div class="title-add">
+                        <h2>Municipality</h2>
+                    </div>                                        
+                    <div class="section-list">
+                        <h3>List</h3>
+                        <div class="button-list">                        
+                            <button class="list" action="" onclick="">All</button>
+                        </div>                       
+                        <div class="table-admin">
+                            <input type="hidden" action="">
+                            <table>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Id Province</th>
+                                    <th>Cod Municipality</th>
+                                    <th>DC</th>
+                                </tr>                
+                                <tr>
+                                    <td>${user.id}</td>
+                                    <td>${user.name}</td>
+                                    <td>${user.id}</td>
+                                    <td>${user.name}</td>
+                                    <td>${user.name}</td>
+                                </tr>                
+                           </table>
+                        </div>
+                    </div>
                 </div>
-                
                 
             </div>
-                                   
+                                
         </body>
         
     </main>    
