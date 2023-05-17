@@ -27,10 +27,171 @@
         <jsp:param name="image" value="/assets/img/header1.jpg" />
     </jsp:include>
     <main>
+        
+        
+        
+    <div id="myBtnContainer">
+        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+        <button class="btn" onclick="filterSelection('flower')"> Flower</button>
+        <button class="btn" onclick="filterSelection('insect')"> Insect</button>
+        <button class="btn" onclick="filterSelection('social')"> Social</button>
+        <button class="btn" onclick="filterSelection('landscape')"> Landscape</button>
+    </div>
+        
+        <!-- Portfolio Gallery Grid -->
+    <div class="row">
+        <div class="column flower">
+            <div class="content">
+                <img src="/assets/img/flowers(1).jpg" alt="Flower" style="width:100%">
+                <h4>Mountains</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="column flower">
+            <div class="content">
+                <img src="/assets/img/flowers(2).jpg" alt="Flower" style="width:100%">
+                <h4>Lights</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="column flower">
+            <div class="content">
+                <img src="/assets/img/flowers(3).jpg" alt="Flower" style="width:100%">
+                <h4>Forest</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="column flower">
+            <div class="content">
+                <img src="/assets/img/flowers(4).jpg" alt="Flower" style="width:100%">
+                <h4>Forest</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="column flower">
+            <div class="content">
+                <img src="/assets/img/flowers(5).jpg" alt="Flower" style="width:100%">
+                <h4>Forest</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="column flower">
+            <div class="content">
+                <img src="/assets/img/flowers(6).jpg" alt="Flower" style="width:100%">
+                <h4>Forest</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+
+        
+        <div class="column insect">
+            <div class="content">
+                <img src="/assets/img/insect(1).jpg" alt="Insect" style="width:100%">
+                <h4>Retro</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="column insect">
+            <div class="content">
+                <img src="/assets/img/insect(2).jpg" alt="Insect" style="width:100%">
+                <h4>Retro</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="column insect">
+            <div class="content">
+                <img src="/assets/img/insect(3).jpg" alt="Insect" style="width:100%">
+                <h4>Retro</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="column insect">
+            <div class="content">
+                <img src="/assets/img/insect(4).jpg" alt="Insect" style="width:100%">
+                <h4>Retro</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        
+
+        <div class="column social">
+            <div class="content">
+                <img src="/assets/img/social(1).jpg" alt="Social" style="width:100%">
+                <h4>Girl</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="column social">
+            <div class="content">
+                <img src="/assets/img/social(2).jpg" alt="Social" style="width:100%">
+                <h4>Girl</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="column social">
+            <div class="content">
+                <img src="/assets/img/social(3).jpg" alt="Social" style="width:100%">
+                <h4>Girl</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="column social">
+            <div class="content">
+                <img src="/assets/img/social(4).jpg" alt="Social" style="width:100%">
+                <h4>Girl</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="column social">
+            <div class="content">
+                <img src="/assets/img/social(5).jpg" alt="Social" style="width:100%">
+                <h4>Girl</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        
+        
+        <div class="column landscape">
+            <div class="content">
+                <img src="/assets/img/landscape(1).jpg" alt="Landscape" style="width:100%">
+                <h4>Man</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="column landscape">
+            <div class="content">
+                <img src="/assets/img/landscape(2).jpg" alt="Landscape" style="width:100%">
+                <h4>Man</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        <div class="column landscape">
+            <div class="content">
+                <img src="/assets/img/landscape(3).jpg" alt="Landscape" style="width:100%">
+                <h4>Man</h4>
+                <p>Lorem ipsum dolor..</p>
+            </div>
+        </div>
+        
+    <!-- END GRID -->
+    </div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         <jsp:include page="/includes/forms/login.jsp"/>
         <jsp:include page="/includes/forms/signup.jsp"/>
     </main>
     <jsp:include page="/includes/components/footer.jsp"/>
+    <script src="/assets/js/portfolio.js"></script>
     <script src="/assets/js/header.js"></script>
     <script src="/assets/js/forms.js"></script>
 </body>
