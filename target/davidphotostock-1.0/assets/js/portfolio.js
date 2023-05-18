@@ -1,9 +1,8 @@
-filterSelection("all") // Execute the function and show all columns
+filterSelection("all")
 function filterSelection(c) {
   var x, i;
-  x = document.getElementsByClassName("column");
-  if (c == "all") c = "";
-  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  x = document.getElementsByClassName("column-pf");
+  if (c == "all") c = ""; 
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
     if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
@@ -36,12 +35,12 @@ function w3RemoveClass(element, name) {
 }
 
 // Add active class to the current button (highlight it)
-var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
+var btnContainer = document.getElementById("container-btn-pf");
+var btns = btnContainer.getElementsByClassName("btn-pf");
 for (var i = 0; i < btns.length; i++) {
   btns[i].addEventListener("click", function(){
-    var current = document.getElementsByClassName("active");
-    current[0].className = current[0].className.replace(" active", "");
-    this.className += " active";
+    var current = document.getElementsByClassName("active-pf");
+    current[0].className = current[0].className.replace(" active-pf", "");
+    this.className += " active-pf";
   });
 }

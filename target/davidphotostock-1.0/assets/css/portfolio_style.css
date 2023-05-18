@@ -14,73 +14,50 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
-
-body {
+.header-row{
+    position: relative;
+}
+body{
   background-color: var(--color5);
-  font-family: Arial;
 }
-
-/* Center website */
-.main {
-  max-width: 1000px;
-  margin: auto;
+.row-pf{
+    display: flex;
+    flex-wrap: wrap;
 }
-
-h1 {
-  font-size: 50px;
-  word-break: break-all;
+.row-pf,
+.row-pf > .column-pf{
+  padding: 10px;
 }
-
-.row {
-  margin: 10px -16px;
+.column-pf{
+  flex: 0 0 33.33%;
+  display: none; /* Oculta todo por defecto */
 }
-
-/* Add padding BETWEEN each column */
-.row,
-.row > .column {
-  padding: 20px;
-}
-
-/* Create three equal columns that floats next to each other */
-.column {
-  float: left;
-  width: 33.33%;
-  display: none; /* Hide all elements by default */
-}
-
-/* Clear floats after rows */ 
-.row:after {
+.row-pf:after {
   content: "";
   display: table;
   clear: both;
 }
-
-/* Content */
-.content {
+.content-pf{
   background-color: white;
   padding: 10px;
 }
-
-/* The "show" class is added to the filtered elements */
-.show {
+.show{
   display: block;
 }
-
-/* Style the buttons */
-.btn {
-  border: none;
+.container-btn-pf{
+    margin: 0 20px 5px 20px;
+}
+.btn-pf{
   outline: none;
+  margin: 20px 10px 0 0;
   padding: 12px 16px;
   background-color: white;
   cursor: pointer;
 }
-
-.btn:hover {
+.btn-pf:hover {
   background-color: #ddd;
 }
-
-.btn.active {
+.btn-pf.active-pf{
   background-color: #666;
   color: white;
 }
