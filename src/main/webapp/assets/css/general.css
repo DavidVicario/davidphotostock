@@ -4,6 +4,16 @@
     --color3: #ff9933; /*rgb(255, 153, 51)*/
     --color4: #001fcf;
     --color5: #131d53;
+    
+    --colorFondo: #000000;
+    --colorCompl: #1c1c1c;
+    --colorBoton: #ff9934;
+    --colorHover: #ff8000;
+    --colorLetra: #ffffff;
+
+    --colorBase1: #95a0be;
+    --colorBase2: #566d8c;
+    --colorBase3: #2e4459;
 }
 *{
     margin: 0;
@@ -79,16 +89,16 @@ input[type="password"]:focus {
     background-color: #4e4e4e;
 }
 input[type="checkbox"] + label:before {
-	content: "";
-	width: 12px;
-	height: 12px;
-	float: left;
-	margin: 2px 5px 0 0;
-	border: 1.5px solid var(--color1);
-	background-color: var(--color2);
+    content: "";
+    width: 12px;
+    height: 12px;
+    float: left;
+    margin: 2px 5px 0 0;
+    border: 1.5px solid var(--color1);
+    background-color: var(--color2);
 }
 input[type="checkbox"]:checked + label:before {
-	border: 1.5px solid var(--color2);
+    border: 1.5px solid var(--color2);
     background-color: #161616;
 }
 input[type="checkbox"]{

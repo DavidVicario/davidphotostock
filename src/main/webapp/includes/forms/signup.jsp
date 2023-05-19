@@ -2,7 +2,7 @@
     <form class="content-signup ani-form" action="UsersServlet?action=create" method="post">
         <div class="image-form">
             <span onclick="closeSignUp()" class="close-x">&times;</span>
-            <img src="../assets/img/color-2k.png" alt="Logo" class="logo-form">
+            <img src="/assets/img/color-2k.png" alt="Logo" class="logo-form">
         </div>
         <div class="container-signup">
             <label for="name"><b>Name *</b></label>

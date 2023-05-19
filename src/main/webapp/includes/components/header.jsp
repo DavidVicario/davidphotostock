@@ -1,4 +1,4 @@
-<header class="header-container">
+<header class="header-container" id="header-container">
     <div class="header-row">
         <div href="/pages/users/home.jsp" class="header-logo">
             <a href="/pages/users/home.jsp" class="link-logo">

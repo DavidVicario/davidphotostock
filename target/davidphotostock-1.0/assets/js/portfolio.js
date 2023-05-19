@@ -1,16 +1,17 @@
+//Portfolio filtro
 filterSelection("all")
+
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("column-pf");
   if (c == "all") c = ""; 
   for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    hiddenClass(x[i], "show-pf");
+    if (x[i].className.indexOf(c) > -1) showClass(x[i], "show-pf");
   }
 }
 
-// Show filtered elements
-function w3AddClass(element, name) {
+function showClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
@@ -21,8 +22,7 @@ function w3AddClass(element, name) {
   }
 }
 
-// Hide elements that are not selected
-function w3RemoveClass(element, name) {
+function hiddenClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
@@ -34,7 +34,6 @@ function w3RemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-// Add active class to the current button (highlight it)
 var btnContainer = document.getElementById("container-btn-pf");
 var btns = btnContainer.getElementsByClassName("btn-pf");
 for (var i = 0; i < btns.length; i++) {
@@ -44,3 +43,21 @@ for (var i = 0; i < btns.length; i++) {
     this.className += " active-pf";
   });
 }
+
+//Dropdown
+function showDrop(id) {
+  document.getElementById(id).classList.toggle("show-dr");
+}
+
+document.addEventListener('click', function(event) {
+  var dropdownButtons = document.querySelectorAll('.btn-drop');
+  var dropdownContents = document.querySelectorAll('.content-dropdown');
+  
+  var clickedInsideButton = Array.from(dropdownButtons).some(button => button === event.target || button.contains(event.target));
+  var clickedInsideContent = Array.from(dropdownContents).some(content => content === event.target || content.contains(event.target));
+
+  if (!clickedInsideButton && !clickedInsideContent) {
+    Array.from(dropdownContents).forEach(content => content.classList.remove('show-dr'));
+  }
+});
+

@@ -1,9 +1,13 @@
 :root{
-    --color1: #010101;
-    --color2: #ffffff;
-    --color3: #ff9933; /*rgb(255, 153, 51)*/
-    --color4: #001fcf;
-    --color5: #1b1d3b;
+    --colorFonds: #000000;
+    --colorCompl: #1c1c1c;
+    --colorButtn: #ff9934;
+    --colorHover: #ff8000;
+    --colorTexts: #ffffff;
+
+    --colorBase1: #95a0be;
+    --colorBase2: #566d8c;
+    --colorBase3: #2e4459;
 }
 *{
     margin: 0;
@@ -14,50 +18,116 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-.header-row{
-    position: relative;
-}
 body{
-  background-color: var(--color5);
+    background-color: var(--colorFonds);
 }
+/*----- Porfolio -----*/
 .row-pf{
     display: flex;
     flex-wrap: wrap;
 }
 .row-pf,
 .row-pf > .column-pf{
-  padding: 10px;
+    padding: 8px;
+    padding-bottom: 50px;
 }
 .column-pf{
-  flex: 0 0 33.33%;
-  display: none; /* Oculta todo por defecto */
+    flex: 0 0 33.33%;
+    display: none; /* Oculta todo por defecto */
 }
 .row-pf:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 .content-pf{
-  background-color: white;
-  padding: 10px;
+    background-color: var(--colorCompl);
+    border-radius: 5px;
+    padding-bottom: 10px;
 }
-.show{
-  display: block;
+.content-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.pf-text{
+    display: flex;
+    flex-direction: column; /* Hace que h4 y p se apilen verticalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+}
+
+h4, p{
+    color: var(--colorTexts);
+    padding: 5px 0 5px 15px;
+}
+h4{
+    padding-top: 10px;
+}
+.btn-cart{
+    outline: none;
+    margin: 15px;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    color: var(--colorTexts);
+    background-color: var(--colorButtn);
+}
+.btn-cart:hover{
+    background-color: var(--colorHover);
+}
+.show-pf{
+    display: block;
 }
 .container-btn-pf{
-    margin: 0 20px 5px 20px;
+    margin: 50px 20px 30px 20px;
 }
-.btn-pf{
-  outline: none;
-  margin: 20px 10px 0 0;
-  padding: 12px 16px;
-  background-color: white;
-  cursor: pointer;
+.btn-bsc{
+    outline: none;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    color: var(--colorTexts);
+    background-color: var(--colorButtn);
 }
-.btn-pf:hover {
-  background-color: #ddd;
+.btn-bsc:hover {
+    background-color: var(--colorHover);
 }
-.btn-pf.active-pf{
-  background-color: #666;
-  color: white;
+/*----- Dropdown -----*/
+.btn-drop {
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    color: var(--colorLetra);
+    background-color: var(--colorButtn);
+}
+.btn-drop:hover, .btn-drop:focus {
+    background-color: var(--colorHover);
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.content-dropdown {
+    display: none;
+    position: absolute;
+    background-color: var(--colorButtn);
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.content-dropdown a {
+    color: var(--colorTexts);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown a:hover {
+    background-color: var(--colorHover);
+}
+.show-dr {
+    display: block;
 }

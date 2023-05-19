@@ -84,7 +84,7 @@
             <a class="arrow left" onclick="plusSlides(-1)"><p><</p></a>          
             <a class="arrow right" onclick="plusSlides(1)"><p>></p></a>
         </section>
-    <a href="/pages/admin/admin.jsp" target="_blank" class="logo"><b>ADMINISTRADOR</b></a>
+    <!-- <a href="/pages/admin/admin.jsp" target="_blank" class="logo"><b>ADMINISTRADOR</b></a> -->
     
     <jsp:include page="/includes/forms/login.jsp"/>
     <jsp:include page="/includes/forms/signup.jsp"/>

@@ -17,31 +17,51 @@
     <link rel="stylesheet" href="/assets/css/subheader.css">
     <link rel="stylesheet" href="/assets/css/footer.css">
 </head>
-<body>
+<body class="fixed-header">
     <jsp:include page="/includes/components/header.jsp"/>
     <jsp:include page="/includes/components/subheader.jsp">
         <jsp:param name="title" value="PORTFOLIO" />
-        <jsp:param name="description1" value="Texto de prueba" />
+        <jsp:param name="description1" value="My view of the world through the camera lens." />
         <jsp:param name="description2" value="" />
         <jsp:param name="description3" value="" />
-        <jsp:param name="image" value="/assets/img/header1.jpg" />
+        <jsp:param name="image" value="/assets/img/social(1).jpg" />
     </jsp:include>
     <main>
         
         <div class="container-btn-pf" id="container-btn-pf">
-            <button class="btn-pf active-pf" onclick="filterSelection('all')"> Show all</button>
-            <button class="btn-pf" onclick="filterSelection('flower')"> Flower</button>
-            <button class="btn-pf" onclick="filterSelection('insect')"> Insect</button>
-            <button class="btn-pf" onclick="filterSelection('social')"> Social</button>
-            <button class="btn-pf" onclick="filterSelection('landscape')"> Landscape</button>
+            <button class="btn-pf btn-bsc active-pf" onclick="filterSelection('all')"> Show all</button>
+            <div class="dropdown">
+                <button class="btn-drop btn-bsc" onclick="showDrop('cdd')"> Categories</button>
+                <div id="cdd" class="content-dropdown">
+                    <a class="btn-pf" onclick="filterSelection('flower'); showDrop('cdd')"> Flower</a>
+                    <a class="btn-pf" onclick="filterSelection('insect'); showDrop('cdd')"> Insect</a>
+                    <a class="btn-pf" onclick="filterSelection('social'); showDrop('cdd')"> Social</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('cdd')"> Landscape</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn-drop btn-bsc" onclick="showDrop('sdd')"> Subcategories</button>
+                <div id="sdd" class="content-dropdown">
+                    <a class="btn-pf" onclick="filterSelection('flower'); showDrop('sdd')"> Flower</a>
+                    <a class="btn-pf" onclick="filterSelection('insect'); showDrop('sdd')"> Insect</a>
+                    <a class="btn-pf" onclick="filterSelection('social'); showDrop('sdd')"> Social</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> Landscape</a>
+                </div>
+            </div>
         </div>
 
+        
         <div class="row-pf">
             <div class="column-pf flower">
                 <div class="content-pf">
                     <img src="/assets/img/flowers(1).jpg" alt="Flower" style="width:100%">
-                    <h4>Mountains</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4>Mountains</h4>
+                            <p>100x70cm  /  €100.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="column-pf flower">

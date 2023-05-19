@@ -15,9 +15,7 @@
 }
 /*----- FOOTER -----*/
 footer{
-    background-size: cover;
-    background-image: url('../img/landscape\(2\).jpg');
-    background-position: center bottom;
+    background-color: #1c1c1c;
 }
 .footer-container{
     display: flex;
