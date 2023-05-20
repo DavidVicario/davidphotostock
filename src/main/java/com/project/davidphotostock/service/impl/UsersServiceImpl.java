@@ -4,9 +4,6 @@ package com.project.davidphotostock.service.impl;
 import com.project.davidphotostock.data.IUsersDao;
 import com.project.davidphotostock.domain.Users;
 import com.project.davidphotostock.service.UsersService;
-import jakarta.ejb.EJB;
-import jakarta.ejb.Stateless;
-import jakarta.inject.Inject;
 import java.util.List;
 
 //Implementamos en la clase su Service correspondiente donde estan los metodos a usar.

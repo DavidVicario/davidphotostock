@@ -1,5 +1,5 @@
 <section class="section-login" id="section-login">
-    <form class="content-login ani-form" action="/action_page.php" method="post">
+    <form class="content-login ani-form" action="UsersServlet?action=login" method="post">
         <div class="image-form">
             <span onclick="closeLogin()" class="close-x">&times;</span>
             <img src="/assets/img/color-2k.png" alt="Logo" class="logo-form">

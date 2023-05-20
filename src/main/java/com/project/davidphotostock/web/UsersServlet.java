@@ -11,8 +11,12 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.util.regex.Pattern;
 
 @WebServlet(name = "UsersServlet", urlPatterns = {"/UsersServlet"})
 public class UsersServlet extends HttpServlet {
@@ -37,6 +41,9 @@ public class UsersServlet extends HttpServlet {
                     break;
                 case "login":
                     this.loginUser(request, response);
+                    break;
+                case "logout":
+                    this.logoutUser(request, response);
                     break;
                 case "createAdmin":
                     this.addNewUser(request, response);
@@ -112,7 +119,51 @@ public class UsersServlet extends HttpServlet {
         IUsersDao iud = new IUsersDaoImpl(getInstance());
         
         us = new UsersServiceImpl(iud);
+        
+        String username = sanitizeInput(request.getParameter("user"));
+        String password = hashPassword(sanitizeInput(request.getParameter("pass")));
+
+        Users user = us.obtainUserByUsernameAndPass(username, password);
+
+        if (user != null) {
+            HttpSession session = request.getSession();
+            session.setAttribute("user", user);
+            response.sendRedirect("index.jsp");
+        } else {
+            request.setAttribute("errorMessage", "Compruebe su usuario o contraseña.");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
     }
+    
+    private String sanitizeInput(String input) {
+        if (input == null) {
+            return "";  
+        }
+        return Pattern.compile("[^a-zA-Z0-9]").matcher(input).replaceAll("");
+    }
+    
+    private String hashPassword(String password) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hashedPassword = md.digest(password.getBytes());
+            StringBuilder sb = new StringBuilder();
+            for (byte b : hashedPassword) {
+                sb.append(String.format("%02x", b));
+            }
+            return sb.toString();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    private void logoutUser(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        HttpSession session = request.getSession();
+        session.invalidate(); // invalidamos la sesión
+
+        response.sendRedirect("index.jsp"); 
+    }
+    
     
     //Metodo para login de un usuario
     private void listAllUsers(HttpServletRequest request, HttpServletResponse response)

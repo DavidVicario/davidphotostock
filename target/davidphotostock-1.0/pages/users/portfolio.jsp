@@ -27,7 +27,9 @@
         <jsp:param name="image" value="/assets/img/social(1).jpg" />
     </jsp:include>
     <main>
-        
+        <h3 class="title-main hm">My Worldview</h3>
+        <p class="title-main pm">Printed on silk photography paper, 250 grm.<br>
+        All images have a size of 100x70 cm.</p>
         <div class="container-btn-pf" id="container-btn-pf">
             <button class="btn-pf btn-bsc active-pf" onclick="filterSelection('all')"> Show all</button>
             <div class="dropdown">
@@ -57,8 +59,8 @@
                     <img src="/assets/img/flowers(1).jpg" alt="Flower" style="width:100%">
                     <div class="content-info">
                         <div class="pf-text">
-                            <h4>Mountains</h4>
-                            <p>100x70cm  /  €100.00</p>
+                            <h4 class="hpf">Sakura</h4>
+                            <p class="ppf">€100.00</p>
                         </div>
                         <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
                     </div>

@@ -1,3 +1,4 @@
+<%@ page import="com.project.davidphotostock.domain.Users" %>
 <header class="header-container" id="header-container">
     <div class="header-row">
         <div href="/pages/users/home.jsp" class="header-logo">
@@ -18,8 +19,17 @@
         </div>
         <div class="users">
             <ul>
-                <li><a onclick="openLogin()">LOGIN</a></li>
-                <li><a onclick="openSignUp()">SIGN UP</a></li>
+                <% 
+                Users loggedInUser = (Users) session.getAttribute("user");
+                if (loggedInUser != null) { 
+                    String username = loggedInUser.getUsername();
+                %>
+                    <li><a onclick="openForm('profile')"><%= username %></a></li>
+                    <li><a onclick="logout()">LOGOUT</a></li>
+                <% } else { %>
+                    <li><a onclick="openForm('login')">LOGIN</a></li>
+                    <li><a onclick="openForm('signup')">SIGN UP</a></li>
+                <% } %>
             </ul>
         </div>
         <div class="mobile-close-header">

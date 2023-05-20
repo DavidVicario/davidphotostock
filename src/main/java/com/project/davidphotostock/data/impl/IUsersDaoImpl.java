@@ -3,10 +3,8 @@ package com.project.davidphotostock.data.impl;
 //Imports
 import com.project.davidphotostock.data.IUsersDao;
 import com.project.davidphotostock.domain.Users;
-import jakarta.ejb.Stateless;
 import java.util.List;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 //Incidamos que se implementa los metodos del interfaz del Dao correspondiente.
