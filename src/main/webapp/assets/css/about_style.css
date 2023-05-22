@@ -1,15 +1,34 @@
 :root{
-    --color1: #010101;
-    --color2: #ffffff;
-    --color3: #ff9933; /*rgb(255, 153, 51)*/
-    --color4: #001fcf;
-    --color5: #191a30;
+    --colorFonds: #000000;
+    --colorCompl: #1c1c1c;
+    --colorButtn: #ff9934;
+    --colorHover: #ff8000;
+    --colorTexts: #ffffff;
+
+    --colorBase1: #95a0be;
+    --colorBase2: #566d8c;
+    --colorBase3: #2e4459;
 }
 *{
     margin: 0;
     padding: 0;
     list-style: none;
+    user-select: none;
     text-decoration: none;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: var(--colorFonds);
+}
+.title-main{
+    color: var(--colorTexts);
+}
+.hm{
+    font-size: 25px;
+    padding: 25px 0 5px 20px;
+}
+.pm{
+    font-size: 20px;
+    padding: 5px 0 15px 20px;
 }

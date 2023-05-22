@@ -1,14 +1,19 @@
 :root{
-    --color1: #010101;
-    --color2: #ffffff;
-    --color3: #ff9933; /*rgb(255, 153, 51)*/
-    --color4: #001fcf;
-    --color5: #191a30;
+    --colorFonds: #000000;
+    --colorCompl: #1c1c1c;
+    --colorButtn: #ff9934;
+    --colorHover: #ff8000;
+    --colorTexts: #ffffff;
+
+    --colorBase1: #95a0be;
+    --colorBase2: #566d8c;
+    --colorBase3: #2e4459;
 }
 *{
     margin: 0;
     padding: 0;
     list-style: none;
+    user-select: none;
     text-decoration: none;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
@@ -29,9 +34,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--color2);
-    /*backdrop-filter: brightness(60%);
-    -webkit-backdrop-filter: brightness(60%);*/
+    color: var(--colorTexts);
 }
 @media (max-width:700px) {
     .subheader-text h1{
@@ -47,5 +50,5 @@
 }
 .subheader-text p{
     margin-top: 10px;
-    color: var(--color2);
+    color: var(--colorTexts);
 }

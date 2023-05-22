@@ -24,6 +24,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
 /*----- FORMS -----*/
 .image-form{
     text-align: center;
@@ -34,15 +35,15 @@
     position: absolute;
     right: 25px;
     top: 0;
-    color: var(--color1);
+    color: var(--colorLetra);
     font-size: 35px;
     font-weight: bold;
 }
 .image-form > .logo-form{
     width: 40%;
     padding: 20px;
-    background-color: var(--color1);
-    border: 1.5px solid var(--color2);
+    background-color: var(--colorCompl);
+    border: 1.5px solid var(--colorLetra);
     border-radius: 50%;
 }
 .close-x:hover,.close-x:focus{
@@ -63,29 +64,33 @@
     padding-top: 60px;
 }
 .section-login > .content-login{
-    background-color: #7e7e7e;
+    background-color: var(--colorFondo);
     margin: 5% auto 15% auto;
-    border: 1px solid #bebebe;
-    width: 450px; /* Tamaño del formulario */
+    border: 1px solid var(--colorLetra);
+    width: 450px;
 }
 .container-login{
     padding: 16px;
+    color: var(--colorLetra);
+}
+.container-login a{
+    color: #4e4e4e;
+    font-weight: bold;    
 }
 .container-login > input[type=text], 
 .container-login > input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    background-color: #222222;
-    color: var(--color2);
+    background-color: var(--colorCompl);
+    color: var(--colorLetra);
     display: inline-block;
-    border: 1.5px solid var(--color2);
+    border: 1.5px solid var(--colorLetra);
     box-sizing: border-box;
 }
 input[type="text"]:focus, 
 input[type="password"]:focus {
-    border: 1.5px solid var(--color2);
-    outline-color: var(--color1);
+    border: 1.5px solid var(--colorLetra);
     background-color: #4e4e4e;
 }
 input[type="checkbox"] + label:before {
@@ -94,12 +99,12 @@ input[type="checkbox"] + label:before {
     height: 12px;
     float: left;
     margin: 2px 5px 0 0;
-    border: 1.5px solid var(--color1);
-    background-color: var(--color2);
+    border: 1.5px solid var(--colorLetra);
+    background-color: var(--colorFondo);
 }
 input[type="checkbox"]:checked + label:before {
-    border: 1.5px solid var(--color2);
-    background-color: #161616;
+    border: 1.5px solid var(--colorLetra);
+    background-color: var(--colorCompl);
 }
 input[type="checkbox"]{
     display: none;
@@ -108,7 +113,7 @@ input[type="checkbox"]:checked + label:after{
     content: "";
     width: 6px;
     height: 3px;
-    border: 2px solid var(--color2);
+    border: 2px solid var(--colorLetra);
     float: left;
     margin-left: -1.2em;
     border-right: 0;
@@ -127,16 +132,16 @@ input[type="checkbox"] + label {
     font-size: 13px;
 }
 .btn-login{
-    background-color: var(--color1);
-    color: var(--color2);
+    background-color: var(--colorBoton);
+    color: var(--colorLetra);
     padding: 15px 0;
     margin: 12px 0 12px 0;
-    border: 1.5px solid var(--color2);
+    border: 1.5px solid var(--colorLetra);
     cursor: pointer;
     width: 100%;
 }
 .btn-login:hover {
-    background-color: #161616;
+    background-color: var(--colorHover);
 }
 .no-user{
     display: flex;
@@ -144,10 +149,9 @@ input[type="checkbox"] + label {
     align-items: center;
     font-size: 13px;
 }
-.container-login a{
-    font-weight: bold;
-    color: var(--color5);
-}
+
+
+
 
 /*----- Sign Up -----*/
 .section-signup{
@@ -163,13 +167,18 @@ input[type="checkbox"] + label {
     padding-top: 60px;
 }
 .section-signup > .content-signup{
-    background-color: #7e7e7e;
+    background-color: var(--colorFondo);;
     margin: 5% auto 15% auto;
-    border: 1px solid #bebebe;
+    border: 1px solid var(--colorLetra);
     width: 600px; /* Tamaño del formulario */
 }
 .container-signup{
     padding: 16px;
+    color: var(--colorLetra);
+}
+.container-signup a{
+    color: #4e4e4e;
+    font-weight: bold;    
 }
 .surnames, .passwords{
     display: flex;
@@ -186,16 +195,15 @@ input[type="checkbox"] + label {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    background-color: #222222;
-    color: var(--color2);
+    background-color: var(--colorCompl);
+    color: var(--colorLetra);
     display: inline-block;
-    border: 1.5px solid var(--color2);
+    border: 1.5px solid var(--colorLetra);
     box-sizing: border-box;
 }
 input[type="text"]:focus, 
 input[type="password"]:focus {
-    border: 1.5px solid var(--color2);
-    outline-color: var(--color1);
+    border: 1.5px solid var(--colorLetra);
     background-color: #4e4e4e;
 }
 .surnames > div > input[type=text], 
@@ -203,39 +211,34 @@ input[type="password"]:focus {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    background-color: #222222;
-    color: var(--color2);
+    background-color: var(--colorCompl);
+    color: var(--colorLetra);
     display: inline-block;
-    border: 1.5px solid var(--color2);
+    border: 1.5px solid var(--colorLetra);
     box-sizing: border-box;
 }
 .surnames > div > input[type=text]:focus, 
 .passwords > div > input[type=password]:focus {
-    border: 1.5px solid var(--color2);
-    outline-color: var(--color1);
+    border: 1.5px solid var(--colorLetra);
     background-color: #4e4e4e;
 }
 .btn-signup{
-    background-color: var(--color1);
-    color: var(--color2);
+    background-color: var(--colorBoton);
+    color: var(--colorLetra);
     padding: 15px 0;
     margin: 30px 0 12px 0;
-    border: 1.5px solid var(--color2);
+    border: 1.5px solid var(--colorLetra);
     cursor: pointer;
     width: 100%;
 }
 .btn-signup:hover {
-    background-color: #161616;
+    background-color: var(--colorHover);
 }
 .u-user{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 13px;
-}
-.container-signup a{
-    font-weight: bold;
-    color: var(--color5);
 }
 @media screen and (max-width: 1132px) {
     .section-login{
@@ -280,6 +283,6 @@ input[type="password"]:focus {
 s-error > .c-error{
     background-color: #7e7e7e;
     margin: 5% auto 15% auto;
-    border: 1px solid #bebebe;
+    border: 1px solid var(--colorLetra);
     width: 450px; /* Tamaño del formulario */
 }

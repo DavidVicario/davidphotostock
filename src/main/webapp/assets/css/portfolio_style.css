@@ -24,6 +24,17 @@ body{
 main{
     padding-bottom: 100px;
 }
+.title-main{
+    color: var(--colorTexts);
+}
+.hm{
+    font-size: 25px;
+    padding: 25px 0 5px 20px;
+}
+.pm{
+    font-size: 20px;
+    padding: 5px 0 15px 20px;
+}
 /*----- Porfolio -----*/
 .row-pf{
     display: flex;
@@ -57,17 +68,6 @@ main{
     display: flex;
     flex-direction: column; /* Hace que h4 y p se apilen verticalmente */
     justify-content: center; /* Centra los elementos verticalmente */
-}
-.title-main{
-    color: var(--colorTexts);
-}
-.hm{
-    font-size: 25px;
-    padding: 25px 0 5px 20px;
-}
-.pm{
-    font-size: 20px;
-    padding: 5px 0 15px 20px;
 }
 .pf-text{
     color: var(--colorTexts);

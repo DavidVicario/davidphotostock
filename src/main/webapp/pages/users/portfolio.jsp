@@ -22,8 +22,6 @@
     <jsp:include page="/includes/components/subheader.jsp">
         <jsp:param name="title" value="PORTFOLIO" />
         <jsp:param name="description1" value="My view of the world through the camera lens." />
-        <jsp:param name="description2" value="" />
-        <jsp:param name="description3" value="" />
         <jsp:param name="image" value="/assets/img/social(1).jpg" />
     </jsp:include>
     <main>

@@ -21,12 +21,40 @@
     <jsp:include page="/includes/components/header.jsp"/>
     <jsp:include page="/includes/components/subheader.jsp">
         <jsp:param name="title" value="CONTACT" />
-        <jsp:param name="description1" value="Texto de prueba" />
-        <jsp:param name="description2" value="" />
-        <jsp:param name="description3" value="" />
-        <jsp:param name="image" value="/assets/img/header2.jpg" />
+        <jsp:param name="description1" value="I'd love to hear from you" />
+        <jsp:param name="image" value="/assets/img/social(3).jpg" />
     </jsp:include>
     <main>
+        <div class="title-main">
+            <h3 class="hm">Contact me</h3>
+            <p class="pm">
+            You’re invited to reach out to me with any questions or <br>
+            queries you may have. I’ll endeavour to get back to you <br>
+            as quickly as possible. So, please bear with us.<br><br>           
+            Mail: davidvicario1990@gamil.com<br>
+            Phone: 618439693</p>
+            <ul>
+                <li><a href="https://www.facebook.com/Daisuke8free" target="_blank" class="bi bi-facebook"></a></li>
+                <li><a href="https://www.instagram.com/davidvicariophoto/" target="_blank" class="bi bi-instagram"></a></li>
+            </ul>
+        </div>
+        <div class="contain-contact">
+            <div class="container-contact" action="/UsersServlet?action=contact" method="post">
+                <label for="name"><b>Name *</b></label>
+                <input id="name" type="text" placeholder="Enter name" name="name" required>                    
+
+                <label for="mail"><b>Mail *</b></label>
+                <input id="mail" type="text" placeholder="Enter mail" name="mail" required>
+
+                <label for="phone"><b>Phone *</b></label>
+                <input id="phone" type="text" placeholder="Enter phone" name="phone" required>            
+
+                <label for="subject">Subject</label>
+                <textarea id="subject" type="text" placeholder="Your message.." name="subject" style="height:200px"></textarea>
+
+                <button class="btn-send" type="submit">SEND</button>
+            </div>
+        </div>
         <jsp:include page="/includes/forms/login.jsp"/>
         <jsp:include page="/includes/forms/signup.jsp"/>
     </main>

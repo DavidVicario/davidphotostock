@@ -1,15 +1,88 @@
 :root{
-    --color1: #010101;
-    --color2: #ffffff;
-    --color3: #ff9933; /*rgb(255, 153, 51)*/
-    --color4: #001fcf;
-    --color5: #191a30;
+    --colorFonds: #000000;
+    --colorCompl: #1c1c1c;
+    --colorButtn: #ff9934;
+    --colorHover: #ff8000;
+    --colorTexts: #ffffff;
+
+    --colorBase1: #95a0be;
+    --colorBase2: #566d8c;
+    --colorBase3: #2e4459;
 }
 *{
     margin: 0;
     padding: 0;
     list-style: none;
+    user-select: none;
     text-decoration: none;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: var(--colorFonds);
+}
+.title-main{
+    color: var(--colorTexts);
+    padding: 25px 0 5px 20px;
+}
+.hm{
+    font-size: 25px;
+    
+}
+.pm{
+    font-size: 20px;
+    padding-top: 5px;
+}
+.title-main > ul{
+    font-size: 20px;
+    display: flex;   
+    padding-top: 20px;
+}
+.title-main > ul li a{
+    margin: 10px 10px 0 0;
+    color: var(--colorTexts);
+}
+.title-main > ul li:hover a{
+    color: var(--colorButtn);
+}
+/*----- FORM CONTACT -----*/
+.contain-contact{
+    margin: 5% auto 8% auto;
+    width: 80%;
+}
+.container-login{
+    padding: 16px;
+}
+label{
+    color: var(--colorTexts);
+    font-weight: bold;
+}
+.container-contact > input[type=text],
+textarea{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: var(--colorCompl);
+    color: var(--colorTexts);
+    display: inline-block;
+    border: 1.5px solid var(--colorTexts);
+    box-sizing: border-box;
+}
+input[type="text"]:focus,
+textarea:focus {
+    outline-color: var(--colorTexts);
+    background-color: #4e4e4e;
+}
+.btn-send{
+    background-color: var(--colorFonds);
+    color: var(--colorButtn);
+    padding: 15px 0;
+    margin: 12px 0 12px 0;
+    border: 1.5px solid var(--colorButtn);
+    cursor: pointer;
+    width: 100%;
+}
+.btn-send:hover {
+    background-color: var(--colorButtn);
+    color: var(--colorTexts);
 }

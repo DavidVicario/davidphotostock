@@ -6,6 +6,14 @@ import com.project.davidphotostock.domain.Users;
 import com.project.davidphotostock.service.UsersService;
 import com.project.davidphotostock.service.impl.UsersServiceImpl;
 import static com.project.davidphotostock.util.ConectionUtil.getInstance;
+
+import jakarta.mail.Message;
+import jakarta.mail.MessagingException;
+import jakarta.mail.Session;
+import jakarta.mail.Transport;
+import jakarta.mail.internet.InternetAddress;
+import jakarta.mail.internet.MimeMessage;
+
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -17,6 +25,9 @@ import java.io.PrintWriter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+
+import java.util.Properties;
+
 import java.util.regex.Pattern;
 
 @WebServlet(name = "UsersServlet", urlPatterns = {"/UsersServlet"})
@@ -52,6 +63,11 @@ public class UsersServlet extends HttpServlet {
                 case "createAdmin":
                     this.addNewUser(request, response);
                     break;
+                    /*
+                case "contact":
+                    this.contactForm(request, response);
+                    break;
+                    */
                 case "update":
                     this.updateUser(request, response);
                     break;
@@ -178,6 +194,42 @@ public class UsersServlet extends HttpServlet {
         response.sendRedirect("index.jsp"); 
     }
     
+    /*
+    private void contactForm(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        String name = request.getParameter("name");
+        String mail = request.getParameter("mail");
+        String phone = request.getParameter("phone");
+        String subject = request.getParameter("subject");
+
+        String to = "daione332@gmail.com";
+        String from = "noreply@gmail.com";
+        String host = "smtp.gmail.com";
+
+        Properties properties = System.getProperties();
+        properties.setProperty("mail.smtp.host", host);
+
+        Session session = Session.getDefaultInstance(properties);
+
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
+            message.setSubject("New contact form submission");
+            message.setText("Name: " + name + "\n"
+                            + "Mail: " + mail + "\n"
+                            + "Phone: " + phone + "\n"
+                            + "Message: " + subject);
+
+            Transport.send(message);
+            response.sendRedirect("contact.jsp?status=success");
+
+        } catch (MessagingException mex) {
+            mex.printStackTrace();
+            response.sendRedirect("contact.jsp?status=error");
+        }
+    }
+    */
     
     //ADMIN
     

@@ -4,8 +4,6 @@
 <%
     String title = request.getParameter("title");
     String description1 = request.getParameter("description1");
-    String description2 = request.getParameter("description2");
-    String description3 = request.getParameter("description3");
     String image = request.getParameter("image");
 %>
 
@@ -13,7 +11,5 @@
     <div class="subheader-text">
         <h1><%= title %></h1>
         <p><%= description1 %></p>
-        <p><%= description2 %></p>
-        <p><%= description3 %></p>
     </div>
 </div>
