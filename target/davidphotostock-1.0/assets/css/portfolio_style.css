@@ -21,6 +21,9 @@
 body{
     background-color: var(--colorFonds);
 }
+main{
+    padding-bottom: 100px;
+}
 /*----- Porfolio -----*/
 .row-pf{
     display: flex;
@@ -28,8 +31,8 @@ body{
 }
 .row-pf,
 .row-pf > .column-pf{
-    padding: 8px;
-    padding-bottom: 50px;
+    padding: 9px;
+    padding-bottom: 15px;
 }
 .column-pf{
     flex: 0 0 33.33%;
