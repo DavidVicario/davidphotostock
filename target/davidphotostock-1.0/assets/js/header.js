@@ -1,12 +1,21 @@
 //Función que muestra el menu
+
+//Selecciono el elemento con la clase "mobile-close-header"
+//Boton que activa la funcion para mostrar y ocultar el menú.
 const mobileCloseHeader = document.querySelector(".mobile-close-header");
+//Selecciono el elemento header
+//Contenedor del header donde se encuentra el menú
 const header = document.querySelector("header");
 
+//Agrego un evento de escucha de clic al elemento mobileCloseHeader
 mobileCloseHeader.addEventListener("click", () => {
+    //Alterna la clase "active" en el elemento header, lo que muestra u oculta el menú
     header.classList.toggle("active");
 });
 
-//Función de icono X
-function myFunction(x) {
+//Función de icono de menu
+//Para animacion que cambia al desplegar el menu.
+function animateX(x) {
+    //Alterna la clase "change" en el elemento x, que representa el ícono
     x.classList.toggle("change");
 }

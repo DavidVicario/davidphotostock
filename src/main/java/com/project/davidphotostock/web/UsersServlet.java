@@ -13,6 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
@@ -42,6 +43,9 @@ public class UsersServlet extends HttpServlet {
                 case "login":
                     this.loginUser(request, response);
                     break;
+                case "checkLogin":
+                    this.checkLogin(request, response);
+                    break;
                 case "logout":
                     this.logoutUser(request, response);
                     break;
@@ -63,21 +67,12 @@ public class UsersServlet extends HttpServlet {
         } else {
             this.actionDefault(request, response);
         }
-        
     }
     
     private void actionDefault(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
         response.sendRedirect("index.jsp");
     }
-    private void actionDefaultAdmin(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        IUsersDao iud = new IUsersDaoImpl(getInstance());
-        us = new UsersServiceImpl(iud);
-        List<Users> users = us.obtainAllUsers();
-        request.setAttribute("users", users);
-        request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
-    }    
     
     //Metodo para dar de alta un usuario.
     private void signUpUser(HttpServletRequest request, HttpServletResponse response)
@@ -109,7 +104,6 @@ public class UsersServlet extends HttpServlet {
             request.getRequestDispatcher("includes/forms/errorPage.jsp").forward(request, response);
         }
         response.sendRedirect("index.jsp");
-        
     }
     
     //Metodo para login de un usuario
@@ -156,6 +150,26 @@ public class UsersServlet extends HttpServlet {
         }
     }
     
+    // Método para comprobar si un usuario ha iniciado sesión
+    private void checkLogin(HttpServletRequest request, HttpServletResponse response)
+        throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Users user = (Users) session.getAttribute("user");
+
+        response.setContentType("text/plain");
+        PrintWriter out = response.getWriter();
+
+        if (user != null) {
+            out.print(user.getUsername());
+        } else {
+            out.print("");
+        }
+
+        System.out.println("El Usuario es: "+user);
+        out.flush();
+    }
+    
+    // Método para cerrar sesion de usuario.
     private void logoutUser(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
         HttpSession session = request.getSession();
@@ -165,7 +179,19 @@ public class UsersServlet extends HttpServlet {
     }
     
     
-    //Metodo para login de un usuario
+    //ADMIN
+    
+    //Acción por defecto para el usuario Admin.
+    private void actionDefaultAdmin(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        IUsersDao iud = new IUsersDaoImpl(getInstance());
+        us = new UsersServiceImpl(iud);
+        List<Users> users = us.obtainAllUsers();
+        request.setAttribute("users", users);
+        request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
+    }
+    
+    //Metodo para listar los usuarios. 
     private void listAllUsers(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
         
@@ -212,22 +238,12 @@ public class UsersServlet extends HttpServlet {
     
     //Metodo para actualizar un usuario desde admin
     private void updateUser(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        
-        IUsersDao iud = new IUsersDaoImpl(getInstance());
-        
-        us = new UsersServiceImpl(iud);
-        
-        
+            throws ServletException, IOException{       
     }
     
     //Metodo para borrar un usuario desde admin
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
-        
-        IUsersDao iud = new IUsersDaoImpl(getInstance());
-        
-        us = new UsersServiceImpl(iud);
     }
     
 }

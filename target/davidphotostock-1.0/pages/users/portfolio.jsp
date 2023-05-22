@@ -35,26 +35,40 @@
             <div class="dropdown">
                 <button class="btn-drop btn-bsc" onclick="showDrop('cdd')"> Categories</button>
                 <div id="cdd" class="content-dropdown">
-                    <a class="btn-pf" onclick="filterSelection('flower'); showDrop('cdd')"> Flower</a>
-                    <a class="btn-pf" onclick="filterSelection('insect'); showDrop('cdd')"> Insect</a>
-                    <a class="btn-pf" onclick="filterSelection('social'); showDrop('cdd')"> Social</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('cdd')"> Landscape</a>
+                    <a class="btn-pf" onclick="filterSelection('flower'); showDrop('cdd')"> Author</a>
+                    <a class="btn-pf" onclick="filterSelection('insect'); showDrop('cdd')"> Macro</a>
+                    <a class="btn-pf" onclick="filterSelection('social'); showDrop('cdd')"> Nature</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('cdd')"> Travel</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('cdd')"> Social</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('cdd')"> Commercial</a>
                 </div>
             </div>
             <div class="dropdown">
                 <button class="btn-drop btn-bsc" onclick="showDrop('sdd')"> Subcategories</button>
                 <div id="sdd" class="content-dropdown">
-                    <a class="btn-pf" onclick="filterSelection('flower'); showDrop('sdd')"> Flower</a>
-                    <a class="btn-pf" onclick="filterSelection('insect'); showDrop('sdd')"> Insect</a>
-                    <a class="btn-pf" onclick="filterSelection('social'); showDrop('sdd')"> Social</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> Landscape</a>
+                    <a class="btn-pf" onclick="filterSelection('flower macro'); showDrop('sdd')"> A. Author</a>
+                    <a class="btn-pf" onclick="filterSelection('insect'); showDrop('sdd')"> A. Abstract</a>
+                    <a class="btn-pf" onclick="filterSelection('social'); showDrop('sdd')"> M. Insect</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> M. Flora</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> N. Fauna</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> N. Flora</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> N. Landscape</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> T. Culture</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> T. People</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> T. Landscape</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> T. Architecture</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> S. Portrait</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> S. People</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> S. Street</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> C. Product</a>
+                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> C. Foot</a>
                 </div>
             </div>
         </div>
 
         
         <div class="row-pf">
-            <div class="column-pf flower">
+            <div class="column-pf flower macro">
                 <div class="content-pf">
                     <img src="/assets/img/flowers(1).jpg" alt="Flower" style="width:100%">
                     <div class="content-info">
@@ -66,69 +80,114 @@
                     </div>
                 </div>
             </div>
-            <div class="column-pf flower">
+            <div class="column-pf flower retrato">
                 <div class="content-pf">
                     <img src="/assets/img/flowers(2).jpg" alt="Flower" style="width:100%">
-                    <h4>Lights</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Sakura</h4>
+                            <p class="ppf">€100.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="column-pf flower">
                 <div class="content-pf">
                     <img src="/assets/img/flowers(3).jpg" alt="Flower" style="width:100%">
-                    <h4>Forest</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Sakura</h4>
+                            <p class="ppf">€100.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="column-pf flower">
                 <div class="content-pf">
                     <img src="/assets/img/flowers(4).jpg" alt="Flower" style="width:100%">
-                    <h4>Forest</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Sakura</h4>
+                            <p class="ppf">€100.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="column-pf flower">
                 <div class="content-pf">
                     <img src="/assets/img/flowers(5).jpg" alt="Flower" style="width:100%">
-                    <h4>Forest</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Sakura</h4>
+                            <p class="ppf">€100.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="column-pf flower">
                 <div class="content-pf">
                     <img src="/assets/img/flowers(6).jpg" alt="Flower" style="width:100%">
-                    <h4>Forest</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Sakura</h4>
+                            <p class="ppf">€100.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
-
-
+            
+            
             <div class="column-pf insect">
                 <div class="content-pf">
                     <img src="/assets/img/insect(1).jpg" alt="Insect" style="width:100%">
-                    <h4>Retro</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Bicho</h4>
+                            <p class="ppf">€150.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="column-pf insect">
                 <div class="content-pf">
                     <img src="/assets/img/insect(2).jpg" alt="Insect" style="width:100%">
-                    <h4>Retro</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Bicho</h4>
+                            <p class="ppf">€150.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="column-pf insect">
                 <div class="content-pf">
                     <img src="/assets/img/insect(3).jpg" alt="Insect" style="width:100%">
-                    <h4>Retro</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Bicho</h4>
+                            <p class="ppf">€150.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="column-pf insect">
                 <div class="content-pf">
                     <img src="/assets/img/insect(4).jpg" alt="Insect" style="width:100%">
-                    <h4>Retro</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Bicho</h4>
+                            <p class="ppf">€150.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
 
@@ -136,36 +195,61 @@
             <div class="column-pf social">
                 <div class="content-pf">
                     <img src="/assets/img/social(1).jpg" alt="Social" style="width:100%">
-                    <h4>Girl</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Andrea</h4>
+                            <p class="ppf">€170.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="column-pf social">
                 <div class="content-pf">
                     <img src="/assets/img/social(2).jpg" alt="Social" style="width:100%">
-                    <h4>Girl</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Andrea</h4>
+                            <p class="ppf">€170.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="column-pf social">
                 <div class="content-pf">
                     <img src="/assets/img/social(3).jpg" alt="Social" style="width:100%">
-                    <h4>Girl</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Andrea</h4>
+                            <p class="ppf">€170.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="column-pf social">
                 <div class="content-pf">
                     <img src="/assets/img/social(4).jpg" alt="Social" style="width:100%">
-                    <h4>Girl</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Andrea</h4>
+                            <p class="ppf">€170.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="column-pf social">
                 <div class="content-pf">
                     <img src="/assets/img/social(5).jpg" alt="Social" style="width:100%">
-                    <h4>Girl</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Andrea</h4>
+                            <p class="ppf">€170.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
 
@@ -173,36 +257,42 @@
             <div class="column-pf landscape">
                 <div class="content-pf">
                     <img src="/assets/img/landscape(1).jpg" alt="Landscape" style="width:100%">
-                    <h4>Man</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Cantabria</h4>
+                            <p class="ppf">€130.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="column-pf landscape">
                 <div class="content-pf">
                     <img src="/assets/img/landscape(2).jpg" alt="Landscape" style="width:100%">
-                    <h4>Man</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Cantabria</h4>
+                            <p class="ppf">€130.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="column-pf landscape">
                 <div class="content-pf">
                     <img src="/assets/img/landscape(3).jpg" alt="Landscape" style="width:100%">
-                    <h4>Man</h4>
-                    <p>Lorem ipsum dolor..</p>
+                    <div class="content-info">
+                        <div class="pf-text">
+                            <h4 class="hpf">Cantabria</h4>
+                            <p class="ppf">€130.00</p>
+                        </div>
+                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                    </div>
                 </div>
             </div>
+
+            
         </div>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         <jsp:include page="/includes/forms/login.jsp"/>
         <jsp:include page="/includes/forms/signup.jsp"/>

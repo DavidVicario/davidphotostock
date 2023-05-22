@@ -29,84 +29,54 @@ window.onclick = function(event) {
     }
 }
 
-// Función para ajustar el header dependiendo si el usuario está logado o no
-function adjustHeaderForLogin() {
-    var loggedInUser = "<%= session.getAttribute('username') %>";
-    var loginLink = document.querySelector('.users ul li a[onclick^="openLogin"]');
-    var signupLink = document.querySelector('.users ul li a[onclick^="openSignUp"]');
-    
-    if (loggedInUser) {
-        // Cambia "Login" por el nombre del usuario
-        loginLink.textContent = loggedInUser;
+// Ajusta el header al cargar la página
+window.onload = function() {
+    var loginLink = document.getElementById('login-link');
+    var signupLink = document.getElementById('signup-link');
+    var userLink = document.getElementById('user-link');
+    var logoutLink = document.getElementById('logout-link');
 
-        // Cambia "Sign Up" por "Cerrar sesión" y ajusta la función onclick
-        signupLink.textContent = 'Cerrar sesión';
-        signupLink.setAttribute('onclick', 'logout()');
-    }
-}
-
-// Función para cerrar sesión
-function logout() {
-    fetch('/UsersServlet?action=logout', { method: 'POST' })
-        .then(response => {
-            if (response.status === 200) {
-                // Una vez que la sesión se ha cerrado correctamente, cambiamos el nombre del usuario y la función onclick de nuevo
-                var loginLink = document.querySelector('.users ul li a[onclick^="openLogin"]');
-                var signupLink = document.querySelector('.users ul li a[onclick^="openSignUp"]');
-                
-                loginLink.textContent = 'LOGIN';
-                loginLink.setAttribute('onclick', 'openForm("login")');
-                signupLink.textContent = 'SIGN UP';
-                signupLink.setAttribute('onclick', 'openForm("signup")');
+    fetch('/UsersServlet?action=checkLogin')
+        .then(response => response.text())
+        .then(username => {
+            if (username !== '') {
+                userLink.style.display = 'block';
+                logoutLink.style.display = 'block';
+                loginLink.style.display = 'none';
+                signupLink.style.display = 'none';
+                userLink.textContent = username;
             } else {
-                console.log('Error al cerrar la sesión');
+                loginLink.style.display = 'block';
+                signupLink.style.display = 'block';
+                userLink.style.display = 'none';
+                logoutLink.style.display = 'none';
             }
         })
         .catch((error) => {
             console.error('Error:', error);
         });
-}
+};
 
-// Ajusta el header al cargar la página
-adjustHeaderForLogin();
+// Función para cerrar sesión
+window.logout = function() {
+    fetch('/UsersServlet?action=logout', { method: 'POST' })
+        .then(response => {
+            if (response.status === 200) {
+                
+                var loginLink = document.getElementById('login-link');
+                var signupLink = document.getElementById('signup-link');
+                
+                loginLink.textContent = 'LOGIN';
+                signupLink.textContent = 'SIGN UP';
+            } else {
+                console.log('Error logging out');
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+};
 
-
-
-
-
-
-
-
-
-/*//LOGIN
-function openLogin() {
-    document.getElementById('section-login').style.display='block';
-}
-function closeLogin() {
-    document.getElementById('section-login').style.display='none';
-}
-var login = document.getElementById('section-login');
-
-window.onclick = function(event) {
-    if (event.target == login) {
-        login.style.display = "none";
-    }
-}
-
-//SIGNUP
-function openSignUp() {
-    document.getElementById('section-signup').style.display='block';
-}
-function closeSignUp() {
-    document.getElementById('section-signup').style.display='none';
-}
-var signup = document.getElementById('section-signup');
-
-window.onclick = function(event) {
-    if (event.target == signup) {
-        signup.style.display = "none";
-    }
-}*/
 
 //Error al introducir los datos.
 

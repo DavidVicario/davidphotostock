@@ -19,21 +19,14 @@
         </div>
         <div class="users">
             <ul>
-                <% 
-                Users loggedInUser = (Users) session.getAttribute("user");
-                if (loggedInUser != null) { 
-                    String username = loggedInUser.getUsername();
-                %>
-                    <li><a onclick="openForm('profile')"><%= username %></a></li>
-                    <li><a onclick="logout()">LOGOUT</a></li>
-                <% } else { %>
-                    <li><a onclick="openForm('login')">LOGIN</a></li>
-                    <li><a onclick="openForm('signup')">SIGN UP</a></li>
-                <% } %>
+                <li><a id="user-link" style="display: none;" onclick="openForm('profile')"></a></li>
+                <li><a id="logout-link" style="display: none;" onclick="logout()">LOGOUT</a></li>
+                <li><a id="login-link" onclick="openForm('login')">LOGIN</a></li>
+                <li><a id="signup-link" onclick="openForm('signup')">SIGN UP</a></li>
             </ul>
         </div>
         <div class="mobile-close-header">
-            <div class="container-x" onclick="myFunction(this)">
+            <div class="container-x" onclick="animateX(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
