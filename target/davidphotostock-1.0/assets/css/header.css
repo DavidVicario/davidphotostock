@@ -54,8 +54,6 @@ a > .name{
 }
 /*----- TEXTO -----*/
 .header-row ul li a{
-    /*-webkit-text-stroke: 0.5px var(--color2);*/
-    opacity: 0.6;
     font-weight: bold;
     color: var(--color1);
 }
@@ -110,17 +108,16 @@ a > .name{
     padding: 5px 0;
     border: 1px solid transparent;
     color: var(--color1);
-    opacity: 0.6;
     font-size: 1.2rem;
     -webkit-text-stroke: 1.5px var(--color1);
 }
 /*----- HOVER -----*/
 .header-row ul > li:hover a{
-    opacity: 0.9;
+    opacity: 0.7;
     text-shadow: 0 0 5px var(--color2);
 }
 .header-row > .shop > .bi:hover{
-    opacity: 1;
+    opacity: 0.7;
     text-shadow: 0 0 5px var(--color2);
 }
 /*----- ICON CLOSE -----*/
