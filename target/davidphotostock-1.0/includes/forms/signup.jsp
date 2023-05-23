@@ -32,7 +32,7 @@
                 </div>
             </div>
             <button class="btn-signup" type="submit">Sign Up</button>
-            <span class="u-user">Already a member? &nbsp;<a href="#" onclick="login()">Login</a></span>
+            <span class="u-user">Already a member? &nbsp;<a href="#" onclick="closeForm('signup'); openForm('login')">Login</a></span>
         </div>
     </form>
 </section>

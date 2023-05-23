@@ -13,7 +13,7 @@
             <label class="me" for="remember"> Remember Me</label>
             <span class="forgot">Forgot <a href="#">password?</a></span>
             <button class="btn-login" type="submit">Login</button>
-            <span class="no-user">Not a member? &nbsp;<a href="#" onclick="signup()">Sign Up</a></span>
+            <span class="no-user">Not a member? &nbsp;<a href="#" onclick="closeForm('login'); openForm('signup')">Sign Up</a></span>
         </div>
     </form>
 </section>
