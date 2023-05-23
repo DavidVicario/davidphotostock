@@ -68,6 +68,9 @@ window.logout = function() {
                 
                 loginLink.textContent = 'LOGIN';
                 signupLink.textContent = 'SIGN UP';
+                
+                //Recargo la pagina para que se actulizen los datos.
+                window.location.reload();
             } else {
                 console.log('Error logging out');
             }

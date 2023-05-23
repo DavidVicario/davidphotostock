@@ -37,7 +37,8 @@ public class UsersServlet extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {        
+            throws ServletException, IOException {
+        
         doPost(request,response);
     }
 
@@ -60,23 +61,11 @@ public class UsersServlet extends HttpServlet {
                 case "logout":
                     this.logoutUser(request, response);
                     break;
-                case "createAdmin":
-                    this.addNewUser(request, response);
-                    break;
                     /*
                 case "contact":
                     this.contactForm(request, response);
                     break;
                     */
-                case "update":
-                    this.updateUser(request, response);
-                    break;
-                case "delete":
-                    this.deleteUser(request, response);
-                    break;
-                case "allUsers":
-                    this.actionDefaultAdmin(request, response);
-                    break;
                 default: 
                     this.actionDefault(request, response);
             }
@@ -87,6 +76,7 @@ public class UsersServlet extends HttpServlet {
     
     private void actionDefault(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
+        
         response.sendRedirect("index.jsp");
     }
     
@@ -130,45 +120,31 @@ public class UsersServlet extends HttpServlet {
         
         us = new UsersServiceImpl(iud);
         
-        String username = sanitizeInput(request.getParameter("user"));
-        String password = hashPassword(sanitizeInput(request.getParameter("pass")));
+        String username = request.getParameter("user");
+        String password = request.getParameter("pass");
 
         Users user = us.obtainUserByUsernameAndPass(username, password);
-
+        
+        if (username.equals("admin") && password.equals("nimda")){
+            HttpSession session = request.getSession();
+            session.setAttribute("user", user);
+            response.sendRedirect("UsersAdminServlet");
+            return;
+        }
         if (user != null) {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
             response.sendRedirect("index.jsp");
+            return;
         } else {
             request.setAttribute("errorMessage", "Compruebe su usuario o contraseña.");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
     
-    private String sanitizeInput(String input) {
-        if (input == null) {
-            return "";  
-        }
-        return Pattern.compile("[^a-zA-Z0-9]").matcher(input).replaceAll("");
-    }
-    
-    private String hashPassword(String password) {
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            byte[] hashedPassword = md.digest(password.getBytes());
-            StringBuilder sb = new StringBuilder();
-            for (byte b : hashedPassword) {
-                sb.append(String.format("%02x", b));
-            }
-            return sb.toString();
-        } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException(e);
-        }
-    }
-    
     // Método para comprobar si un usuario ha iniciado sesión
     private void checkLogin(HttpServletRequest request, HttpServletResponse response)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         HttpSession session = request.getSession();
         Users user = (Users) session.getAttribute("user");
 
@@ -188,8 +164,9 @@ public class UsersServlet extends HttpServlet {
     // Método para cerrar sesion de usuario.
     private void logoutUser(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
+        
         HttpSession session = request.getSession();
-        session.invalidate(); // invalidamos la sesión
+        session.invalidate(); 
 
         response.sendRedirect("index.jsp"); 
     }
@@ -231,71 +208,6 @@ public class UsersServlet extends HttpServlet {
     }
     */
     
-    //ADMIN
     
-    //Acción por defecto para el usuario Admin.
-    private void actionDefaultAdmin(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        IUsersDao iud = new IUsersDaoImpl(getInstance());
-        us = new UsersServiceImpl(iud);
-        List<Users> users = us.obtainAllUsers();
-        request.setAttribute("users", users);
-        request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
-    }
-    
-    //Metodo para listar los usuarios. 
-    private void listAllUsers(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        
-        IUsersDao iud = new IUsersDaoImpl(getInstance());
-        
-        us = new UsersServiceImpl(iud);
-        
-        List<Users> users = us.obtainAllUsers();
-        request.setAttribute("users", users);
-        request.getRequestDispatcher("pages/admin/usersList.jsp").forward(request, response);
-    }
-    
-    //Metodo para agregar un usuario desde admin
-    private void addNewUser(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        
-        IUsersDao iud = new IUsersDaoImpl(getInstance());
-        
-        us = new UsersServiceImpl(iud);
-        
-        String name = request.getParameter("name");
-        String firstSurname = request.getParameter("fsurname");
-        String secondSurname = request.getParameter("ssurname");
-        String mail = request.getParameter("mail");
-        String username = request.getParameter("user");
-        String password = request.getParameter("pass");
-        String cPassword = request.getParameter("cpass");
-        
-        if (!password.equals(cPassword)) {
-            request.getSession().setAttribute("errorMessage", "Las contraseñas no coinciden.");
-            request.getSession().setAttribute("errorActive", true);
-            request.getRequestDispatcher("includes/forms/errorPage.jsp").forward(request, response);
-            return;
-        }
-        
-        Users user = new Users(name, firstSurname, secondSurname, mail, username, password);
-        
-        if (!us.createUser(user)){
-            request.getSession().setAttribute("errorActive", true);
-            request.getRequestDispatcher("includes/forms/errorPage.jsp").forward(request, response);
-        }
-        response.sendRedirect("pages/admin/admin.jsp");
-    }
-    
-    //Metodo para actualizar un usuario desde admin
-    private void updateUser(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{       
-    }
-    
-    //Metodo para borrar un usuario desde admin
-    private void deleteUser(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-    }
     
 }

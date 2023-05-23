@@ -105,11 +105,13 @@ main{
     font-size: 16px;
     border: none;
     cursor: pointer;
-    color: var(--colorTexts);
-    background-color: var(--colorButtn);
+    border: 1.5px solid var(--colorButtn);
+    color: var(--colorButtn);
+    background-color: var(--colorFonds);
 }
 .btn-bsc:hover {
-    background-color: var(--colorHover);
+    color: var(--colorTexts);
+    background-color: var(--colorButtn);
 }
 /*----- Dropdown -----*/
 .btn-drop {
@@ -117,10 +119,16 @@ main{
     font-size: 16px;
     border: none;
     cursor: pointer;
-    color: var(--colorLetra);
+    border: 1.5px solid var(--colorButtn);
+    color: var(--colorButtn);
+    background-color: var(--colorFonds);
+}
+.btn-drop:hover {
+    color: var(--colorTexts);
     background-color: var(--colorButtn);
 }
-.btn-drop:hover, .btn-drop:focus {
+.btn-drop:focus{
+    color: var(--colorTexts);
     background-color: var(--colorHover);
 }
 .dropdown {

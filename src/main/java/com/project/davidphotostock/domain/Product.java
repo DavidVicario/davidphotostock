@@ -76,6 +76,13 @@ public class Product implements Serializable {
         this.idProduct = idProduct;
     }
 
+    public Product(String productName, Integer stock, BigDecimal price, Subcategory idSubcategory) {
+        this.productName = productName;
+        this.stock = stock;
+        this.price = price;
+        this.idSubcategory = idSubcategory;
+    }
+
     //Getter and Setter
     public Integer getIdProduct() {
         return idProduct;

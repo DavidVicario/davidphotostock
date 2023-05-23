@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="com.project.davidphotostock.domain.Users" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,7 +18,7 @@
     <header class="header-admin">
         <div class="title-admin">
             <h1>ADMINISTRATOR</h1>
-            <a class="logout-admin" href="#">LogOut</a>
+            <a class="logout-admin" href="index.jsp" onclick="logout()">LogOut</a>
         </div>
     </header>
     <main>
@@ -89,18 +90,16 @@
                                     <th>Mail</th>
                                     <th>Username</th>
                                     <th>Password</th>
+                                </tr>                                
+                                <tr>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
                                 </tr>
-                                <c:forEach var="user" items="${users}">
-                                    <tr>
-                                        <td>${user.id}</td>
-                                        <td>${user.name}</td>
-                                        <td>${user.firstSurname}</td>
-                                        <td>${user.secondSurname}</td>
-                                        <td>${user.mail}</td>
-                                        <td>${user.username}</td>
-                                        <td>${user.password}</td>
-                                    </tr>
-                                </c:forEach>
                            </table>
                         </div>
                     </div>
@@ -173,12 +172,12 @@
                                     <th>Id Municipality</th>
                                 </tr>
                                 <tr>
-                                    <td>${user.id}</td>
-                                    <td>${user.name}</td>
-                                    <td>${user.firstSurname}</td>
-                                    <td>${user.secondSurname}</td>
-                                    <td>${user.mail}</td>
-                                    <td>${user.username}</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
                                 </tr>
                            </table>
                         </div>
@@ -226,10 +225,10 @@
                                     <th>Id Product</th>
                                 </tr>
                                 <tr>
-                                    <td>${user.id}</td>
-                                    <td>${user.name}</td>
-                                    <td>${user.firstSurname}</td>
-                                    <td>${user.secondSurname}</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
                                 </tr>
                            </table>
                         </div>
@@ -267,8 +266,8 @@
                                     <th>Name</th>
                                 </tr>
                                 <tr>
-                                    <td>${user.id}</td>
-                                    <td>${user.name}</td>
+                                    <td>#</td>
+                                    <td>#</td>
                                 </tr>                                
                            </table>
                         </div>
@@ -309,9 +308,9 @@
                                     <th>ID Category</th>
                                 </tr>                                
                                 <tr>
-                                    <td>${user.id}</td>
-                                    <td>${user.name}</td>
-                                    <td>${user.firstSurname}</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
                                 </tr>                                
                            </table>
                         </div>
@@ -366,11 +365,11 @@
                                     <th>Id Subcategory</th>
                                </tr>
                                <tr>
-                                    <td>#id</td>
-                                    <td>#name</td>
-                                    <td>#stock</td>
-                                    <td>#price</td>
-                                    <td>#id sub</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
                                </tr>
                            </table>
                         </div>
@@ -395,8 +394,8 @@
                                     <th>Name</th>
                                 </tr>                
                                 <tr>
-                                    <td>${user.id}</td>
-                                    <td>${user.name}</td>
+                                    <td>#</td>
+                                    <td>#</td>
                                 </tr>                
                            </table>
                         </div>
@@ -422,9 +421,9 @@
                                     <th>Id Ccaa</th>
                                 </tr>                
                                 <tr>
-                                    <td>${user.id}</td>
-                                    <td>${user.name}</td>
-                                    <td>${user.name}</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
                                 </tr>                
                            </table>
                         </div>
@@ -451,23 +450,19 @@
                                     <th>DC</th>
                                 </tr>                
                                 <tr>
-                                    <td>${user.id}</td>
-                                    <td>${user.name}</td>
-                                    <td>${user.id}</td>
-                                    <td>${user.name}</td>
-                                    <td>${user.name}</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
                                 </tr>                
                            </table>
                         </div>
                     </div>
                 </div>
-                
-            </div>
-                                
+            </div>         
         </body>
-        
-    </main>    
-    
+    </main>
     <script src="/assets/js/admin.js"></script>
 </body>
 </html>

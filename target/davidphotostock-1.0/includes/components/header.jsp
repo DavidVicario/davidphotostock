@@ -19,7 +19,7 @@
         </div>
         <div class="users">
             <ul>
-                <li><a id="user-link" style="display: none;" onclick="openForm('profile')"></a></li>
+                <li><a id="user-link" style="display: none; text-transform: uppercase;" onclick="openForm('profile')"></a></li>
                 <li><a id="logout-link" style="display: none;" onclick="logout()">LOGOUT</a></li>
                 <li><a id="login-link" onclick="openForm('login')">LOGIN</a></li>
                 <li><a id="signup-link" onclick="openForm('signup')">SIGN UP</a></li>

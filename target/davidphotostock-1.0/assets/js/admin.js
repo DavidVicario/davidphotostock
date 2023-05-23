@@ -49,3 +49,26 @@ document.getElementById("menu-admin").addEventListener("click", function (event)
         showPage(pageId);
     }
 });
+
+// Función para cerrar sesión
+window.logout = function() {
+    fetch('/UsersAdminServlet?action=logout', { method: 'POST' })
+        .then(response => {
+            if (response.status === 200) {
+                
+                var loginLink = document.getElementById('login-link');
+                var signupLink = document.getElementById('signup-link');
+                
+                loginLink.textContent = 'LOGIN';
+                signupLink.textContent = 'SIGN UP';
+                
+                //Recargo la pagina para que se actulizen los datos.
+                window.location.href = "index.jsp";
+            } else {
+                console.log('Error logging out');
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+};

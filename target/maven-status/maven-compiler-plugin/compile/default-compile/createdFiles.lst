@@ -43,6 +43,7 @@ com\project\davidphotostock\data\ISubcategoryDao.class
 com\project\davidphotostock\service\impl\ShipmentServiceImpl.class
 com\project\davidphotostock\domain\Shipment.class
 com\project\davidphotostock\data\IMunicipalityDao.class
+com\project\davidphotostock\util\ConectionUtil.class
 com\project\davidphotostock\service\impl\ProductServiceImpl.class
 com\project\davidphotostock\data\impl\ISubcategoryDaoImpl.class
 com\project\davidphotostock\test\testService.class
@@ -52,4 +53,5 @@ com\project\davidphotostock\service\MunicipalityService.class
 com\project\davidphotostock\web\ProductServlet.class
 com\project\davidphotostock\service\ProvinceService.class
 com\project\davidphotostock\data\IShipmentDao.class
+com\project\davidphotostock\web\UsersAdminServlet.class
 com\project\davidphotostock\test\test.class
