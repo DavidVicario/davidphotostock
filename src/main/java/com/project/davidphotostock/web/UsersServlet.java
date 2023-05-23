@@ -16,18 +16,18 @@ import jakarta.mail.internet.MimeMessage;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
-
 import java.util.Properties;
-
 import java.util.regex.Pattern;
 
 @WebServlet(name = "UsersServlet", urlPatterns = {"/UsersServlet"})
@@ -125,17 +125,20 @@ public class UsersServlet extends HttpServlet {
 
         Users user = us.obtainUserByUsernameAndPass(username, password);
         
-        if (username.equals("admin") && password.equals("nimda")){
-            HttpSession session = request.getSession();
-            session.setAttribute("user", user);
-            response.sendRedirect("UsersAdminServlet");
-            return;
-        }
         if (user != null) {
-            HttpSession session = request.getSession();
-            session.setAttribute("user", user);
-            response.sendRedirect("index.jsp");
-            return;
+        HttpSession session = request.getSession();
+        session.setAttribute("user", user);
+            // Si el usuario selecciona "Recordarme", guarda su nombre de usuario en una Cookie.
+            if("on".equals(request.getParameter("remember"))) {
+                Cookie usernameCookie = new Cookie("username", username);
+                usernameCookie.setMaxAge(60*60*24*15); // 15 días
+                response.addCookie(usernameCookie);
+            }
+            if (username.equals("admin") && password.equals("nimda")){
+                response.sendRedirect("UsersAdminServlet");
+            } else {
+                response.sendRedirect("index.jsp");
+            }
         } else {
             request.setAttribute("errorMessage", "Compruebe su usuario o contraseña.");
             request.getRequestDispatcher("index.jsp").forward(request, response);

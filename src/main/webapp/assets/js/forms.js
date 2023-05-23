@@ -118,5 +118,28 @@ validate.onsubmit = function() {
     return true;
 }
 
+//Recordar usuario
+window.onload = function() {
+    const username = getCookie("username");
+    if (username) {
+        document.getElementById("user").value = username;
+    }
+}
+
+function getCookie(cname) {
+    const name = cname + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
 //Error al introducir los datos.
