@@ -85,9 +85,58 @@
             <a class="arrow right" onclick="plusSlides(1)"><p>></p></a>
         </section>
     
-    <jsp:include page="/includes/forms/login.jsp"/>
-    <jsp:include page="/includes/forms/signup.jsp"/>
     
+        <div class="content-home">
+            <div class="image-home travel image-left"></div>
+            <div class="container-home">
+                <h1>ESTE TEXTO ES DE PRUEBA </h1>
+                <p>
+                    Este texto es para probar los espacios y ver como quedan 
+                    los colores y los div. Este texto es para probar los 
+                    espacios y ver como quedan los colores y los div.
+                </p>
+            </div>
+        </div>
+    
+        <div class="content-home">
+            <div class="container-home">
+                <h1>ESTE TEXTO ES DE PRUEBA </h1>
+                <p>
+                    Este texto es para probar los espacios y ver como quedan 
+                    los colores y los div. Este texto es para probar los 
+                    espacios y ver como quedan los colores y los div.
+                </p>
+            </div>
+            <div class="image-home author image-right"></div>
+        </div>
+    
+        <div class="content-home">
+            <div class="image-home nature image-left"></div>
+            <div class="container-home">
+                <h1>ESTE TEXTO ES DE PRUEBA </h1>
+                <p>
+                    Este texto es para probar los espacios y ver como quedan 
+                    los colores y los div. Este texto es para probar los 
+                    espacios y ver como quedan los colores y los div.
+                </p>
+            </div>
+        </div>
+    
+        <div class="content-home">
+            <div class="container-home">
+                <h1>ESTE TEXTO ES DE PRUEBA </h1>
+                <p>
+                    Este texto es para probar los espacios y ver como quedan 
+                    los colores y los div. Este texto es para probar los 
+                    espacios y ver como quedan los colores y los div.
+                </p>
+            </div>
+            <div class="image-home abstract image-right"></div>
+        </div>
+    
+    
+    <jsp:include page="/includes/forms/login.jsp"/>
+    <jsp:include page="/includes/forms/signup.jsp"/>    
     <!-- REVISAR -->
     <c:if test="${not empty errorMessage}">
         <c:if test="${sessionScope.errorActive}">
@@ -101,8 +150,7 @@
             </section>
             <c:remove var="errorActive" scope="session" />
         </c:if>
-    </c:if>
-    
+    </c:if>    
     </main>
     <jsp:include page="/includes/components/footer.jsp"/>
     <script src="/assets/js/header.js"></script>
