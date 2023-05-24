@@ -91,12 +91,14 @@
     <!-- REVISAR -->
     <c:if test="${not empty errorMessage}">
         <c:if test="${sessionScope.errorActive}">
-            <div id="s-error" class="s-error">
-                <div class="image-form">
-                    <span onclick="closeError()" class="close-x">&times;</span>
-                </div>
-                <div class="c-error ani-form">${errorMessage}</div>
-            </div>
+            <section class="s-error" id="s-error">
+                <form class="c-error ani-form">
+                    <div class="image-form">
+                        <span onclick="closeError()" class="close-x">&times;</span>
+                    </div>
+                    <div class="">${errorMessage}</div>
+                </form>
+            </section>
             <c:remove var="errorActive" scope="session" />
         </c:if>
     </c:if>

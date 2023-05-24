@@ -18,6 +18,10 @@ public class IUsersDaoImpl implements IUsersDao {
      */
     private EntityManager em;
 
+    /*
+    Definimos un constructor y llamamos de parametro a nuestro EntityManager em
+    de esta manera podemos usarlo para realizar operaciones.
+     */
     public IUsersDaoImpl(EntityManager em) {
         this.em = em;
     }

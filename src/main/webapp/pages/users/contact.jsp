@@ -52,19 +52,19 @@
                 <label for="subject">Subject *</label>
                 <textarea id="subject" type="text" placeholder="Your message.." name="subject" style="height:200px" required></textarea>
 
-                <button class="btn-send" onclick="openForm('message') type="submit">SEND</button>
+                <button class="btn-send" onclick="openForm('message')" type="submit">SEND</button>
             </form>
         </div>
         <jsp:include page="/includes/forms/login.jsp"/>
         <jsp:include page="/includes/forms/signup.jsp"/>
     </main>
     <% if (request.getAttribute("message") != null) { %>
-        <div class="section-message">
+        <section class="section-message">
             <form class="contain-message ani-mess">
                 <p><%= request.getAttribute("message") %></p>
                 <button class="btn-accept" onclick="closeForm('message')" type="submit">Accept</button>
             </form>
-        </div>
+        </section>
     <% } %>
     <jsp:include page="/includes/components/footer.jsp"/>
     <script src="/assets/js/header.js"></script>

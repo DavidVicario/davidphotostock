@@ -100,6 +100,9 @@ document.addEventListener('click', function(event) {
     }
 });
 
+window.onload = function() {
+  window.location.href = "/ProductServlet?action=allProduct";
+}
 
 // Dropdown Cascada -- En proceso...
 /*

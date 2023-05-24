@@ -128,7 +128,7 @@ public class UsersServlet extends HttpServlet {
                 response.sendRedirect("index.jsp");
             }
         } else {
-            request.setAttribute("errorMessage", "Compruebe su usuario o contraseña.");
+            request.setAttribute("message", "Compruebe su usuario o contraseña.");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }

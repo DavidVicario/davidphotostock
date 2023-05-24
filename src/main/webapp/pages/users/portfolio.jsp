@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,20 +65,27 @@
             </div>
         </div>
 
+        <a href="ProductServlet?action=allProduct"></a>
         
         <div class="row-pf">
-            <div class="column-pf flower macro">
-                <div class="content-pf">
-                    <img src="/assets/img/flowers(1).jpg" alt="Flower" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Sakura</h4>
-                            <p class="ppf">€100.00</p>
+            <c:forEach var="product" items="${products}">
+                <div class="column-pf flower macro">
+                    <div class="content-pf">
+                        <img src="/assets/img/flowers(1).jpg" alt="Flower" style="width:100%">
+                        <div class="content-info">
+                            <div class="pf-text">
+                                <h4 class="hpf">${product.name}</h4>
+                                <p class="ppf">€${product.price}</p>
+                            </div>
+                            <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
                         </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
                     </div>
                 </div>
-            </div>
+            </c:forEach>
+            
+            
+            
+            <!--
             <div class="column-pf flower retrato">
                 <div class="content-pf">
                     <img src="/assets/img/flowers(2).jpg" alt="Flower" style="width:100%">
@@ -288,7 +296,9 @@
                     </div>
                 </div>
             </div>
-
+                
+            
+            -->
             
         </div>
         

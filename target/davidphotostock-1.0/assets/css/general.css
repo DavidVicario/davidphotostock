@@ -281,8 +281,8 @@ input[type="password"]:focus {
     padding-top: 60px;
 }
 s-error > .c-error{
-    background-color: #7e7e7e;
-    margin: 5% auto 15% auto;
+    background-color: var(--colorFondo);
+    margin: 30%;
     border: 1px solid var(--colorLetra);
-    width: 450px; /* Tamaño del formulario */
+    width: 300px; /* Tamaño del formulario */
 }
