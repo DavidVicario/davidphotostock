@@ -6,14 +6,6 @@ import com.project.davidphotostock.domain.Users;
 import com.project.davidphotostock.service.UsersService;
 import com.project.davidphotostock.service.impl.UsersServiceImpl;
 import static com.project.davidphotostock.util.ConectionUtil.getInstance;
-
-import jakarta.mail.Message;
-import jakarta.mail.MessagingException;
-import jakarta.mail.Session;
-import jakarta.mail.Transport;
-import jakarta.mail.internet.InternetAddress;
-import jakarta.mail.internet.MimeMessage;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
@@ -23,12 +15,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
-
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.List;
-import java.util.Properties;
-import java.util.regex.Pattern;
+import com.sendgrid.*;
+import com.sendgrid.helpers.mail.Mail;
+import com.sendgrid.helpers.mail.objects.Content;
+import com.sendgrid.helpers.mail.objects.Email;
 
 @WebServlet(name = "UsersServlet", urlPatterns = {"/UsersServlet"})
 public class UsersServlet extends HttpServlet {
@@ -61,11 +51,9 @@ public class UsersServlet extends HttpServlet {
                 case "logout":
                     this.logoutUser(request, response);
                     break;
-                    /*
                 case "contact":
                     this.contactForm(request, response);
                     break;
-                    */
                 default: 
                     this.actionDefault(request, response);
             }
@@ -134,7 +122,7 @@ public class UsersServlet extends HttpServlet {
                 usernameCookie.setMaxAge(60*60*24*15); // 15 días
                 response.addCookie(usernameCookie);
             }
-            if (username.equals("admin") && password.equals("nimda")){
+            if (username.equals("admin")){
                 response.sendRedirect("UsersAdminServlet");
             } else {
                 response.sendRedirect("index.jsp");
@@ -174,7 +162,7 @@ public class UsersServlet extends HttpServlet {
         response.sendRedirect("index.jsp"); 
     }
     
-    /*
+    
     private void contactForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
         String name = request.getParameter("name");
@@ -182,35 +170,44 @@ public class UsersServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String subject = request.getParameter("subject");
 
-        String to = "daione332@gmail.com";
-        String from = "noreply@gmail.com";
-        String host = "smtp.gmail.com";
+        // Definir el cuerpo del correo
+        String body = "Nombre: " + name + "\n" +
+                      "Correo: " + mail + "\n" +
+                      "Teléfono: " + phone + "\n" +
+                      "Asunto: " + subject;
 
-        Properties properties = System.getProperties();
-        properties.setProperty("mail.smtp.host", host);
+        // Definir los correos de envío y recepción
+        Email from = new Email("davidphotostock8@gmail.com");
+        Email to = new Email("davidphotostock8@gmail.com");
 
-        Session session = Session.getDefaultInstance(properties);
+        // Crear el contenido del correo
+        Content content = new Content("text/plain", body);
+
+        // Crear el correo
+        Mail mailToSend = new Mail(from, subject, to, content);
+
+        // Crear un objeto SendGrid y enviar el correo
+        SendGrid sg = new SendGrid("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");
+        com.sendgrid.Request requestSendGrid = new com.sendgrid.Request();
 
         try {
-            MimeMessage message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(from));
-            message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
-            message.setSubject("New contact form submission");
-            message.setText("Name: " + name + "\n"
-                            + "Mail: " + mail + "\n"
-                            + "Phone: " + phone + "\n"
-                            + "Message: " + subject);
-
-            Transport.send(message);
-            response.sendRedirect("contact.jsp?status=success");
-
-        } catch (MessagingException mex) {
-            mex.printStackTrace();
-            response.sendRedirect("contact.jsp?status=error");
+            requestSendGrid.setMethod(Method.POST);
+            requestSendGrid.setEndpoint("mail/send");
+            requestSendGrid.setBody(mailToSend.build());
+            Response responseSendGrid = sg.api(requestSendGrid);
+            System.out.println(responseSendGrid.getStatusCode());
+            System.out.println(responseSendGrid.getBody());
+            System.out.println(responseSendGrid.getHeaders());
+            if (responseSendGrid.getStatusCode() == 202) {
+                request.setAttribute("message", "¡Tu mensaje ha sido enviado con éxito!");
+            } else {
+                request.setAttribute("message", "Ocurrió un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.");
+            }
+            request.getRequestDispatcher("pages/users/contact.jsp").forward(request, response);
+        } catch (IOException ex) {
+            throw ex;
         }
+        
     }
-    */
-    
-    
     
 }

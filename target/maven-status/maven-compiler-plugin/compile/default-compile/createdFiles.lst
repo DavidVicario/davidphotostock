@@ -41,6 +41,7 @@ com\project\davidphotostock\resources\JakartaEE10Resource.class
 com\project\davidphotostock\domain\Province.class
 com\project\davidphotostock\data\ISubcategoryDao.class
 com\project\davidphotostock\service\impl\ShipmentServiceImpl.class
+.netbeans_automatic_build
 com\project\davidphotostock\domain\Shipment.class
 com\project\davidphotostock\data\IMunicipalityDao.class
 com\project\davidphotostock\util\ConectionUtil.class
@@ -50,6 +51,7 @@ com\project\davidphotostock\test\testService.class
 com\project\davidphotostock\domain\Subcategory.class
 com\project\davidphotostock\domain\Product.class
 com\project\davidphotostock\service\MunicipalityService.class
+com\project\davidphotostock\test\testCorreo.class
 com\project\davidphotostock\web\ProductServlet.class
 com\project\davidphotostock\service\ProvinceService.class
 com\project\davidphotostock\data\IShipmentDao.class

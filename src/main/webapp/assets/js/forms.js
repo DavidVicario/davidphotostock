@@ -4,7 +4,9 @@ function openForm(formName) {
         document.getElementById('section-login').style.display = 'block';
     } else if (formName == 'signup') {
         document.getElementById('section-signup').style.display = 'block';
-    } 
+    } else if (formName == 'message') {
+        document.getElementById('section-message').style.display = 'block';
+    }
 }
 
 //Función para cerrar formularios
@@ -13,18 +15,24 @@ function closeForm(formName) {
         document.getElementById('section-login').style.display = 'none';
     } else if (formName == 'signup') {
         document.getElementById('section-signup').style.display = 'none';
+    } else if (formName == 'message') {
+        document.getElementById('section-message').style.display = 'none';
     } 
 }
 
 //Cierre de formulario al hacer click fuera de él
 const login = document.getElementById('section-login');
 const signup = document.getElementById('section-signup');
+const message = document.getElementById('section-message');
 
 window.onclick = function(event) {
     if (event.target == login) {
         login.style.display = "none";
     }
     if (event.target == signup) {
+        signup.style.display = "none";
+    }
+    if (event.target == message) {
         signup.style.display = "none";
     }
 }

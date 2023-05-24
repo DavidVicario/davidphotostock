@@ -39,7 +39,7 @@
             </ul>
         </div>
         <div class="contain-contact">
-            <div class="container-contact" action="/UsersServlet?action=contact" method="post">
+            <form class="container-contact" action="/UsersServlet?action=contact" method="post">
                 <label for="name"><b>Name *</b></label>
                 <input id="name" type="text" placeholder="Enter name" name="name" required>                    
 
@@ -49,15 +49,23 @@
                 <label for="phone"><b>Phone *</b></label>
                 <input id="phone" type="text" placeholder="Enter phone" name="phone" required>            
 
-                <label for="subject">Subject</label>
-                <textarea id="subject" type="text" placeholder="Your message.." name="subject" style="height:200px"></textarea>
+                <label for="subject">Subject *</label>
+                <textarea id="subject" type="text" placeholder="Your message.." name="subject" style="height:200px" required></textarea>
 
-                <button class="btn-send" type="submit">SEND</button>
-            </div>
+                <button class="btn-send" onclick="openForm('message') type="submit">SEND</button>
+            </form>
         </div>
         <jsp:include page="/includes/forms/login.jsp"/>
         <jsp:include page="/includes/forms/signup.jsp"/>
     </main>
+    <% if (request.getAttribute("message") != null) { %>
+        <div class="section-message">
+            <form class="contain-message ani-mess">
+                <p><%= request.getAttribute("message") %></p>
+                <button class="btn-accept" onclick="closeForm('message')" type="submit">Accept</button>
+            </form>
+        </div>
+    <% } %>
     <jsp:include page="/includes/components/footer.jsp"/>
     <script src="/assets/js/header.js"></script>
     <script src="/assets/js/forms.js"></script>
