@@ -187,7 +187,7 @@ public class UsersServlet extends HttpServlet {
         Mail mailToSend = new Mail(from, subject, to, content);
 
         // Crear un objeto SendGrid y enviar el correo
-        SendGrid sg = new SendGrid("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");
+        SendGrid sg = new SendGrid("");
         com.sendgrid.Request requestSendGrid = new com.sendgrid.Request();
 
         try {
