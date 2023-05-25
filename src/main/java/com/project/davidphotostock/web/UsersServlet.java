@@ -116,7 +116,7 @@ public class UsersServlet extends HttpServlet {
         if (user != null) {
         HttpSession session = request.getSession();
         session.setAttribute("user", user);
-            // Si el usuario selecciona "Recordarme", guarda su nombre de usuario en una Cookie.
+            //Si el usuario selecciona "Recordarme", guarda su nombre de usuario en una Cookie.
             if("on".equals(request.getParameter("remember"))) {
                 Cookie usernameCookie = new Cookie("username", username);
                 usernameCookie.setMaxAge(60*60*24*15); // 15 días
@@ -126,8 +126,9 @@ public class UsersServlet extends HttpServlet {
                 response.sendRedirect("UsersAdminServlet");
             } else {
                 response.sendRedirect("index.jsp");
-            }
-        } else {
+            }   
+        } 
+        else {
             request.setAttribute("message", "Compruebe su usuario o contraseña.");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }

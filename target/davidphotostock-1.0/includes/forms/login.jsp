@@ -6,9 +6,9 @@
         </div>
         <div class="container-login">
             <label for="user"><b>Username</b></label>
-            <input id="user" type="text" placeholder="Enter Username" name="user" required>
+            <input id="user-l" type="text" placeholder="Enter Username" name="user" required>
             <label for="pass"><b>Password</b></label>
-            <input id="pass" type="password" placeholder="Enter Password" name="pass" required>
+            <input id="pass-l" type="password" placeholder="Enter Password" name="pass" required>
             <input id="remember" type="checkbox" checked="checked" name="remember">
             <label class="me" for="remember"> Remember Me</label>
             <span class="forgot">Forgot <a href="#">password?</a></span>

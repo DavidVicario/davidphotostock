@@ -5,10 +5,11 @@
     --color4: #001fcf;
     --color5: #191a30;
     
-    --colorFonds: #000000;
+    --colorFonds: #000000; /*rgb(255, 153, 51)*/
     --colorCompl: #1c1c1c;
+    --colorHovr1: #4e4e4e;
     --colorButtn: #ff9934;
-    --colorHover: #ff8000;
+    --colorHovr2: #ff8000;
     --colorTexts: #ffffff;
 }
 *{
@@ -60,7 +61,7 @@
     position: absolute !important;
     top: 0;
     left: 0;
-    color: var(--color1);
+    color: var(--colorFonds);
     text-align: center;
     height: 100%;
     width: 100%;
@@ -84,7 +85,7 @@
 }
 /*----- Btn -----*/
 .content-slider > .buttons{
-    position:relative;
+    position: relative;
     padding-top: 30px;
     letter-spacing: 0.5px;
 }
@@ -95,10 +96,10 @@
 }
 .buttons > .transparent a{
     padding: 9px 10px;
-    border: 2px solid var(--color1);
+    border: 2px solid var(--colorFonds);
 }
 .button a{
-    color: var(--color1);
+    color: var(--colorFonds);
     letter-spacing: 2px;
     font-size: 12px;
     display: block;
@@ -111,7 +112,7 @@
     top: 50%;
     width: auto;
     margin: -40px 70px 0px 70px;
-    color: var(--color1);
+    color: var(--colorFonds);
     font-size: 20px;
     font-weight: bold;
     user-select: none;
@@ -123,14 +124,14 @@
 }
 .left{
     border: 1px solid transparent;
-    color: var(--color1);
+    color: var(--colorFonds);
     opacity: 0.6;
     transition: 0.4s;
 }
 .right{
     right: 0;
     border: 1px solid transparent;
-    color: var(--color1);
+    color: var(--colorFonds);
     opacity: 0.6;
     transition: 0.4s;
 }
@@ -198,7 +199,7 @@
 }
 
 /*----- MIDDLE HOME -----*/
-.image-home.travel {
+.image-home.travel {   
     background-image: url('../img/landscape\(2\).jpg');
 }
 .image-home.author {

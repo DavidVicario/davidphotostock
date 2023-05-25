@@ -7,13 +7,10 @@
     
     --colorFondo: #000000;
     --colorCompl: #1c1c1c;
+    --colorHovr1: #4e4e4e;
     --colorBoton: #ff9934;
-    --colorHover: #ff8000;
+    --colorHovr2: #ff8000;
     --colorLetra: #ffffff;
-
-    --colorBase1: #95a0be;
-    --colorBase2: #566d8c;
-    --colorBase3: #2e4459;
 }
 *{
     margin: 0;
@@ -74,7 +71,7 @@
     color: var(--colorLetra);
 }
 .container-login a{
-    color: #4e4e4e;
+    color: var(--colorHovr1);
     font-weight: bold;    
 }
 .container-login > input[type=text], 
@@ -91,7 +88,7 @@
 input[type="text"]:focus, 
 input[type="password"]:focus {
     border: 1.5px solid var(--colorLetra);
-    background-color: #4e4e4e;
+    background-color: var(--colorHovr1);
 }
 input[type="checkbox"] + label:before {
     content: "";
@@ -141,7 +138,7 @@ input[type="checkbox"] + label {
     width: 100%;
 }
 .btn-login:hover {
-    background-color: var(--colorHover);
+    background-color: var(--colorHovr2);
 }
 .no-user{
     display: flex;
@@ -177,7 +174,7 @@ input[type="checkbox"] + label {
     color: var(--colorLetra);
 }
 .container-signup a{
-    color: #4e4e4e;
+    color: var(--colorHovr1);
     font-weight: bold;    
 }
 .surnames, .passwords{
@@ -204,7 +201,7 @@ input[type="checkbox"] + label {
 input[type="text"]:focus, 
 input[type="password"]:focus {
     border: 1.5px solid var(--colorLetra);
-    background-color: #4e4e4e;
+    background-color: var(--colorHovr1);
 }
 .surnames > div > input[type=text], 
 .passwords > div > input[type=password] {
@@ -220,7 +217,7 @@ input[type="password"]:focus {
 .surnames > div > input[type=text]:focus, 
 .passwords > div > input[type=password]:focus {
     border: 1.5px solid var(--colorLetra);
-    background-color: #4e4e4e;
+    background-color: var(--colorHovr1);
 }
 .btn-signup{
     background-color: var(--colorBoton);
@@ -232,7 +229,7 @@ input[type="password"]:focus {
     width: 100%;
 }
 .btn-signup:hover {
-    background-color: var(--colorHover);
+    background-color: var(--colorHovr2);
 }
 .u-user{
     display: flex;

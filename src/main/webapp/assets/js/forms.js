@@ -47,6 +47,7 @@ window.onload = function() {
     fetch('/UsersServlet?action=checkLogin')
         .then(response => response.text())
         .then(username => {
+            console.log(username);
             if (username !== '') {
                 userLink.style.display = 'block';
                 logoutLink.style.display = 'block';
@@ -63,6 +64,12 @@ window.onload = function() {
         .catch((error) => {
             console.error('Error:', error);
         });
+        
+    //Recordar usuario
+    const username = getCookie("username");
+    if (username) {
+        document.getElementById("user").value = username;
+    }
 };
 
 //Función para cerrar sesión
@@ -124,14 +131,6 @@ validate.onsubmit = function() {
         return false;
     }
     return true;
-}
-
-//Recordar usuario
-window.onload = function() {
-    const username = getCookie("username");
-    if (username) {
-        document.getElementById("user").value = username;
-    }
 }
 
 function getCookie(cname) {
