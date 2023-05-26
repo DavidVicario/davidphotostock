@@ -1,10 +1,15 @@
 package com.project.davidphotostock.web;
 
+import com.project.davidphotostock.data.ICategoryDao;
 import com.project.davidphotostock.data.IProductDao;
+import com.project.davidphotostock.data.impl.ICategoryDaoImpl;
 import com.project.davidphotostock.data.impl.IProductDaoImpl;
+import com.project.davidphotostock.domain.Category;
 import com.project.davidphotostock.domain.Product;
 import com.project.davidphotostock.domain.Subcategory;
+import com.project.davidphotostock.service.CategoryService;
 import com.project.davidphotostock.service.ProductService;
+import com.project.davidphotostock.service.impl.CategoryServiceImpl;
 import com.project.davidphotostock.service.impl.ProductServiceImpl;
 import static com.project.davidphotostock.util.ConectionUtil.getInstance;
 import jakarta.servlet.RequestDispatcher;
@@ -22,6 +27,7 @@ import java.util.List;
 public class ProductServlet extends HttpServlet {
 
     ProductService ps;
+    CategoryService cs;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -29,7 +35,7 @@ public class ProductServlet extends HttpServlet {
 
         String action = request.getParameter("action");
 
-        System.out.println("ACtiiion" + action);
+        
         // Chequear si el usuario quiere ver todos los productos
         if (action != null && action.equals("allProduct")) {
             this.showAllProduct(request, response);
@@ -44,42 +50,31 @@ public class ProductServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String action = request.getParameter("action");
-        if (action != null) {
-            switch (action) {
-                case "create":
-                    this.signUpProduct(request, response);
-                    break;
-                case "update":
-                    this.updateProduct(request, response);
-                    break;
-                case "delete":
-                    this.deleteProduct(request, response);
-                    break;
-                default:
-                    this.actionDefault(request, response);
-            }
-        } else {
-            this.actionDefault(request, response);
-        }
+        
+        this.actionDefault(request, response);
+        
     }
 
     private void actionDefault(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("pages/users/portfolio.jsp");
     }
 
     private void showAllProduct(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         IProductDao ipd = new IProductDaoImpl(getInstance());
-
         ps = new ProductServiceImpl(ipd);
+        
+        ICategoryDao icd = new ICategoryDaoImpl(getInstance());
+        cs = new CategoryServiceImpl(icd);
 
         List<Product> products = ps.obtainAllProducts();
+        List<Category> categories = cs.obtainAllCategories();
 
-        System.out.println("Lista de productos" + products);
         request.setAttribute("products", products);
+        request.setAttribute("categories", categories);
         RequestDispatcher dispatcher = request.getRequestDispatcher("pages/users/portfolio.jsp");
         dispatcher.forward(request, response);
     }

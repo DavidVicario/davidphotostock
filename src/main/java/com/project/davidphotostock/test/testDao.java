@@ -22,7 +22,7 @@ public class testDao {
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("davidphotostock-pu");
         EntityManager em = emf.createEntityManager();
-        ICategoryDao categoryDao = new ICategoryDaoImpl();
+//        ICategoryDao categoryDao = new ICategoryDaoImpl();
 
         // Creamos un objeto de categoría y lo persistimos en la base de datos
         
@@ -43,25 +43,25 @@ public class testDao {
         
 
         // Obtenemos todas las categorías de la base de datos
-        List<Category> allCategories = categoryDao.obtainAll();
+//        List<Category> allCategories = categoryDao.obtainAll();
         //System.out.println(allCategories);
         
-        for(int i = 0; i < allCategories.size(); i++){
-            Category ct = allCategories.get(i);
-            System.out.println("El nombre de la categoria es "+ct.getCategoryName()+" y su id es "+ct.getIdCategory());
-            System.out.println(ct);
-        }
-
-        // Obtenemos una categoría específica según su id
-        Category foundCategory = categoryDao.obtainById(1);
-        System.out.println(foundCategory);
-        
-        // Obtenemos una categoría específica según su name
-        Category foundCategory2 = categoryDao.obtainByName("Retrato");
-        System.out.println(foundCategory2);
-        
-        // Cerramos el EntityManager y el EntityManagerFactory
-        em.close();
-        emf.close();
+//        for(int i = 0; i < allCategories.size(); i++){
+//            Category ct = allCategories.get(i);
+//            System.out.println("El nombre de la categoria es "+ct.getCategoryName()+" y su id es "+ct.getIdCategory());
+//            System.out.println(ct);
+//        }
+//
+//        // Obtenemos una categoría específica según su id
+//        Category foundCategory = categoryDao.obtainById(1);
+//        System.out.println(foundCategory);
+//        
+//        // Obtenemos una categoría específica según su name
+//        Category foundCategory2 = categoryDao.obtainByName("Retrato");
+//        System.out.println(foundCategory2);
+//        
+//        // Cerramos el EntityManager y el EntityManagerFactory
+//        em.close();
+//        emf.close();
     }
 }

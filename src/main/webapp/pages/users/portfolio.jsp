@@ -33,13 +33,12 @@
             <button class="btn-pf btn-bsc active-pf" onclick="filterSelection('all')"> Show all</button>
             <div class="dropdown">
                 <button class="btn-drop btn-bsc" onclick="showDrop('cdd')"> Categories</button>
-                <div id="cdd" class="content-dropdown">
-                    <a class="btn-pf" onclick="filterSelection('flower'); showDrop('cdd')"> Author</a>
-                    <a class="btn-pf" onclick="filterSelection('insect'); showDrop('cdd')"> Macro</a>
-                    <a class="btn-pf" onclick="filterSelection('social'); showDrop('cdd')"> Nature</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('cdd')"> Travel</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('cdd')"> Social</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('cdd')"> Commercial</a>
+                <div id="cdd" class="content-dropdown">                    
+                    <c:if test="${not empty categories}">
+                        <c:forEach var="category" items="${categories}">
+                            <a class="btn-pf" onclick="filterSelection('${category.categoryName}'); showDrop('cdd')">${category.categoryName}</a>
+                        </c:forEach>
+                    </c:if>
                 </div>
             </div>
             <div class="dropdown">
@@ -64,244 +63,24 @@
                 </div>
             </div>
         </div>
-
-        <a href="ProductServlet?action=allProduct"></a>
-        
         <div class="row-pf">
-            <c:forEach var="product" items="${products}">
-                <div class="column-pf flower macro">
-                    <div class="content-pf">
-                        <img src="/assets/img/flowers(1).jpg" alt="Flower" style="width:100%">
-                        <div class="content-info">
-                            <div class="pf-text">
-                                <h4 class="hpf">${product.name}</h4>
-                                <p class="ppf">€${product.price}</p>
+            <c:if test="${not empty products}">
+                <c:forEach var="product" items="${products}">
+                    <div class="column-pf ${product.idSubcategory.idCategory.categoryName} ${product.idSubcategory.subcategoryName}">
+                        <div class="content-pf">
+                            <img src="/assets/img/flowers(1).jpg" alt="Flower" style="width:100%">
+                            <div class="content-info">
+                                <div class="pf-text">
+                                    <h4 class="hpf">${product.productName}</h4>
+                                    <p class="ppf">€${product.price}</p>
+                                </div>
+                                <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
                             </div>
-                            <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
                         </div>
                     </div>
-                </div>
-            </c:forEach>
-            
-            
-            
-            <!--
-            <div class="column-pf flower retrato">
-                <div class="content-pf">
-                    <img src="/assets/img/flowers(2).jpg" alt="Flower" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Sakura</h4>
-                            <p class="ppf">€100.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="column-pf flower">
-                <div class="content-pf">
-                    <img src="/assets/img/flowers(3).jpg" alt="Flower" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Sakura</h4>
-                            <p class="ppf">€100.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="column-pf flower">
-                <div class="content-pf">
-                    <img src="/assets/img/flowers(4).jpg" alt="Flower" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Sakura</h4>
-                            <p class="ppf">€100.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="column-pf flower">
-                <div class="content-pf">
-                    <img src="/assets/img/flowers(5).jpg" alt="Flower" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Sakura</h4>
-                            <p class="ppf">€100.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="column-pf flower">
-                <div class="content-pf">
-                    <img src="/assets/img/flowers(6).jpg" alt="Flower" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Sakura</h4>
-                            <p class="ppf">€100.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="column-pf insect">
-                <div class="content-pf">
-                    <img src="/assets/img/insect(1).jpg" alt="Insect" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Bicho</h4>
-                            <p class="ppf">€150.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="column-pf insect">
-                <div class="content-pf">
-                    <img src="/assets/img/insect(2).jpg" alt="Insect" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Bicho</h4>
-                            <p class="ppf">€150.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="column-pf insect">
-                <div class="content-pf">
-                    <img src="/assets/img/insect(3).jpg" alt="Insect" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Bicho</h4>
-                            <p class="ppf">€150.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="column-pf insect">
-                <div class="content-pf">
-                    <img src="/assets/img/insect(4).jpg" alt="Insect" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Bicho</h4>
-                            <p class="ppf">€150.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="column-pf social">
-                <div class="content-pf">
-                    <img src="/assets/img/social(1).jpg" alt="Social" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Andrea</h4>
-                            <p class="ppf">€170.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="column-pf social">
-                <div class="content-pf">
-                    <img src="/assets/img/social(2).jpg" alt="Social" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Andrea</h4>
-                            <p class="ppf">€170.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="column-pf social">
-                <div class="content-pf">
-                    <img src="/assets/img/social(3).jpg" alt="Social" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Andrea</h4>
-                            <p class="ppf">€170.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="column-pf social">
-                <div class="content-pf">
-                    <img src="/assets/img/social(4).jpg" alt="Social" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Andrea</h4>
-                            <p class="ppf">€170.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="column-pf social">
-                <div class="content-pf">
-                    <img src="/assets/img/social(5).jpg" alt="Social" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Andrea</h4>
-                            <p class="ppf">€170.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="column-pf landscape">
-                <div class="content-pf">
-                    <img src="/assets/img/landscape(1).jpg" alt="Landscape" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Cantabria</h4>
-                            <p class="ppf">€130.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="column-pf landscape">
-                <div class="content-pf">
-                    <img src="/assets/img/landscape(2).jpg" alt="Landscape" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Cantabria</h4>
-                            <p class="ppf">€130.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-            <div class="column-pf landscape">
-                <div class="content-pf">
-                    <img src="/assets/img/landscape(3).jpg" alt="Landscape" style="width:100%">
-                    <div class="content-info">
-                        <div class="pf-text">
-                            <h4 class="hpf">Cantabria</h4>
-                            <p class="ppf">€130.00</p>
-                        </div>
-                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
-                    </div>
-                </div>
-            </div>
-                
-            
-            -->
-            
+                </c:forEach>
+            </c:if>
         </div>
-        
         <jsp:include page="/includes/forms/login.jsp"/>
         <jsp:include page="/includes/forms/signup.jsp"/>
     </main>

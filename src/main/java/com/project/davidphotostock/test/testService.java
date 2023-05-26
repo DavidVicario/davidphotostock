@@ -19,26 +19,26 @@ import javax.persistence.Persistence;
  */
 public class testService {
     public static void main(String[] args) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("davidphotostock-pu");
-        EntityManager em = emf.createEntityManager();
-        ICategoryDao categoryDao = new ICategoryDaoImpl();
-        CategoryService categoryService = new CategoryServiceImpl();
-        
-        Category c = new Category();
-        
-        c.setCategoryName("Bodas");
-        categoryService.createCategory(c);
-        
-        Category c2 = categoryService.obtainCategoryByName("Bodas");
-        c2.setCategoryName("Boda");
-        
-        categoryService.updateCategory(c2);
-        
-        categoryService.deleteCategory(c2);
-        
-        categoryService.obtainCategoryById(1);
-        
-        categoryService.obtainAllCategories();
+//        EntityManagerFactory emf = Persistence.createEntityManagerFactory("davidphotostock-pu");
+//        EntityManager em = emf.createEntityManager();
+//        ICategoryDao categoryDao = new ICategoryDaoImpl();
+//        CategoryService categoryService = new CategoryServiceImpl();
+//        
+//        Category c = new Category();
+//        
+//        c.setCategoryName("Bodas");
+//        categoryService.createCategory(c);
+//        
+//        Category c2 = categoryService.obtainCategoryByName("Bodas");
+//        c2.setCategoryName("Boda");
+//        
+//        categoryService.updateCategory(c2);
+//        
+//        categoryService.deleteCategory(c2);
+//        
+//        categoryService.obtainCategoryById(1);
+//        
+//        categoryService.obtainAllCategories();
         
     }
 }

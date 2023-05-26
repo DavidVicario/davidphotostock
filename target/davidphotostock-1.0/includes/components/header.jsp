@@ -12,7 +12,7 @@
         </div>
         <div class="nav">
             <ul>
-                <li><a href="/pages/users/portfolio.jsp">PORTFOLIO</a></li>
+                <li><a href="ProductServlet?action=allProduct">PORTFOLIO</a></li>
                 <li><a href="/pages/users/about.jsp">ABOUT</a></li>
                 <li><a href="/pages/users/contact.jsp">CONTACT</a></li>
             </ul>

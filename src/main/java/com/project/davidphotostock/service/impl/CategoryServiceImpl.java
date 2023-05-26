@@ -8,14 +8,16 @@ import jakarta.ejb.Stateless;
 import jakarta.inject.Inject;
 import java.util.List;
 
-@Stateless
 //Implementamos en la clase su Service correspondiente donde estan los metodos a usar.
 public class CategoryServiceImpl implements CategoryService {
-
-    @Inject
+    
     //Declaramos el interfaz Dao para poder usar la implementacion de sus metodos.
     private ICategoryDao icd;
 
+    public CategoryServiceImpl(ICategoryDao icd) {
+        this.icd = icd;
+    }
+    
     //Metodo para crear un nuevo registro en la base de datos si este no existe.
     @Override
     public void createCategory(Category c) {

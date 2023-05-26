@@ -31,7 +31,7 @@
             You’re invited to reach out to me with any questions or <br>
             queries you may have. I’ll endeavour to get back to you <br>
             as quickly as possible. So, please bear with us.<br><br>           
-            Mail: davidvicario1990@gamil.com<br>
+            Mail: davidphotostock8@gmail.com<br>
             Phone: 618439693</p>
             <ul>
                 <li><a href="https://www.facebook.com/Daisuke8free" target="_blank" class="bi bi-facebook"></a></li>
