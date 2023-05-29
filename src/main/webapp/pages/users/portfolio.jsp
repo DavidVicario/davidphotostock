@@ -41,6 +41,7 @@
                     </c:if>
                 </div>
             </div>
+            <!-- Proyecto de mejora, filtro en cascada...
             <div class="dropdown">
                 <button class="btn-drop btn-bsc" onclick="showDrop('sdd')"> Subcategories</button>
                 <div id="sdd" class="content-dropdown">
@@ -62,6 +63,7 @@
                     <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> C. Foot</a>
                 </div>
             </div>
+            -->
         </div>
         <div class="row-pf">
             <c:if test="${not empty products}">
@@ -72,9 +74,23 @@
                             <div class="content-info">
                                 <div class="pf-text">
                                     <h4 class="hpf">${product.productName}</h4>
-                                    <p class="ppf">€${product.price}</p>
+                                    <c:choose>
+                                        <c:when test="${product.stock == 0}">
+                                            <p class="ppf">Sold Out</p>
+                                        </c:when>
+                                        <c:otherwise>
+                                            <p class="ppf">€${product.price}</p>
+                                        </c:otherwise>
+                                    </c:choose>
                                 </div>
-                                <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                                <c:choose>
+                                    <c:when test="${product.stock == 0}">
+                                        <button class="btn-cart btn-disabled" disabled>Add Cart <i class="bi bi-bag-plus"></i></button>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                                    </c:otherwise>
+                                </c:choose>
                             </div>
                         </div>
                     </div>

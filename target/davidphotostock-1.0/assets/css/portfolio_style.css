@@ -1,8 +1,9 @@
 :root{
     --colorFonds: #000000;
     --colorCompl: #1c1c1c;
+    --colorHovr1: #4e4e4e;
     --colorButtn: #ff9934;
-    --colorHover: #ff8000;
+    --colorHovr2: #ff8000;
     --colorTexts: #ffffff;
 }
 *{
@@ -87,7 +88,11 @@ main{
     background-color: var(--colorButtn);
 }
 .btn-cart:hover{
-    background-color: var(--colorHover);
+    background-color: var(--colorHovr2);
+}
+.btn-disabled{
+    pointer-events: none;
+    background-color: var(--colorHovr1);
 }
 .show-pf{
     display: block;
@@ -125,7 +130,7 @@ main{
 }
 .btn-drop:focus{
     color: var(--colorTexts);
-    background-color: var(--colorHover);
+    background-color: var(--colorHovr2);
 }
 .dropdown {
     position: relative;
@@ -147,7 +152,7 @@ main{
     display: block;
 }
 .dropdown a:hover {
-    background-color: var(--colorHover);
+    background-color: var(--colorHovr2);
 }
 .show-dr {
     display: block;

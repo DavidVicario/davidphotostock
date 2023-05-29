@@ -32,7 +32,7 @@
             queries you may have. I’ll endeavour to get back to you <br>
             as quickly as possible. So, please bear with us.<br><br>           
             Mail: davidphotostock8@gmail.com<br>
-            Phone: 618439693</p>
+            Phone: 617597842</p>
             <ul>
                 <li><a href="https://www.facebook.com/Daisuke8free" target="_blank" class="bi bi-facebook"></a></li>
                 <li><a href="https://www.instagram.com/davidvicariophoto/" target="_blank" class="bi bi-instagram"></a></li>
@@ -42,16 +42,12 @@
             <form class="container-contact" action="/UsersServlet?action=contact" method="post">
                 <label for="name"><b>Name *</b></label>
                 <input id="name" type="text" placeholder="Enter name" name="name" required>                    
-
                 <label for="mail"><b>Mail *</b></label>
                 <input id="mail" type="text" placeholder="Enter mail" name="mail" required>
-
                 <label for="phone"><b>Phone *</b></label>
                 <input id="phone" type="text" placeholder="Enter phone" name="phone" required>            
-
                 <label for="subject">Subject *</label>
                 <textarea id="subject" type="text" placeholder="Your message.." name="subject" style="height:200px" required></textarea>
-
                 <button class="btn-send" onclick="openForm('message')" type="submit">SEND</button>
             </form>
         </div>

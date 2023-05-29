@@ -34,13 +34,12 @@ public class ProductServlet extends HttpServlet {
             throws ServletException, IOException {
 
         String action = request.getParameter("action");
-
         
         // Chequear si el usuario quiere ver todos los productos
         if (action != null && action.equals("allProduct")) {
             this.showAllProduct(request, response);
         } else {
-            // Si no, delegar a doPost como antes
+            // Si no, delegar a doPost
             doPost(request, response);
         }
     }

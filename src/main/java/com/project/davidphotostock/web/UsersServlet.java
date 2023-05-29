@@ -19,26 +19,28 @@ import com.sendgrid.*;
 import com.sendgrid.helpers.mail.Mail;
 import com.sendgrid.helpers.mail.objects.Content;
 import com.sendgrid.helpers.mail.objects.Email;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(name = "UsersServlet", urlPatterns = {"/UsersServlet"})
 public class UsersServlet extends HttpServlet {
 
     UsersService us;
-    
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        doPost(request,response);
+
+        doPost(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String action = request.getParameter("action");
-        if (action != null){
-            switch (action){
+        if (action != null) {
+            switch (action) {
                 case "create":
                     this.signUpUser(request, response);
                     break;
@@ -54,28 +56,31 @@ public class UsersServlet extends HttpServlet {
                 case "contact":
                     this.contactForm(request, response);
                     break;
-                default: 
+                case "cart":
+                    this.addCart(request, response);
+                    break;
+                default:
                     this.actionDefault(request, response);
             }
         } else {
             this.actionDefault(request, response);
         }
     }
-    
+
     private void actionDefault(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        
+            throws ServletException, IOException {
+
         response.sendRedirect("index.jsp");
     }
-    
+
     //Metodo para dar de alta un usuario.
     private void signUpUser(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        
+            throws ServletException, IOException {
+
         IUsersDao iud = new IUsersDaoImpl(getInstance());
-        
+
         us = new UsersServiceImpl(iud);
-        
+
         String name = request.getParameter("name");
         String firstSurname = request.getParameter("fsurname");
         String secondSurname = request.getParameter("ssurname");
@@ -83,60 +88,60 @@ public class UsersServlet extends HttpServlet {
         String username = request.getParameter("user");
         String password = request.getParameter("pass");
         String cPassword = request.getParameter("cpass");
-        
+
         if (!password.equals(cPassword)) {
             request.getSession().setAttribute("errorMessage", "Las contraseñas no coinciden.");
             request.getSession().setAttribute("errorActive", true);
             request.getRequestDispatcher("includes/forms/errorPage.jsp").forward(request, response);
             return;
         }
-        
+
         Users user = new Users(name, firstSurname, secondSurname, mail, username, password);
-        
-        if (!us.createUser(user)){
+
+        if (!us.createUser(user)) {
             request.getSession().setAttribute("errorActive", true);
             request.getRequestDispatcher("includes/forms/errorPage.jsp").forward(request, response);
         }
         response.sendRedirect("index.jsp");
     }
-    
+
     //Metodo para login de un usuario
     private void loginUser(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        
+            throws ServletException, IOException {
+
         IUsersDao iud = new IUsersDaoImpl(getInstance());
-        
+
         us = new UsersServiceImpl(iud);
-        
+
         String username = request.getParameter("user");
         String password = request.getParameter("pass");
 
         Users user = us.obtainUserByUsernameAndPass(username, password);
-        
+
         if (user != null) {
-        HttpSession session = request.getSession();
-        session.setAttribute("user", user);
+            HttpSession session = request.getSession();
+            session.setAttribute("user", user);
             //Si el usuario selecciona "Recordarme", guarda su nombre de usuario en una Cookie.
-            if("on".equals(request.getParameter("remember"))) {
+            if ("on".equals(request.getParameter("remember"))) {
                 Cookie usernameCookie = new Cookie("username", username);
-                usernameCookie.setMaxAge(60*60*24*15); // 15 días
+                usernameCookie.setMaxAge(60 * 60 * 24 * 15); // 15 días
                 response.addCookie(usernameCookie);
             }
-            if (username.equals("admin")){
+            if (username.equals("admin")) {
                 response.sendRedirect("UsersAdminServlet");
             } else {
                 response.sendRedirect("index.jsp");
-            }   
-        } 
-        else {
+            }
+        } else {
             request.setAttribute("message", "Compruebe su usuario o contraseña.");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
-    
+
     // Método para comprobar si un usuario ha iniciado sesión
     private void checkLogin(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
         HttpSession session = request.getSession();
         Users user = (Users) session.getAttribute("user");
 
@@ -149,33 +154,33 @@ public class UsersServlet extends HttpServlet {
             out.print("");
         }
 
-        System.out.println("El Usuario es: "+user);
+        System.out.println("El Usuario es: " + user);
         out.flush();
     }
-    
+
     // Método para cerrar sesion de usuario.
     private void logoutUser(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        
-        HttpSession session = request.getSession();
-        session.invalidate(); 
+            throws ServletException, IOException {
 
-        response.sendRedirect("index.jsp"); 
+        HttpSession session = request.getSession();
+        session.invalidate();
+
+        response.sendRedirect("index.jsp");
     }
-    
-    
+
     private void contactForm(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
+            throws ServletException, IOException {
+        
         String name = request.getParameter("name");
         String mail = request.getParameter("mail");
         String phone = request.getParameter("phone");
         String subject = request.getParameter("subject");
 
         // Definir el cuerpo del correo
-        String body = "Nombre: " + name + "\n" +
-                      "Correo: " + mail + "\n" +
-                      "Teléfono: " + phone + "\n" +
-                      "Asunto: " + subject;
+        String body = "Nombre: " + name + "\n"
+                + "Correo: " + mail + "\n"
+                + "Teléfono: " + phone + "\n"
+                + "Asunto: " + subject;
 
         // Definir los correos de envío y recepción
         Email from = new Email("davidphotostock8@gmail.com");
@@ -208,7 +213,39 @@ public class UsersServlet extends HttpServlet {
         } catch (IOException ex) {
             throw ex;
         }
-        
     }
-    
+
+    private void addCart(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        response.setContentType("text/html;charset=UTF-8");
+
+        HttpSession session = request.getSession();
+
+        List<String> articulos = (List<String>) session.getAttribute("articulos");
+
+        if (articulos == null) {
+            articulos = new ArrayList<>();
+            session.setAttribute("articulos", articulos);
+        }
+
+        String articuloNuevo = request.getParameter("articulo");
+
+        if (articuloNuevo != null && !articuloNuevo.trim().equals("")) {
+            articulos.add(articuloNuevo);
+        }
+
+        PrintWriter out = response.getWriter();
+        out.print("<h1>Lista de articulos</h1>");
+        out.print("<br />");
+
+        for (String articulo : articulos) {
+            out.print("<li>" + articulo + "</li>");
+        }
+
+        out.print("<br />");
+        out.print("<a href:'/CarritoCompras'> Regresar al inicio </a>");
+        out.close();
+
+    }
 }

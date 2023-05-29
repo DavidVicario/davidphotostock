@@ -33,7 +33,9 @@
             </div>
         </div>                    
         <div class="shop">
-            <a href="" class="bi bi-bag"></a>
+            <a href="" class="bi bi-bag">
+                <span class="badge">3</span>
+            </a>
         </div>
     </div>
 </header>
