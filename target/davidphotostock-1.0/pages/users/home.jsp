@@ -40,7 +40,7 @@
                 <div class="image-slider flowers" data-desktop-content-width="auto" data-tablet-content-width="auto" 
                 data-bg-alignment="center" data-color-scheme="light" data-x-pos="centered" data-y-pos="middle"></div>
                 <div class="content-slider">
-                    <h1 class="head-slider">FLOWER</h1>
+                    <h1 class="head-slider">NATURE</h1>
                     <p class="subhead-slider">
                         <span>Ephemeral beauty</span>
                     </p>
@@ -55,7 +55,7 @@
                 <div class="image-slider insect" data-desktop-content-width="auto" data-tablet-content-width="auto" 
                 data-bg-alignment="center" data-color-scheme="light" data-x-pos="centered" data-y-pos="middle"></div>
                 <div class="content-slider">
-                    <h1 class="head-slider">INSECT</h1>
+                    <h1 class="head-slider">MACRO</h1>
                     <p class="subhead-slider">
                         <span>Little warrior</span>
                     </p>

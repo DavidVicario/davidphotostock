@@ -19,3 +19,17 @@ function animateX(x) {
     //Alterna la clase "change" en el elemento x, que representa el ícono
     x.classList.toggle("change");
 }
+
+window.onload = function () {
+    // Seleccionar los elementos necesarios
+    let shop = document.querySelector('.shop');
+    let cart = document.querySelector('.cesta');
+
+    shop.addEventListener('mouseenter', function () {
+        cart.style.visibility = "visible";
+    });
+
+    shop.addEventListener('mouseleave', function () {
+        cart.style.visibility = "hidden";
+    });
+}

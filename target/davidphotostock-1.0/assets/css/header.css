@@ -97,11 +97,16 @@ a > .name{
     color: var(--color1);
     cursor: pointer;
 }
+.list-header > li:hover a{
+    opacity: 0.7;
+    text-shadow: 0 0 5px var(--color2);
+}
 /*----- SHOP -----*/
 .header-row > .shop{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 .shop > .bi{
     margin: 10px;
@@ -111,15 +116,34 @@ a > .name{
     font-size: 1.2rem;
     -webkit-text-stroke: 1.5px var(--color1);
 }
-/*----- HOVER -----*/
-.header-row ul > li:hover a{
-    opacity: 0.7;
-    text-shadow: 0 0 5px var(--color2);
+/*-----MEDIDOR CARRITO-----*/
+.badge {
+    position: absolute;
+    top: 8px;
+    right: 0;
+    padding: 2px 6px;
+    border-radius: 50%;
+    background: var(--color3);
+    font-size: 12px;
+    -webkit-text-stroke: 0.8px var(--color1);
+}
+.cesta{
+    position: absolute;
+    background-color: var(--color1);
+    top: 45px;
+    right: 0;
+    width: 400px;
+    height: 300px;
+    border: 1.5px solid var(--color2);
+    color: var(--color2);
+    visibility: hidden;
 }
 .header-row > .shop > .bi:hover{
     opacity: 0.7;
     text-shadow: 0 0 5px var(--color2);
 }
+
+
 /*----- ICON CLOSE -----*/
 .mobile-close-header{
     display: none;
@@ -148,19 +172,6 @@ a > .name{
 }
 .change > .bar3{
     transform: translate(0, -10px) rotate(45deg);
-}
-.shop{
-    position: relative;
-}
-/*-----MEDIDOR CARRITO-----*/
-.badge {
-    position: absolute;
-    top: 8px;
-    right: 0;
-    padding: 2px 6px;
-    border-radius: 50%;
-    background: var(--color3);
-    font-size: 12px;
 }
 
 /*----- MOBILE -----*/
