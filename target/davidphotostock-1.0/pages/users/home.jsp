@@ -86,8 +86,10 @@
         </section>
     
     
-        <div class="content-home">
-            <div class="image-home travel image-left"></div>
+        <div class="content-home-uno">
+            <div class="image-home travel">
+                <div class="image-content"></div>
+            </div>
             <div class="container-home">
                 <h1>ESTE TEXTO ES DE PRUEBA </h1>
                 <p>
@@ -98,8 +100,8 @@
             </div>
         </div>
     
-        <div class="content-home">
-            <div class="container-home">
+        <div class="content-home-dos">            
+            <div class="container-home">                
                 <h1>ESTE TEXTO ES DE PRUEBA </h1>
                 <p>
                     Este texto es para probar los espacios y ver como quedan 
@@ -107,11 +109,15 @@
                     espacios y ver como quedan los colores y los div.
                 </p>
             </div>
-            <div class="image-home author image-right"></div>
+            <div class="image-home author">
+                <div class="image-content"></div>
+            </div>            
         </div>
     
-        <div class="content-home">
-            <div class="image-home nature image-left"></div>
+        <div class="content-home-uno">
+            <div class="image-home nature">
+                <div class="image-content"></div>
+            </div>            
             <div class="container-home">
                 <h1>ESTE TEXTO ES DE PRUEBA </h1>
                 <p>
@@ -122,16 +128,18 @@
             </div>
         </div>
     
-        <div class="content-home">
+        <div class="content-home-dos">             
             <div class="container-home">
-                <h1>ESTE TEXTO ES DE PRUEBA </h1>
-                <p>
+                <h1 class="hh">ESTE TEXTO ES DE PRUEBA </h1>
+                <p class="hp">
                     Este texto es para probar los espacios y ver como quedan 
                     los colores y los div. Este texto es para probar los 
                     espacios y ver como quedan los colores y los div.
                 </p>
             </div>
-            <div class="image-home abstract image-right"></div>
+            <div class="image-home abstract">
+                <div class="image-content"></div>
+            </div>
         </div>
     
     
