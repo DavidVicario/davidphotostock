@@ -4,6 +4,13 @@
     --color3: #ff9933; /*rgb(255, 153, 51)*/
     --color4: #001fcf;
     --color5: #191a30;
+    
+    --colorFonds: #000000;
+    --colorCompl: #1c1c1c;
+    --colorHovr1: #4e4e4e;
+    --colorButtn: #ff9934;
+    --colorHovr2: #ff8000;
+    --colorTexts: #ffffff;
 }
 *{
     margin: 0;
@@ -106,11 +113,12 @@ a > .name{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: relative;    
 }
 .shop > .bi{
-    margin: 10px;
-    padding: 5px 0;
+    width: 100%;
+    margin: 0 10px 0 10px;
+    padding: 0px 5px 0 5px;
     border: 1px solid transparent;
     color: var(--color1);
     font-size: 1.2rem;
@@ -120,27 +128,127 @@ a > .name{
 .badge {
     position: absolute;
     top: 8px;
-    right: 0;
+    right: 4px;
     padding: 2px 6px;
     border-radius: 50%;
     background: var(--color3);
     font-size: 12px;
     -webkit-text-stroke: 0.8px var(--color1);
 }
-.cesta{
+.contain-cart{
     position: absolute;
     background-color: var(--color1);
-    top: 45px;
-    right: 0;
-    width: 400px;
-    height: 300px;
-    border: 1.5px solid var(--color2);
+    top: 40px;
+    right: -1px;
+    width: 400px;    
+    max-height: auto;   
+    border-color: var(--color2);
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
     color: var(--color2);
     visibility: hidden;
+    
+    display: flex; /* Añadimos display: flex */
+    flex-direction: column; /* Hacemos que los elementos se dispongan verticalmente */
+    overflow: hidden;
 }
-.header-row > .shop > .bi:hover{
-    opacity: 0.7;
-    text-shadow: 0 0 5px var(--color2);
+.contain-cart:before{
+    content: " ";
+    position: absolute;
+    height: 1px;
+    width: calc(100% - 51px);
+    background-color: white;
+}
+.title-cart{
+    font-size: 20px;
+    padding-left: 5px;
+    padding-bottom: 8px;
+    margin: 10px 5px 5px 5px;
+    border-bottom: 1.5px solid var(--color2);
+}
+.container-item{
+    margin: 5px;
+    border-bottom: 1.5px solid var(--color2);    
+    overflow-y: auto; /* Aquí es donde hacemos la lista de items desplazable */
+    flex-grow: 1; /* Esto hará que .container-item ocupe todo el espacio disponible */
+}
+.item-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px 10px 10px;
+}
+.left-item{
+    display: flex;
+    align-items: center;
+}
+.right-item .detail-item{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+.detail-item{
+    font-size: 15px;
+}
+.amout-item{
+    margin: 5px;
+}
+.price-item{
+    margin: 5px 10px 5px 5px;
+}
+.remove-item{
+    font-size: 25px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+.img-item{
+    width: 60px;
+    height: 45px;
+    margin-right: 5px;
+    border: 1.5px solid var(--colorLetra);
+}
+.amout-item > input[type="text"]{
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    text-align: center;
+    background-color: var(--colorCompl);
+    color: var(--colorLetra);
+    display: inline-block;
+    border: 1.5px solid var(--colorLetra);
+    box-sizing: border-box;
+}
+.amout-item > input[type="text"]:focus{
+    border: 1.5px solid var(--colorLetra);
+    background-color: var(--colorHovr1);
+}
+.btn-item{
+    background-color: var(--colorBoton);
+    color: var(--colorLetra);
+    padding: 8px 5px ;
+    margin: 10px;
+    border: 1.5px solid var(--colorLetra);
+    cursor: pointer;
+    text-align: center;
+    width: 80px;
+}
+.btn-item:hover{
+    background-color: var(--colorHovr2);
+}
+.shop:hover{
+    color: var(--color2);
+    background-color: var(--color1);
+    border-color: var(--color2);
+    border-style: solid;
+    border-width: 1.5px 1.5px 0px 1.5px;
+}
+.shop:hover > .bi{
+    color: var(--color2);
+    -webkit-text-stroke: 1px var(--color2);
+}
+.shop:hover > .bi > .badge{
+    -webkit-text-stroke: 1px var(--color1) !important;
 }
 
 

@@ -84,6 +84,7 @@ textarea:focus {
 }
 .btn-send:hover {
     background-color: var(--colorButtn);
+    border: 1.5px solid var(--colorTexts);
     color: var(--colorTexts);
 }
 

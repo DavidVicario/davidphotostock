@@ -85,6 +85,7 @@ main{
     border: none;
     cursor: pointer;
     color: var(--colorTexts);
+    border: 1.5px solid var(--colorTexts);
     background-color: var(--colorButtn);
 }
 .btn-cart:hover{
@@ -112,6 +113,7 @@ main{
 }
 .btn-bsc:hover {
     color: var(--colorTexts);
+    border: 1.5px solid var(--colorTexts);
     background-color: var(--colorButtn);
 }
 /*----- Dropdown -----*/

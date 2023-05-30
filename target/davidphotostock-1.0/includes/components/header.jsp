@@ -33,33 +33,37 @@
             </div>
         </div>                    
         <div class="shop">
-            <a href="" class="bi bi-bag">
+            <i class="bi bi-bag">
                 <span class="badge">3</span>
-            </a>
-            <div class="cesta hidden">
-                <h2>Items:</h2>
-                <form action="action">
+            </i>
+            <div class="contain-cart">
+                <h2 class="title-cart">Items:</h2>
+                <form class="container-item">
                     <ul>
-                        <li>
-                            <a><img src="src" alt="alt"/></a>                             
-                            <div class="item-detail">
-                                <a>Nombre foto</a>
+                        <li class="item-row">
+                            <div class="left-item">
+                                <img class="img-item" src="/assets/img/flowers(1).jpg" alt="Flower"/>                             
+                                <div class="detail-item">
+                                    <span>Nombre foto</span>
+                                </div>
                             </div>
-                            <div class="item-detail">
-                                <div class="amout-item">
-                                    <input type="number" name="name" value="1" autocomplete="off">
-                                </div>
-                                <div class="price-item">
-                                    <span class="price">Precio</span>
-                                </div>
-                                <div class="remove-item">
-                                    <span onclick="" class="remove">&times;</span>
+                            <div class="right-item">
+                                <div class="detail-item">
+                                    <div class="amout-item">
+                                        <input type="text" name="name" value="1" autocomplete="off">
+                                    </div>
+                                    <div class="price-item">
+                                        <span class="price">Precio</span>
+                                    </div>
+                                    <div class="remove-item">
+                                        <span onclick="" class="remove">&times;</span>
+                                    </div>
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </form>
-                <a>Checkout</a>
+                <a href="" class="btn-item">Cart</a>
             </div>
         </div>
     </div>

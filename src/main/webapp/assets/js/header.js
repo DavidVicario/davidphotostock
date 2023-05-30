@@ -1,5 +1,4 @@
 //Función que muestra el menu
-
 //Selecciono el elemento con la clase "mobile-close-header"
 //Boton que activa la funcion para mostrar y ocultar el menú.
 const mobileCloseHeader = document.querySelector(".mobile-close-header");
@@ -20,16 +19,16 @@ function animateX(x) {
     x.classList.toggle("change");
 }
 
-window.onload = function () {
-    // Seleccionar los elementos necesarios
-    let shop = document.querySelector('.shop');
-    let cart = document.querySelector('.cesta');
+//Función que muestra el carrito
+// Selecciona el elemento de la tienda
+let shop = document.querySelector('.shop');
+let cart = document.querySelector('.contain-cart');
 
-    shop.addEventListener('mouseenter', function () {
-        cart.style.visibility = "visible";
-    });
+// Agrega un controlador de eventos para cuando el mouse entra en el elemento
+shop.addEventListener('mouseenter', function () {
+    cart.style.visibility = "visible";
+});
 
-    shop.addEventListener('mouseleave', function () {
-        cart.style.visibility = "hidden";
-    });
-}
+shop.addEventListener('mouseleave', function () {
+    cart.style.visibility = "hidden";
+});
