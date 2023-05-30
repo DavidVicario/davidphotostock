@@ -88,7 +88,7 @@
                                         <button class="btn-cart btn-disabled" disabled>Add Cart <i class="bi bi-bag-plus"></i></button>
                                     </c:when>
                                     <c:otherwise>
-                                        <button class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></button>
+                                    <a href="/ProductServlet?action=addCart&idProduct=${product.idProduct}" class="btn-cart">Add Cart <i class="bi bi-bag-plus"></i></a>
                                     </c:otherwise>
                                 </c:choose>
                             </div>

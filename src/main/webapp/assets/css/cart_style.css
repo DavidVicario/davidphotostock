@@ -1,0 +1,148 @@
+:root{
+    --color1: #141414;
+    --color2: #ffffff;
+    --color3: #ff9933; /*rgb(255, 153, 51)*/
+    --color4: #001fcf;
+    --color5: #191a30;
+    
+    --colorFonds: #000000;
+    --colorCompl: #1c1c1c;
+    --colorHovr1: #4e4e4e;
+    --colorButtn: #ff9934;
+    --colorHovr2: #ff8000;
+    --colorTexts: #ffffff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background-color: var(--colorFonds);
+}
+.title-main{
+    color: var(--colorTexts);
+}
+.hm{
+    font-size: 25px;
+    padding: 25px 0 5px 20px;
+}
+.pm{
+    font-size: 20px;
+    padding: 5px 0 15px 20px;
+}
+/*----- SHOP -----*/
+.section-buy{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-bottom: 60px;
+}
+.contain-buy{
+    margin: 5% auto 8% auto;
+    background-color: var(--color1);
+    width: 80%;    
+    max-height: auto;
+    color: var(--color2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.title-buy{
+    font-size: 24px;
+    padding-left: 10px;
+    padding-bottom: 12px;
+    margin: 20px 5px 5px 5px;
+    border-bottom: 2.5px solid var(--color2);
+}
+.container-buy{
+    margin: 5px;
+    border-bottom: 1.5px solid var(--color2);    
+    overflow-y: auto;
+    flex-grow: 1;
+}
+.img-buy{
+    width: 180px;
+    height: 120px;
+    margin-right: 5px;
+    border: 1.5px solid var(--colorLetra);
+}
+.buy-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px 5px 10px;
+    margin: 0 5px 10px 5px;
+    background-color: var(--colorCompl);
+}
+.left-buy{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.right-buy .detail-buy{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 19px;
+}
+.detail-buy{
+    font-size: 20px;
+    margin: 10px;
+}
+.amout-buy{
+    margin-right: 50px;
+}
+.price-buy{
+    margin-right: 50px;
+}
+.remove-buy{
+    font-size: 40px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+.amout-buy > input[type="number"]{
+    width: 45px;
+    height: 45px;
+    padding: 5px;
+    font-size: 20px;
+    text-align: center;
+    background-color: var(--colorFonds);
+    color: var(--colorLetra);
+    display: inline-block;
+    border: 1.5px solid var(--colorLetra);
+    box-sizing: border-box;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.amout-buy > input[type="number"]:focus{
+    border: 1.5px solid var(--colorLetra);
+    background-color: var(--colorHovr1);
+}
+.contain-btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+.btn-buy{
+    background-color: var(--colorBoton);
+    color: var(--colorLetra);
+    padding: 15px 0;
+    margin: 12px 0 12px 0;
+    border: 1.5px solid var(--colorLetra);
+    cursor: pointer;
+    text-align: center;
+    width: 20%;
+}
+.btn-buy:hover{
+    background-color: var(--colorHovr2);
+}

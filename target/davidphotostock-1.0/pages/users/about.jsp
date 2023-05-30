@@ -22,7 +22,7 @@
     <jsp:include page="/includes/components/subheader.jsp">
         <jsp:param name="title" value="ABOUT" />
         <jsp:param name="description1" value="Texto de prueba" />
-        <jsp:param name="image" value="/assets/img/header3.jpg" />
+        <jsp:param name="image" value="/assets/img/header3.png" />
     </jsp:include>
     <main>
         <h3 class="title-main hm">My Worldview</h3>

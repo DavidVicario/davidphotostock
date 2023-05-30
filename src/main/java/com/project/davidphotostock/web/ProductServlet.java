@@ -18,9 +18,11 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "ProductServlet", urlPatterns = {"/ProductServlet"})
@@ -50,8 +52,17 @@ public class ProductServlet extends HttpServlet {
 
         String action = request.getParameter("action");
         
-        this.actionDefault(request, response);
-        
+        if (action != null) {
+            switch (action) {                
+                case "addCart":
+                    this.addCart(request, response);
+                    break;                
+                default:
+                    this.actionDefault(request, response);
+            }
+        } else {
+            this.actionDefault(request, response);
+        }
     }
 
     private void actionDefault(HttpServletRequest request, HttpServletResponse response)
@@ -78,6 +89,33 @@ public class ProductServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
+    private void addCart(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        HttpSession session = request.getSession();
+
+        List<Product> cart = (List<Product>) session.getAttribute("cart");
+
+        if (cart == null) {
+            cart = new ArrayList<>();
+            session.setAttribute("cart", cart);
+        }
+
+        String idProduct = request.getParameter("idProduct");
+
+        if (idProduct != null && !idProduct.trim().equals("")) {
+            int productId = Integer.parseInt(idProduct);
+            Product product = ps.obtainProductById(productId);
+            if (product != null) {
+                cart.add(product);
+            }
+        }
+
+        response.sendRedirect("pages/users/portfolio.jsp");
+
+    }
+    
+    
     private void signUpProduct(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         /*

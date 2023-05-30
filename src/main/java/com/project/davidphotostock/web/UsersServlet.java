@@ -2,6 +2,7 @@ package com.project.davidphotostock.web;
 
 import com.project.davidphotostock.data.IUsersDao;
 import com.project.davidphotostock.data.impl.IUsersDaoImpl;
+import com.project.davidphotostock.domain.Product;
 import com.project.davidphotostock.domain.Users;
 import com.project.davidphotostock.service.UsersService;
 import com.project.davidphotostock.service.impl.UsersServiceImpl;
@@ -55,10 +56,7 @@ public class UsersServlet extends HttpServlet {
                     break;
                 case "contact":
                     this.contactForm(request, response);
-                    break;
-                case "cart":
-                    this.addCart(request, response);
-                    break;
+                    break;                
                 default:
                     this.actionDefault(request, response);
             }
@@ -154,7 +152,6 @@ public class UsersServlet extends HttpServlet {
             out.print("");
         }
 
-        System.out.println("El Usuario es: " + user);
         out.flush();
     }
 
@@ -214,38 +211,5 @@ public class UsersServlet extends HttpServlet {
             throw ex;
         }
     }
-
-    private void addCart(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        response.setContentType("text/html;charset=UTF-8");
-
-        HttpSession session = request.getSession();
-
-        List<String> articulos = (List<String>) session.getAttribute("articulos");
-
-        if (articulos == null) {
-            articulos = new ArrayList<>();
-            session.setAttribute("articulos", articulos);
-        }
-
-        String articuloNuevo = request.getParameter("articulo");
-
-        if (articuloNuevo != null && !articuloNuevo.trim().equals("")) {
-            articulos.add(articuloNuevo);
-        }
-
-        PrintWriter out = response.getWriter();
-        out.print("<h1>Lista de articulos</h1>");
-        out.print("<br />");
-
-        for (String articulo : articulos) {
-            out.print("<li>" + articulo + "</li>");
-        }
-
-        out.print("<br />");
-        out.print("<a href:'/CarritoCompras'> Regresar al inicio </a>");
-        out.close();
-
-    }
+    
 }
