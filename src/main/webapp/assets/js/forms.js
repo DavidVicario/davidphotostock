@@ -1,3 +1,8 @@
+//Impido el click derecho en todo el proyecto.
+document.oncontextmenu = function() {
+    return false;
+}
+
 //Función para abrir formularios
 function openForm(formName) {
     if (formName == 'login') {

@@ -76,7 +76,7 @@
                 <c:forEach var="product" items="${products}">
                     <div class="column-pf ${product.idSubcategory.idCategory.categoryName} ${product.idSubcategory.subcategoryName}">
                         <div class="content-pf">
-                            <img src="/assets/img/flowers(1).jpg" alt="Flower" style="width:100%">
+                            <img src="/assets/img/flowers(1).jpg" class="id-image" alt="Flower" style="width:100%">
                             <div class="content-info">
                                 <div class="pf-text">
                                     <h4 class="hpf">${product.productName}</h4>
@@ -100,9 +100,13 @@
                             </div>
                         </div>
                     </div>
+                    <div id="zoom-modal" class="zoom-modal">
+                        <span class="close-modal">&times;</span>
+                        <img class="modal-content" id="zoom-image">
+                    </div>
                 </c:forEach>
             </c:if>
-        </div>
+        </div>        
         <jsp:include page="/includes/forms/login.jsp"/>
         <jsp:include page="/includes/forms/signup.jsp"/>
     </main>
