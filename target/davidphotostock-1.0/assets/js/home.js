@@ -24,11 +24,11 @@ function showSlides(n) {
     let slides = document.getElementsByClassName("wrapper-slider");
     //Si llega al final del slider y se mostrará la primera img
     if (n > slides.length) {
-        slideIndex = 1
+        slideIndex = 1;
     }
     //Si se retrocede desde la primera img, se mostrará la última img
     if (n < 1) {
-        slideIndex = slides.length
+        slideIndex = slides.length;
     }
     //Itera sobre cada  slides y establezco "none" para ocultarlos
     for (let i = 0; i < slides.length; i++) {
@@ -63,49 +63,3 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(element);
     });
 });
-
-//Boton de TOP
-
-let btnTop = document.getElementById("btn-top");
-
-window.onscroll = function () {
-    scrollFunction()
-    indicator()
-};
-
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        btnTop.style.display = "block";
-    } else {
-        btnTop.style.display = "none";
-    }
-}
-
-btnTop.addEventListener('click', goTop);
-
-function goTop() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-
-//Medidor de Scroll
-const circle = document.querySelector('.progress-ring-circle');
-const radius = circle.r.baseVal.value;
-const circumference = radius * 2 * Math.PI;
-
-circle.style.strokeDasharray = `${circumference} ${circumference}`;
-circle.style.strokeDashoffset = `${circumference}`;
-
-function setProgress(percent) {
-    const offset = circumference - percent / 100 * circumference;
-    circle.style.strokeDashoffset = offset;
-}
-
-function indicator() {
-    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrolled = (winScroll / height) * 100;
-    setProgress(scrolled);
-}
-
-window.addEventListener('scroll', indicator);

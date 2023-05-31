@@ -25,6 +25,12 @@
         <jsp:param name="description1" value="My view of the world through the camera lens." />
         <jsp:param name="image" value="/assets/img/social(1).jpg" />
     </jsp:include>
+    <a class="btn-top" id="btn-top">
+        <svg class="progress-ring" width="60" height="60">
+            <circle class="progress-ring-circle" stroke="#ff8000" stroke-width="3" fill="#ffffff" r="28" cx="30" cy="30"/>
+            <text x="50%" y="50%" text-anchor="middle" stroke="#ff9934" fill="#ff9934" dy=".3em">TOP</text>
+        </svg>
+    </a>
     <main>
         <h3 class="title-main hm">My Worldview</h3>
         <p class="title-main pm">Printed on silk photography paper, 250 grm.<br>
@@ -104,5 +110,6 @@
     <script src="/assets/js/portfolio.js"></script>
     <script src="/assets/js/header.js"></script>
     <script src="/assets/js/forms.js"></script>
+    <script src="/assets/js/top.js"></script>
 </body>
 </html>

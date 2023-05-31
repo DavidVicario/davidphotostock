@@ -24,6 +24,12 @@
         <jsp:param name="description1" value="I'd love to hear from you" />
         <jsp:param name="image" value="/assets/img/social(3).jpg" />
     </jsp:include>
+    <a class="btn-top" id="btn-top">
+        <svg class="progress-ring" width="60" height="60">
+            <circle class="progress-ring-circle" stroke="#ff8000" stroke-width="3" fill="#ffffff" r="28" cx="30" cy="30"/>
+            <text x="50%" y="50%" text-anchor="middle" stroke="#ff9934" fill="#ff9934" dy=".3em">TOP</text>
+        </svg>
+    </a>
     <main>
         <div class="title-main">
             <h3 class="hm">Contact me</h3>
@@ -65,5 +71,6 @@
     <jsp:include page="/includes/components/footer.jsp"/>
     <script src="/assets/js/header.js"></script>
     <script src="/assets/js/forms.js"></script>
+    <script src="/assets/js/top.js"></script>
 </body>
 </html>
