@@ -147,9 +147,6 @@ input[type="checkbox"] + label {
     font-size: 13px;
 }
 
-
-
-
 /*----- Sign Up -----*/
 .section-signup{
     display: none;
@@ -245,7 +242,6 @@ input[type="password"]:focus {
         z-index: 100;
     }
 }
-
 @media screen and (max-width: 750px) {
     .section-signup > .content-signup{
         width: 450px;

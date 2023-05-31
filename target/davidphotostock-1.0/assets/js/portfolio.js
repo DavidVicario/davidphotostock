@@ -106,7 +106,9 @@ window.onload = function() {
 
 // Dropdown Cascada -- En proceso...
 /*
-//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_cascading_dropdown
+    https://www.w3schools.com/howto/howto_css_modal_images.asp
+ * 
+    https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_cascading_dropdown
 const subjectObject = {
     "Front-end": {
         "Author": ["Author", "Abstract"],

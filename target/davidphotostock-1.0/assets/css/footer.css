@@ -4,18 +4,26 @@
     --color3: #ff9933; /*rgb(255, 153, 51)*/
     --color4: #001fcf;
     --color5: #191a30;
+    
+    --colorFonds: #000000;
+    --colorCompl: #1c1c1c;
+    --colorHovr1: #4e4e4e;
+    --colorButtn: #ff9934;
+    --colorHovr2: #ff8000;
+    --colorTexts: #ffffff;
 }
 *{
     margin: 0;
     padding: 0;
     list-style: none;
+    user-select: none;
     text-decoration: none;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
 /*----- FOOTER -----*/
 footer{
-    background-color: #1c1c1c;
+    background-color: var(--colorCompl);
 }
 .footer-container{
     display: flex;
@@ -54,18 +62,12 @@ footer{
     margin: 0 10px;
     padding: 10px;
     cursor: pointer;
-    border-bottom: 1px solid transparent;
     color: var(--color3);
-    transition: border-bottom 0.3s ease-in-out;
 }
 .networks ul li a{
-    color: var(--color2);
+    color: var(--colorTexts);
     font-size: 1.8em;
 }
-.networks ul li:hover{
-    border-bottom: 1px solid var(--color3);
-    text-shadow: 0 0 10px var(--color3);
-}
 .networks ul li:hover a{
-    color: var(--color3);
+    color: var(--colorButtn);
 }

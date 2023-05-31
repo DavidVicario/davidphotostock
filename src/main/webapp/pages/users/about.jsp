@@ -28,6 +28,12 @@
         <h3 class="title-main hm">My Worldview</h3>
         <p class="title-main pm">Printed on silk photography paper, 250 grm.<br>
         All images have a size of 100x70 cm.</p>
+        
+        
+        <svg class="progress-ring" width="120" height="120">
+            <circle class="progress-ring__circle" stroke="blue" stroke-width="4" fill="transparent" r="52" cx="60" cy="60"/>
+            <text x="50%" y="50%" text-anchor="middle" stroke="#51c5cf" stroke-width="1px" dy=".3em">TOP</text>
+        </svg>
         <jsp:include page="/includes/forms/login.jsp"/>
         <jsp:include page="/includes/forms/signup.jsp"/>
     </main>
