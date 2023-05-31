@@ -61,7 +61,10 @@ public class ProductServlet extends HttpServlet {
             switch (action) {                
                 case "addCart":
                     this.addCart(request, response);
-                    break;                
+                    break;
+                case "removeCart":
+                    this.removeCart(request, response);
+                    break;
                 default:
                     this.actionDefault(request, response);
             }
@@ -108,7 +111,6 @@ public class ProductServlet extends HttpServlet {
 
         if (cart == null) {
             cart = new ArrayList<>();
-            session.setAttribute("cart", cart);
         }
 
         String idProduct = request.getParameter("idProduct");
@@ -120,9 +122,35 @@ public class ProductServlet extends HttpServlet {
                 cart.add(product);
             }
         }
+        session.setAttribute("cart", cart);
+        
+        showAllProduct(request, response);
+    }
+    
+    private void removeCart(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        HttpSession session = request.getSession();
 
-        response.sendRedirect("pages/users/portfolio.jsp");
-
+        List<Product> cart = (List<Product>) session.getAttribute("cart");
+        
+        String idProduct = request.getParameter("idProduct");
+        
+        if (idProduct != null && !idProduct.trim().equals("")) {
+            int productId = Integer.parseInt(idProduct);
+            cart.remove(productId);
+        }
+        session.setAttribute("cart", cart);
+        
+        String view = request.getParameter("view");
+        
+        if (view != null){
+            RequestDispatcher dispatcher = request.getRequestDispatcher("pages/users/cart.jsp");
+            dispatcher.forward(request, response);
+        } else {
+            showAllProduct(request, response);
+        }
+        
     }
     
     

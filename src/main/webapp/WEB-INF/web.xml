@@ -29,14 +29,5 @@
     <servlet-mapping>
         <servlet-name>UsersAdminServlet</servlet-name>
         <url-pattern>/UsersAdminServlet</url-pattern>
-    </servlet-mapping>
-    <!--Indicamos Los servlet y el mapeo de la url de product-->
-    <servlet>
-        <servlet-name>ProductServlet</servlet-name>
-        <servlet-class>com.project.davidphotostock.web.ProductServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ProductServlet</servlet-name>
-        <url-pattern>/ProductServlet</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>   
 </web-app>

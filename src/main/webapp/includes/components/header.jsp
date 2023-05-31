@@ -1,5 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="com.project.davidphotostock.domain.Users" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <header class="header-container" id="header-container">
     <div class="header-row">
         <div href="/pages/users/home.jsp" class="header-logo">
@@ -13,7 +16,7 @@
         </div>
         <div class="nav">
             <ul class="list-header">
-                <li><a href="ProductServlet?action=allProduct">PORTFOLIO</a></li>
+                <li><a href="/ProductServlet?action=allProduct">PORTFOLIO</a></li>
                 <li><a href="/pages/users/about.jsp">ABOUT</a></li>
                 <li><a href="/pages/users/contact.jsp">CONTACT</a></li>
             </ul>
@@ -34,20 +37,34 @@
             </div>
         </div>                    
         <div class="shop">
-            <i class="bi bi-bag">
-                <span class="badge">1</span>
-            </i>
+            <c:choose>
+                <c:when test="${not empty cart}">
+                    <i class="bi bi-bag">
+                        <span class="badge">${fn:length(cart)}</span>
+                    </i>
+                </c:when>
+                <c:otherwise>
+                    <i class="bi bi-bag">
+                        <span class="badge badge-hidden"></span>
+                    </i>
+                </c:otherwise>
+            </c:choose>
             <div class="contain-cart">
                 <h2 class="title-cart">Items:</h2>
-                <c:if test="${not empty products}">
-                    <c:forEach var="product" items="${sessionScope.cart}">
+                <c:if test="${empty cart}">
+                    <form class="container-item" style="background-color: red; width: 100px; height: 20px;">
+                        
+                    </form>
+                </c:if>
+                <c:if test="${not empty cart}">
+                    <c:forEach var="item" varStatus="row" items="${cart}">
                         <form class="container-item">
                             <ul>
                                 <li class="item-row">
                                     <div class="left-item">
                                         <img class="img-item" src="/assets/img/flowers(1).jpg" alt="Flower"/>                             
                                         <div class="detail-item">
-                                            <span>${product.productName}</span>
+                                            <span>${item.productName}</span>
                                         </div>
                                     </div>
                                     <div class="right-item">
@@ -56,10 +73,10 @@
                                                 <input type="number" name="name" value="1" autocomplete="off">
                                             </div>
                                             <div class="price-item">
-                                                <p class="price">€${product.price}</p>
+                                                <p class="price">€ ${item.price}</p>
                                             </div>
                                             <div class="remove-item">
-                                                <span onclick="" class="remove">&times;</span>
+                                                <a href="/ProductServlet?action=removeCart&idProduct=${row.index}" class="remove">&times;</a>
                                             </div>
                                         </div>
                                     </div>
@@ -67,8 +84,8 @@
                             </ul>
                         </form>
                     </c:forEach>
-                </c:if>                            
-                <a href="/pages/users/cart.jsp" class="btn-item">Cart</a>
+                    <a href="/pages/users/cart.jsp" class="btn-item">Cart</a>
+                </c:if>
             </div>
         </div>
     </div>

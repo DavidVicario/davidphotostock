@@ -290,7 +290,9 @@ input::-webkit-inner-spin-button {
 .change > .bar3{
     transform: translate(0, -10px) rotate(45deg);
 }
-
+.badge-hidden{
+    display: none;
+}
 /*----- MOBILE -----*/
 @media screen and (max-width: 1132px) {
     .header-container{

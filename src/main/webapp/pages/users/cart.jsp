@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,19 +34,18 @@
         <main>
         <h3 class="title-main hm">Cart</h3>
         <p class="title-main pm">What you want at home.</p>
-        
         <div class="section-buy">            
             <div class="contain-buy">
                 <h4 class="title-buy">Items:</h4>
-                <c:if test="${not empty products}">
-                    <c:forEach var="product" items="${sessionScope.cart}">
+                <c:if test="${not empty cart}">
+                    <c:forEach var="item" varStatus="row" items="${cart}">
                         <form class="container-buy">
                             <ul>
                                 <li class="buy-row">
                                     <div class="left-buy">
                                         <img class="img-buy" src="/assets/img/flowers(1).jpg" alt="Flower"/>                             
                                         <div class="detail-buy">
-                                            <span>Nombre</span>
+                                            <span>${item.productName}</span>
                                         </div>
                                     </div>
                                     <div class="right-buy">
@@ -54,10 +54,10 @@
                                                 <input type="number" name="name" value="1" autocomplete="off">
                                             </div>
                                             <div class="price-buy">
-                                                <p class="price">€200</p>
+                                                <p class="price">€${item.price}</p>
                                             </div>
                                             <div class="remove-buy">
-                                                <span onclick="" class="remove">&times;</span>
+                                                <a href="/ProductServlet?action=removeCart&idProduct=${row.index}&view=cart" class="remove">&times;</a>
                                             </div>
                                         </div>
                                     </div>
@@ -67,13 +67,11 @@
                     </c:forEach>
                 </c:if>
                 <div class="contain-btn">
-                    <a href="/pages/users/portfolio.jsp" class="btn-buy">Continue Shopping</a>
+                    <a href="/ProductServlet?action=allProduct" class="btn-buy">Continue Shopping</a>
                     <a href="" class="btn-buy">Checkout</a>
                 </div>
             </div>
         </div>
-        
-        
         <jsp:include page="/includes/forms/login.jsp"/>
         <jsp:include page="/includes/forms/signup.jsp"/>
         </main>
