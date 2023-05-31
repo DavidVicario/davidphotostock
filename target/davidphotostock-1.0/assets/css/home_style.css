@@ -345,9 +345,9 @@ body{
 }
 .contain-flip{
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Esto crea tres columnas de igual tamaño */
-    gap: 20px; /* Espacio entre cada elemento */
-    justify-items: center; /* Centra los elementos horizontalmente */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
     align-items: center;
     margin: 20px;
 }
@@ -356,7 +356,6 @@ body{
     width: 350px;
     height: 220px;
     perspective: 1000px;
-    margin: 10px 20px 10px 20px;
 }
 .instagram-flip-inner {
     position: relative;
@@ -387,7 +386,6 @@ body{
 }
 .image-insta{
     background-image: url('../img/social(5).jpg');
-
 }
 .instagram-flip-back {
     display: flex;
