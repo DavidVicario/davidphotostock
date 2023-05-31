@@ -2,15 +2,19 @@ package com.project.davidphotostock.web;
 
 import com.project.davidphotostock.data.ICategoryDao;
 import com.project.davidphotostock.data.IProductDao;
+import com.project.davidphotostock.data.ISubcategoryDao;
 import com.project.davidphotostock.data.impl.ICategoryDaoImpl;
 import com.project.davidphotostock.data.impl.IProductDaoImpl;
+import com.project.davidphotostock.data.impl.ISubcategoryDaoImpl;
 import com.project.davidphotostock.domain.Category;
 import com.project.davidphotostock.domain.Product;
 import com.project.davidphotostock.domain.Subcategory;
 import com.project.davidphotostock.service.CategoryService;
 import com.project.davidphotostock.service.ProductService;
+import com.project.davidphotostock.service.SubcategoryService;
 import com.project.davidphotostock.service.impl.CategoryServiceImpl;
 import com.project.davidphotostock.service.impl.ProductServiceImpl;
+import com.project.davidphotostock.service.impl.SubcategoryServiceImpl;
 import static com.project.davidphotostock.util.ConectionUtil.getInstance;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -30,6 +34,7 @@ public class ProductServlet extends HttpServlet {
 
     ProductService ps;
     CategoryService cs;
+    SubcategoryService ss;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -80,11 +85,16 @@ public class ProductServlet extends HttpServlet {
         ICategoryDao icd = new ICategoryDaoImpl(getInstance());
         cs = new CategoryServiceImpl(icd);
 
+        ISubcategoryDao isd = new ISubcategoryDaoImpl(getInstance());
+        ss = new SubcategoryServiceImpl(isd);
+        
         List<Product> products = ps.obtainAllProducts();
         List<Category> categories = cs.obtainAllCategories();
-
+        List<Subcategory> subcategories = ss.obtainAllSubcategories();
+        
         request.setAttribute("products", products);
         request.setAttribute("categories", categories);
+        request.setAttribute("subcategories", subcategories);
         RequestDispatcher dispatcher = request.getRequestDispatcher("pages/users/portfolio.jsp");
         dispatcher.forward(request, response);
     }

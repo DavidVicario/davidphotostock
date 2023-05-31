@@ -46,30 +46,17 @@
                         </c:forEach>
                     </c:if>
                 </div>
-            </div>
-            <!-- Proyecto de mejora, filtro en cascada...
+            </div>            
             <div class="dropdown">
                 <button class="btn-drop btn-bsc" onclick="showDrop('sdd')"> Subcategories</button>
                 <div id="sdd" class="content-dropdown">
-                    <a class="btn-pf" onclick="filterSelection('flower macro'); showDrop('sdd')"> A. Author</a>
-                    <a class="btn-pf" onclick="filterSelection('insect'); showDrop('sdd')"> A. Abstract</a>
-                    <a class="btn-pf" onclick="filterSelection('social'); showDrop('sdd')"> M. Insect</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> M. Flora</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> N. Fauna</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> N. Flora</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> N. Landscape</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> T. Culture</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> T. People</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> T. Landscape</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> T. Architecture</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> S. Portrait</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> S. People</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> S. Street</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> C. Product</a>
-                    <a class="btn-pf" onclick="filterSelection('landscape'); showDrop('sdd')"> C. Foot</a>
+                    <c:if test="${not empty categories}">
+                        <c:forEach var="subcategory" items="${subcategories}">
+                            <a class="btn-pf" onclick="filterSelection('${subcategory.subcategoryName}'); showDrop('sdd')">${subcategory.subcategoryName}</a>
+                        </c:forEach>
+                    </c:if>
                 </div>
             </div>
-            -->
         </div>
         <div class="row-pf">
             <c:if test="${not empty products}">

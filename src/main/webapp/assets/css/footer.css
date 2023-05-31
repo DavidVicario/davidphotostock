@@ -29,7 +29,7 @@ footer{
     display: flex;
     padding: 5px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 /*----- FOOTER -----*/
 .footer-container > .footer-logo{
@@ -40,6 +40,7 @@ footer{
     width: auto;
     height: 60px;
     margin: 10px;
+    margin-left: 80px;
 }
 /*----- COPYRIGHT -----*/
 .footer-container p{
@@ -52,6 +53,7 @@ footer{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-right: 80px;
 }
 .networks ul{
     display: flex;
