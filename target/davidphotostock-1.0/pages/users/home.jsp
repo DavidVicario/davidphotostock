@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +37,7 @@
                     </p>
                     <div class="buttons">
                         <div class="button transparent">
-                            <a href="">VIEW NOW</a>
+                            <a href="/ProductServlet?action=allProduct">VIEW NOW</a>
                         </div>
                     </div>
                 </div>
@@ -51,7 +52,7 @@
                     </p>
                     <div class="buttons">
                         <div class="button transparent">
-                            <a href="">VIEW NOW</a>
+                            <a href="/ProductServlet?action=allProduct">VIEW NOW</a>
                         </div>
                     </div>
                 </div>
@@ -66,7 +67,7 @@
                     </p>
                     <div class="buttons">
                         <div class="button transparent">
-                            <a href="">VIEW NOW</a>
+                            <a href="/ProductServlet?action=allProduct">VIEW NOW</a>
                         </div>
                     </div>
                 </div>
@@ -81,7 +82,7 @@
                     </p>
                     <div class="buttons">
                         <div class="button transparent">
-                            <a href="">VIEW NOW</a>
+                            <a href="/ProductServlet?action=allProduct">VIEW NOW</a>
                         </div>
                     </div>
                 </div>            

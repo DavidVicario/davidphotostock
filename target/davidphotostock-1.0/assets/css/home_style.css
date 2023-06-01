@@ -1,28 +1,5 @@
-:root{
-    --color1: #010101;
-    --color2: #ffffff;
-    --color3: #ff9933; /*rgb(255, 153, 51)*/
-    --color4: #001fcf;
-    --color5: #191a30;
-
-    --colorFonds: #000000;
-    --colorCompl: #1c1c1c;
-    --colorHovr1: #4e4e4e;
-    --colorButtn: #ff9934;
-    --colorHovr2: #ff8000;
-    --colorTexts: #ffffff;
-}
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    user-select: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 body{
-    background-color: var(--colorFonds);
+    background-color: var(--blackBase);
 }
 /*----- SLIDER -----*/
 .section-slider{
@@ -30,7 +7,7 @@ body{
     display: flex;
     width: 100%;
     height: 100vh;
-    background-color: var(--colorFonds);
+    background-color: var(--blackBase);
 }
 .section-slider > .wrapper-slider{
     position: relative;
@@ -39,7 +16,7 @@ body{
     height: 100%;
     justify-content: center;
 }
-/*----- Img -----*/
+/*----- IMAGE -----*/
 .wrapper-slider > .image-slider{
     height: 100%;
     width: 100%;
@@ -60,12 +37,12 @@ body{
 .image-slider.social {
     background-image: url('../img/social\(2\).jpg');
 }
-/*----- Txt -----*/
+/*----- TEXTS -----*/
 .wrapper-slider > .content-slider{
     position: absolute !important;
     top: 0;
     left: 0;
-    color: var(--colorFonds);
+    color: var(--blackBase);
     text-align: center;
     height: 100%;
     width: 100%;
@@ -87,7 +64,7 @@ body{
     text-align: center;
     font-weight: 300;
 }
-/*----- Btn -----*/
+/*----- BUTTONS -----*/
 .content-slider > .buttons{
     position: relative;
     padding-top: 30px;
@@ -101,10 +78,10 @@ body{
 }
 .buttons > .transparent a{
     padding: 9px 10px;
-    border: 2px solid var(--colorFonds);
+    border: 2px solid var(--blackBase);
 }
 .button a{
-    color: var(--colorFonds);
+    color: var(--blackBase);
     letter-spacing: 2px;
     font-size: 12px;
     display: block;
@@ -121,7 +98,7 @@ body{
     top: 50%;
     width: auto;
     margin: -40px 70px 0px 70px;
-    color: var(--colorFonds);
+    color: var(--blackBase);
     font-size: 20px;
     font-weight: bold;
     user-select: none;
@@ -133,14 +110,14 @@ body{
 }
 .left{
     border: 1px solid transparent;
-    color: var(--colorFonds);
+    color: var(--blackBase);
     opacity: 0.6;
     transition: 0.4s;
 }
 .right{
     right: 0;
     border: 1px solid transparent;
-    color: var(--colorFonds);
+    color: var(--blackBase);
     opacity: 0.6;
     transition: 0.4s;
 }
@@ -148,16 +125,16 @@ body{
     transition: 0.4s ease-in-out;
     margin-left: 60px;
     opacity: 0.9;
-    text-shadow: 0 0 5px var(--color2);
+    text-shadow: 0 0 5px var(--whiteBase);
 }
 .right:hover{
     transition: 0.4s ease-in-out;
     margin-right: 60px;
     opacity: 0.9;
-    text-shadow: 0 0 5px var(--color2);
+    text-shadow: 0 0 5px var(--whiteBase);
 }
 /*----- MOBILE -----*/
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px){
     .arrow{
         padding: 30px;
         margin: -40px 30px 0px 30px;
@@ -167,16 +144,16 @@ body{
         transition: 0.4s ease-in-out;
         margin-left: 20px;
         opacity: 0.9;
-        text-shadow: 0 0 5px var(--color2);
+        text-shadow: 0 0 5px var(--whiteBase);
     }
     .right:hover{
         transition: 0.4s ease-in-out;
         margin-right: 20px;
         opacity: 0.9;
-        text-shadow: 0 0 5px var(--color2);
+        text-shadow: 0 0 5px var(--whiteBase);
     }
 }
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 620px){
     .arrow{
         padding: 30px;
         margin: -40px 5px 0px 5px;
@@ -185,32 +162,28 @@ body{
     .left:hover{
         margin-left: 10px;
         opacity: 0.9;
-        text-shadow: 0 0 5px var(--color2);
+        text-shadow: 0 0 5px var(--whiteBase);
     }
     .right:hover{
         margin-right: 10px;
         opacity: 0.9;
-        text-shadow: 0 0 5px var(--color2);
+        text-shadow: 0 0 5px var(--whiteBase);
     }
 }
 /*----- ANIMATIONS SLIDER-----*/
 .ani-slider{
     animation-name: fade;
     animation-duration: 1.5s;
+    animation-timing-function: linear;
 }
 @keyframes fade{
     from {
-        opacity: .4
+        opacity: .2
     }
     to {
         opacity: 1
     }
-    /*
-    from {transform: translateX(0%);}
-    from {transform: translateX(100%);}
-    */
 }
-
 /*----- MIDDLE HOME -----*/
 .image-home.travel .image-content{
     background-image: url('../img/landscape\(2\).jpg');
@@ -229,17 +202,17 @@ body{
     display: flex;
     flex-direction: row;
 }
-.content-home-uno:nth-of-type(even) {
+.content-home-uno:nth-of-type(even){
     flex-direction: row-reverse;
 }
-.content-home-dos:nth-child(even) {
+.content-home-dos:nth-child(even){
     flex-direction: row-reverse;
 }
-.image-home {
+.image-home{
     flex: 1;
     position: relative;
 }
-.image-content {
+.image-content{
     padding-top: 75%;
     background-size: cover;
     background-position: center;
@@ -258,9 +231,9 @@ body{
     margin: 0 25% 0 25%;
     text-align: justify;
 }
-.container-home {
+.container-home{
     flex: 1;
-    color: var(--colorTexts);
+    color: var(--whiteBase);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -294,7 +267,6 @@ body{
         transform: translateY(0);
     }
 }
-
 /*----- ABOUT HOME -----*/
 .about-home-image.about-image{
     background-image: url('../img/header3.png');
@@ -314,32 +286,31 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--colorTexts);
+    color: var(--whiteBase);
     line-height: 1.8;
 }
 .about-home-btn{
     background-color: transparent;
-    color: var(--colorTexts);
+    color: var(--whiteBase);
     font-size: 15px;
     padding: 5px 0;
     margin: 18px 0 12px 0;
-    border: 1.5px solid var(--colorTexts);
+    border: 1.5px solid var(--whiteBase);
     cursor: pointer;
     text-align: center;
     width: 150px;
 }
 .about-home-btn:hover{
-    background-color: var(--colorTexts);
-    color: var(--colorFonds);
+    background-color: var(--whiteBase);
+    color: var(--blackBase);
     transition: 0.5s linear;
 }
-
 /*----- INSTAGRAM HOME -----*/
 .instagram-tittle{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--colorTexts);
+    color: var(--whiteBase);
     font-size: 30px;
     padding: 70px 20px 30px 20px;
 }
@@ -351,13 +322,13 @@ body{
     align-items: center;
     margin: 20px;
 }
-.instagram-flip {
+.instagram-flip{
     background-color: transparent;
     width: 350px;
     height: 220px;
     perspective: 1000px;
 }
-.instagram-flip-inner {
+.instagram-flip-inner{
     position: relative;
     width: 100%;
     height: 100%;
@@ -365,21 +336,21 @@ body{
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
-.instagram-flip:hover .instagram-flip-inner {
+.instagram-flip:hover .instagram-flip-inner{
     transform: rotateY(180deg);
 }
-.instagram-flip-front, .instagram-flip-back {
+.instagram-flip-front, .instagram-flip-back{
     position: absolute;
     width: 100%;
     height: 100%;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
 }
-.instagram-flip-front {
+.instagram-flip-front{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--colorTexts);
+    color: var(--whiteBase);
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -387,19 +358,19 @@ body{
 .image-insta{
     background-image: url('../img/social(5).jpg');
 }
-.instagram-flip-back {
+.instagram-flip-back{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--colorCompl);
+    background-color: var(--greyBase);
     transform: rotateY(180deg);
 }
 .instagram-flip-back > a{
-    color: var(--colorButtn);
+    color: var(--orangeBase);
     font-size: 20px;
 }
 .instagram-flip-back > a:hover{
-    color: var(--colorHovr2);
+    color: var(--orangeHovr);
     font-size: 20px;
 }
 .btn-insta{
@@ -407,21 +378,21 @@ body{
     justify-content: center;
     align-items: center;
     background-color: transparent;
-    color: var(--colorTexts);
+    color: var(--whiteBase);
     font-size: 15px;
     padding: 10px 0;
     margin: 30px auto 30px auto;
-    border: 1.5px solid var(--colorTexts);
+    border: 1.5px solid var(--whiteBase);
     cursor: pointer;
     text-align: center;
     width: 120px;
 }
-.btn-insta i {
+.btn-insta i{
     margin-right: 10px;
     margin-top: 2px;
 }
 .btn-insta:hover{
-    background-color: var(--colorButtn);
+    background-color: var(--orangeBase);
 }
 .btn-insta.bi{
     margin-right: 10px;
@@ -438,12 +409,11 @@ body{
         transform: scale(1)
     }
 }
-
 .thankyou{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: var(--colorTexts);
+    color: var(--whiteBase);
     font-size: 15px;
     text-align: justify;
     margin: 10px auto 100px auto;

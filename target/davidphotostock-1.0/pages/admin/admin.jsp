@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page import="com.project.davidphotostock.domain.Users" %>
 
 <!DOCTYPE html>
@@ -13,6 +14,7 @@
     <link rel="shortcut icon" href="/assets/img/negro-2k.png" type="image/png">
     <link rel="stylesheet" href="/assets/icons/bootstrap-icons.css">
     <link rel="stylesheet" href="/assets/css/admin_style.css">
+    <link rel="stylesheet" href="/assets/css/general.css">
 </head>
 <body>
     <header class="header-admin">
@@ -91,6 +93,15 @@
                                     <th>Username</th>
                                     <th>Password</th>
                                 </tr>                                
+                                <tr>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                    <td>#</td>
+                                </tr>
                                 <tr>
                                     <td>#</td>
                                     <td>#</td>

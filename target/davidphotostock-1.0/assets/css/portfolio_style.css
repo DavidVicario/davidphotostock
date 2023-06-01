@@ -1,28 +1,11 @@
-:root{
-    --colorFonds: #000000;
-    --colorCompl: #1c1c1c;
-    --colorHovr1: #4e4e4e;
-    --colorButtn: #ff9934;
-    --colorHovr2: #ff8000;
-    --colorTexts: #ffffff;
-}
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    user-select: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 body{
-    background-color: var(--colorFonds);
+    background-color: var(--blackBase);
 }
 main{
     padding-bottom: 100px;
 }
 .title-main{
-    color: var(--colorTexts);
+    color: var(--whiteBase);
 }
 .hm{
     font-size: 25px;
@@ -44,7 +27,7 @@ main{
 }
 .column-pf{
     flex: 0 0 33.33%;
-    display: none; /* Oculta todo por defecto */
+    display: none;
 }
 .row-pf:after {
     content: "";
@@ -52,7 +35,7 @@ main{
     clear: both;
 }
 .content-pf{
-    background-color: var(--colorCompl);
+    background-color: var(--greyBase);
     border-radius: 5px;
     padding-bottom: 10px;
 }
@@ -67,7 +50,7 @@ main{
     justify-content: center;
 }
 .pf-text{
-    color: var(--colorTexts);
+    color: var(--whiteBase);
     line-height: 20px;
     padding: 5px 0 5px 15px;
 }
@@ -84,16 +67,16 @@ main{
     font-size: 12px;
     border: none;
     cursor: pointer;
-    color: var(--colorTexts);
-    border: 1.5px solid var(--colorTexts);
-    background-color: var(--colorButtn);
+    color: var(--whiteBase);
+    border: 1.5px solid var(--whiteBase);
+    background-color: var(--orangeBase);
 }
 .btn-cart:hover{
-    background-color: var(--colorHovr2);
+    background-color: var(--orangeHovr);
 }
 .btn-disabled{
     pointer-events: none;
-    background-color: var(--colorHovr1);
+    background-color: var(--greyHovr);
 }
 .show-pf{
     display: block;
@@ -107,24 +90,24 @@ main{
     font-size: 16px;
     border: none;
     cursor: pointer;
-    border: 1.5px solid var(--colorButtn);
-    color: var(--colorButtn);
-    background-color: var(--colorFonds);
+    border: 1.5px solid var(--orangeBase);
+    color: var(--orangeBase);
+    background-color: var(--blackBase);
 }
-.btn-bsc:hover {
-    color: var(--colorTexts);
-    border: 1.5px solid var(--colorTexts);
-    background-color: var(--colorButtn);
+.btn-bsc:hover{
+    color: var(--whiteBase);
+    border: 1.5px solid var(--whiteBase);
+    background-color: var(--orangeBase);
 }
-/*----- Imagen -----*/
-.id-image {
+/*----- IMAGEN ZOOM -----*/
+.id-image{
     cursor: pointer;
     transition: 0.3s;
 }
-.id-image:hover {
+.id-image:hover{
     opacity: 0.7;
 }
-.zoom-modal {
+.zoom-modal{
     display: none;
     position: fixed;
     z-index: 1;
@@ -134,23 +117,22 @@ main{
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.9);
+    background-color: var(--greyModal);
 }
-.modal-content {
+.modal-content{
     margin: auto;
     display: block;
     width: 80%;
     max-width: 700px;
 }
 /*----- ANIMACION MODAL -----*/
-.modal-content, #caption {
+.modal-content{
     -webkit-animation-name: zoom;
     -webkit-animation-duration: 0.6s;
     animation-name: zoom;
     animation-duration: 0.6s;
 }
-@-webkit-keyframes zoom {
+@-webkit-keyframes zoom{
     from {
         -webkit-transform:scale(0)
     }
@@ -158,7 +140,7 @@ main{
         -webkit-transform:scale(1)
     }
 }
-@keyframes zoom {
+@keyframes zoom{
     from {
         transform:scale(0)
     }
@@ -166,7 +148,7 @@ main{
         transform:scale(1)
     }
 }
-.close-modal {
+.close-modal{
     position: absolute;
     top: 15px;
     right: 35px;
@@ -176,51 +158,50 @@ main{
     transition: 0.3s;
 }
 .close-modal:hover,
-.close-modal:focus {
-    color: #bbb;
+.close-modal:focus{
+    color: var(--orangeHovr);
     text-decoration: none;
     cursor: pointer;
 }
-
 /*----- Dropdown -----*/
-.btn-drop {
+.btn-drop{
     padding: 14px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    border: 1.5px solid var(--colorButtn);
-    color: var(--colorButtn);
-    background-color: var(--colorFonds);
+    border: 1.5px solid var(--orangeBase);
+    color: var(--orangeBase);
+    background-color: var(--blackBase);
 }
-.btn-drop:hover {
-    color: var(--colorTexts);
-    background-color: var(--colorButtn);
+.btn-drop:hover{
+    color: var(--whiteBase);
+    background-color: var(--orangeBase);
 }
 .btn-drop:focus{
-    color: var(--colorTexts);
-    background-color: var(--colorHovr2);
+    color: var(--whiteBase);
+    background-color: var(--orangeHovr);
 }
-.dropdown {
+.dropdown{
     position: relative;
     display: inline-block;
 }
-.content-dropdown {
+.content-dropdown{
     display: none;
     position: absolute;
-    background-color: var(--colorButtn);
+    background-color: var(--orangeBase);
     min-width: 160px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-.content-dropdown a {
-    color: var(--colorTexts);
+.content-dropdown a{
+    color: var(--whiteBase);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
-.dropdown a:hover {
-    background-color: var(--colorHovr2);
+.dropdown a:hover{
+    background-color: var(--orangeHovr);
 }
 .show-dr {
     display: block;

@@ -1,33 +1,12 @@
-:root{
-    --colorFonds: #000000;
-    --colorCompl: #1c1c1c;
-    --colorButtn: #ff9934;
-    --colorHover: #ff8000;
-    --colorTexts: #ffffff;
-
-    --colorBase1: #95a0be;
-    --colorBase2: #566d8c;
-    --colorBase3: #2e4459;
-}
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    user-select: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 body{
-    background-color: var(--colorFonds);
+    background-color: var(--blackBase);
 }
 .title-main{
-    color: var(--colorTexts);
+    color: var(--whiteBase);
     padding: 25px 0 5px 20px;
 }
 .hm{
     font-size: 25px;
-    
 }
 .pm{
     font-size: 20px;
@@ -35,15 +14,15 @@ body{
 }
 .title-main > ul{
     font-size: 20px;
-    display: flex;   
+    display: flex;
     padding-top: 20px;
 }
 .title-main > ul li a{
     margin: 10px 10px 0 0;
-    color: var(--colorTexts);
+    color: var(--whiteBase);
 }
 .title-main > ul li:hover a{
-    color: var(--colorButtn);
+    color: var(--orangeBase);
 }
 /*----- FORM CONTACT -----*/
 .contain-contact{
@@ -54,7 +33,7 @@ body{
     padding: 16px;
 }
 label{
-    color: var(--colorTexts);
+    color: var(--whiteBase);
     font-weight: bold;
 }
 .container-contact > input[type=text],
@@ -62,33 +41,32 @@ textarea{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
-    background-color: var(--colorCompl);
-    color: var(--colorTexts);
+    background-color: var(--greyBase);
+    color: var(--whiteBase);
     display: inline-block;
-    border: 1.5px solid var(--colorTexts);
+    border: 1.5px solid var(--whiteBase);
     box-sizing: border-box;
 }
 input[type="text"]:focus,
-textarea:focus {
-    outline-color: var(--colorTexts);
-    background-color: #4e4e4e;
+textarea:focus{
+    outline-color: var(--whiteBase);
+    background-color: var(--greyHovr);
 }
 .btn-send{
-    background-color: var(--colorFonds);
-    color: var(--colorButtn);
+    background-color: var(--blackBase);
+    color: var(--orangeBase);
     padding: 15px 0;
     margin: 12px 0 12px 0;
-    border: 1.5px solid var(--colorButtn);
+    border: 1.5px solid var(--orangeBase);
     cursor: pointer;
     width: 100%;
 }
 .btn-send:hover {
-    background-color: var(--colorButtn);
-    border: 1.5px solid var(--colorTexts);
-    color: var(--colorTexts);
+    background-color: var(--orangeBase);
+    border: 1.5px solid var(--whiteBase);
+    color: var(--whiteBase);
 }
-
-/*----- Message -----*/
+/*----- MESSAGE -----*/
 .section-message{
     display: none;
     position: fixed;
@@ -98,25 +76,33 @@ textarea:focus {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.5);
+    background-color: var(--greyModal);
     padding-top: 60px;
 }
 .contain-message{
-    background-color: var(--colorFondo);;
+    background-color: var(--blackBase);
+    ;
     margin: 5% auto 15% auto;
-    border: 1px solid var(--colorLetra);
+    border: 1px solid var(--whiteBase);
     width: 200px;
 }
-
 .ani-mess{
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
 }
-  @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
-    to {-webkit-transform: scale(1)}
+@-webkit-keyframes animatezoom{
+    from {
+        -webkit-transform: scale(0)
+    }
+    to {
+        -webkit-transform: scale(1)
+    }
 }
-  @keyframes animatezoom {
-    from {transform: scale(0)} 
-    to {transform: scale(1)}
+@keyframes animatezoom{
+    from {
+        transform: scale(0)
+    }
+    to {
+        transform: scale(1)
+    }
 }

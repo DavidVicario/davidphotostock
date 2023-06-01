@@ -1,5 +1,5 @@
 <section class="section-signup" id="section-signup">
-    <form class="content-signup ani-form" action="UsersServlet?action=create" method="post">
+    <form class="content-signup ani-form" action="/UsersServlet?action=create" method="post">
         <div class="image-form">
             <span onclick="closeForm('signup')" class="close-x">&times;</span>
             <img src="/assets/img/color-2k.png" alt="Logo" class="logo-form">

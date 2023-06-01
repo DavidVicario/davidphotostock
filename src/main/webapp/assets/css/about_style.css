@@ -1,28 +1,8 @@
-:root{
-    --colorFonds: #000000;
-    --colorCompl: #1c1c1c;
-    --colorButtn: #ff9934;
-    --colorHover: #ff8000;
-    --colorTexts: #ffffff;
-
-    --colorBase1: #95a0be;
-    --colorBase2: #566d8c;
-    --colorBase3: #2e4459;
-}
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    user-select: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 body{
-    background-color: var(--colorFonds);
+    background-color: var(--blackBase);
 }
 .title-main{
-    color: var(--colorTexts);
+    color: var(--whiteBase);
 }
 .hm{
     font-size: 25px;

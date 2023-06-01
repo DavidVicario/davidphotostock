@@ -1,29 +1,6 @@
-:root{
-    --color1: #010101;
-    --color2: #ffffff;
-    --color3: #ff9933; /*rgb(255, 153, 51)*/
-    --color4: #001fcf;
-    --color5: #191a30;
-    
-    --colorFonds: #000000;
-    --colorCompl: #1c1c1c;
-    --colorHovr1: #4e4e4e;
-    --colorButtn: #ff9934;
-    --colorHovr2: #ff8000;
-    --colorTexts: #ffffff;
-}
-*{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    user-select: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
 /*----- FOOTER -----*/
 footer{
-    background-color: var(--colorCompl);
+    background-color: var(--greyBase);
 }
 .footer-container{
     display: flex;
@@ -46,7 +23,7 @@ footer{
 .footer-container p{
     text-align: center;
     font-size: 0.9rem;
-    color: var(--color2);
+    color: var(--whiteBase);
 }
 /*----- REDES -----*/
 .networks{
@@ -64,12 +41,11 @@ footer{
     margin: 0 10px;
     padding: 10px;
     cursor: pointer;
-    color: var(--color3);
 }
 .networks ul li a{
-    color: var(--colorTexts);
+    color: var(--whiteBase);
     font-size: 1.8em;
 }
 .networks ul li:hover a{
-    color: var(--colorButtn);
+    color: var(--orangeBase);
 }
