@@ -231,6 +231,24 @@ body{
     margin: 0 25% 0 25%;
     text-align: justify;
 }
+@media screen and (max-width: 820px){
+    .container-home .hh{
+        font-size: 20px;
+        line-height: 0.9;
+        padding-bottom: 5px;
+    }
+    .container-home .hp{
+        font-size: 15px;
+        line-height: 1;
+    }
+}
+@media screen and (max-width: 650px){
+    .container-home .hh,
+    .container-home .hp{
+        margin: 0 10% 0 10%;
+        text-align: justify;        
+    }
+}
 .container-home{
     flex: 1;
     color: var(--whiteBase);
@@ -312,6 +330,7 @@ body{
     align-items: center;
     color: var(--whiteBase);
     font-size: 30px;
+    text-align: center;
     padding: 70px 20px 30px 20px;
 }
 .contain-flip{
@@ -321,6 +340,26 @@ body{
     justify-items: center;
     align-items: center;
     margin: 20px;
+}
+@media screen and (max-width: 1140px){
+    .contain-flip{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-items: center;
+        align-items: center;
+        margin: 20px;
+    }
+}
+@media screen and (max-width: 770px){
+    .contain-flip{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        justify-items: center;
+        align-items: center;
+        margin: 20px;
+    }
 }
 .instagram-flip{
     background-color: transparent;

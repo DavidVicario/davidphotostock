@@ -39,14 +39,14 @@
         <div class="shop">
             <c:choose>
                 <c:when test="${not empty cart}">
-                    <i class="bi bi-bag">
+                    <a href="/pages/users/cart.jsp" class="bi bi-bag">
                         <span class="badge">${fn:length(cart)}</span>
-                    </i>
+                    </a>
                 </c:when>
                 <c:otherwise>
-                    <i class="bi bi-bag">
+                    <a href="/pages/users/cart.jsp" class="bi bi-bag">
                         <span class="badge badge-hidden"></span>
-                    </i>
+                    </a>
                 </c:otherwise>
             </c:choose>
             <div class="contain-cart">
