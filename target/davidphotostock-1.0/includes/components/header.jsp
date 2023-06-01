@@ -70,7 +70,7 @@
                                     <div class="right-item">
                                         <div class="detail-item">
                                             <div class="amout-item">
-                                                <input type="number" name="name" value="1" autocomplete="off">
+                                                <input type="number" name="name" value="1" min="1" max="${item.stock}" autocomplete="off">
                                             </div>
                                             <div class="price-item">
                                                 <p class="price">€ ${item.price}</p>
@@ -84,6 +84,9 @@
                             </ul>
                         </form>
                     </c:forEach>
+                    <div class="total-price" style="color: white">
+                        <p id="total-price-header" style="color: white">Total: </p>
+                    </div>
                     <a href="/pages/users/cart.jsp" class="btn-item">Cart</a>
                 </c:if>
             </div>

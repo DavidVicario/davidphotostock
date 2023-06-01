@@ -154,3 +154,13 @@ function getCookie(cname) {
     }
     return "";
 }
+
+//Control de Stock en carrito. 
+document.querySelectorAll('input[type="number"]').forEach(input => {
+    input.addEventListener('change', event => {
+        const max = parseInt(input.getAttribute('max'));
+        if (input.value > max) {
+            input.value = max;
+        }
+    });
+});
