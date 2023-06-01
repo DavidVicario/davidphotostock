@@ -34,6 +34,16 @@ main{
     display: table;
     clear: both;
 }
+@media screen and (max-width: 1014px){
+    .column-pf{
+        flex: 0 0 50%;
+    }
+}
+@media screen and (max-width: 690px){
+    .column-pf{
+        flex: 0 0 99%;
+    }
+}
 .content-pf{
     background-color: var(--greyBase);
     border-radius: 5px;

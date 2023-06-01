@@ -75,7 +75,7 @@
                 <p class="total-price" id="total-price" style="color: white"></p>
             </div>
             <div class="contain-btn">
-                <a href="/ProductServlet?action=allProduct" class="btn-buy">Continue Shopping</a>
+                <a href="/ProductServlet?action=allProduct" class="btn-buy">Continue</a>
                 <a href="" class="btn-buy">Checkout</a>
             </div>
         </div>
