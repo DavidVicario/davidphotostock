@@ -112,6 +112,23 @@ a > .name{
     -webkit-text-stroke: 0.8px var(--blackBase);
     font-style: normal;
 }
+.container-empty-header{
+    width: 99%;
+    height: 99%;
+    margin:5px;
+    border-bottom: 1.5px solid var(--whiteBase);
+}
+.empty-cart-header{
+    text-align: center;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    margin: 5px auto 15px auto;
+    background-color: var(--greyBase);
+}
 .contain-cart{
     position: absolute;
     background-color: var(--blackBase);

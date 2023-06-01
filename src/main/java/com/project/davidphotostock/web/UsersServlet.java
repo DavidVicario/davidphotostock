@@ -2,7 +2,6 @@ package com.project.davidphotostock.web;
 
 import com.project.davidphotostock.data.IUsersDao;
 import com.project.davidphotostock.data.impl.IUsersDaoImpl;
-import com.project.davidphotostock.domain.Product;
 import com.project.davidphotostock.domain.Users;
 import com.project.davidphotostock.service.UsersService;
 import com.project.davidphotostock.service.impl.UsersServiceImpl;
@@ -20,8 +19,6 @@ import com.sendgrid.*;
 import com.sendgrid.helpers.mail.Mail;
 import com.sendgrid.helpers.mail.objects.Content;
 import com.sendgrid.helpers.mail.objects.Email;
-import java.util.ArrayList;
-import java.util.List;
 
 @WebServlet(name = "UsersServlet", urlPatterns = {"/UsersServlet"})
 public class UsersServlet extends HttpServlet {

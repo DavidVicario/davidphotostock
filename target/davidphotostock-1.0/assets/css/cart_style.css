@@ -37,9 +37,26 @@ body{
     margin: 20px 5px 5px 5px;
     border-bottom: 2.5px solid var(--whiteBase);
 }
+.container-empty{
+    width: 99%;
+    height: 99%;
+    margin:5px;
+    border-bottom: 1.5px solid var(--whiteBase);
+}
+.empty-cart{
+    text-align: center;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 30px 0 30px 0;
+    margin: 10px auto 20px auto;
+    background-color: var(--greyBase);
+}
 .container-buy{
     margin: 5px;
-    border-bottom: 1.5px solid var(--whiteBase);    
+    border-bottom: 1.5px solid var(--whiteBase);
     overflow-y: auto;
     flex-grow: 1;
 }

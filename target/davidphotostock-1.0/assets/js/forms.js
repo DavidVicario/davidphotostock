@@ -73,7 +73,7 @@ window.onload = function() {
     //Recordar usuario
     const username = getCookie("username");
     if (username) {
-        document.getElementById("user").value = username;
+        document.getElementById("user-l").value = username;
     }
 };
 
@@ -138,6 +138,7 @@ validate.onsubmit = function() {
     return true;
 }
 
+//Funcion para recuperar el username de la Cookie
 function getCookie(cname) {
     const name = cname + "=";
     const decodedCookie = decodeURIComponent(document.cookie);
@@ -153,5 +154,3 @@ function getCookie(cname) {
     }
     return "";
 }
-
-//Error al introducir los datos.

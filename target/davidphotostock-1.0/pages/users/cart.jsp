@@ -37,6 +37,11 @@
         <div class="section-buy">            
             <div class="contain-buy">
                 <h4 class="title-buy">Items:</h4>
+                <c:if test="${empty cart}">
+                    <form class="container-empty">
+                        <h5 class="empty-cart">-- Empty Cart --</h5>
+                    </form>
+                </c:if>
                 <c:if test="${not empty cart}">
                     <c:forEach var="item" varStatus="row" items="${cart}">
                         <form class="container-buy">

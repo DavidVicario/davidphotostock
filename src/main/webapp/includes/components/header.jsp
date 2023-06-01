@@ -52,8 +52,8 @@
             <div class="contain-cart">
                 <h2 class="title-cart">Items:</h2>
                 <c:if test="${empty cart}">
-                    <form class="container-item" style="background-color: red; width: 100px; height: 20px;">
-                        
+                    <form class="container-empty-header">
+                        <h5 class="empty-cart-header">-- Empty Cart --</h5>
                     </form>
                 </c:if>
                 <c:if test="${not empty cart}">
