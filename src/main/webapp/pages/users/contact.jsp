@@ -35,9 +35,10 @@
         <div class="title-main">
             <h3 class="hm">Contact me</h3>
             <p class="pm">
-            You’re invited to reach out to me with any questions or <br>
-            queries you may have. I’ll endeavour to get back to you <br>
-            as quickly as possible. So, please bear with us.<br><br>           
+            You’re invited to reach out to me with any questions<br> 
+            or queries you may have. I’ll endeavour to get back <br>
+            to you as quickly as possible.<br> 
+            So, please bear with us.<br><br>           
             Mail: davidphotostock8@gmail.com<br>
             Phone: 617597842</p>
             <ul>

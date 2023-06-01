@@ -125,13 +125,11 @@ body{
     transition: 0.4s ease-in-out;
     margin-left: 60px;
     opacity: 0.9;
-    text-shadow: 0 0 5px var(--whiteBase);
 }
 .right:hover{
     transition: 0.4s ease-in-out;
     margin-right: 60px;
     opacity: 0.9;
-    text-shadow: 0 0 5px var(--whiteBase);
 }
 /*----- MOBILE -----*/
 @media screen and (max-width: 900px){
