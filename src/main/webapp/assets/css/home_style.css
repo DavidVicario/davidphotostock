@@ -26,16 +26,16 @@ body{
     background-position: center center;
 }
 .image-slider.landscape {
-    background-image: url('../img/3103180554.jpg');
+    background-image: url('../img/img/3103180554.jpg');
 }
 .image-slider.flowers {
-    background-image: url('../img/0705211987.jpg');
+    background-image: url('../img/img/0705211987.jpg');
 }
 .image-slider.insect {
-    background-image: url('../img/0812212850.jpg');
+    background-image: url('../img/img/0812212850.jpg');
 }
 .image-slider.social {
-    background-image: url('../img/0907221149.jpg');
+    background-image: url('../img/img/0907221149.jpg');
 }
 /*----- TEXTS -----*/
 .wrapper-slider > .content-slider{
@@ -184,16 +184,16 @@ body{
 }
 /*----- MIDDLE HOME -----*/
 .image-home.travel .image-content{
-    background-image: url('../img/0812211849.jpg');
+    background-image: url('../img/img/0812211849.jpg');
 }
 .image-home.author .image-content{
-    background-image: url('../img/0715211849.jpg');
+    background-image: url('../img/img/0715211849.jpg');
 }
 .image-home.nature .image-content{
-    background-image: url('../img/3103180451.jpg');
+    background-image: url('../img/img/3103180451.jpg');
 }
 .image-home.abstract .image-content{
-    background-image: url('../img/IMG_20221120_123853_2.jpg');
+    background-image: url('../img/img/IMG_20221120_123853_2.jpg');
 }
 .content-home-uno,
 .content-home-dos {
@@ -285,7 +285,7 @@ body{
 }
 /*----- ABOUT HOME -----*/
 .about-home-image.about-image{
-    background-image: url('../img-me/IMG_20230409_114655_3.jpg');
+    background-image: url('../img/img-me/MG_0265.jpeg');
 }
 .about-home-image{
     position: relative;
@@ -393,22 +393,22 @@ body{
     background-repeat: no-repeat;
 }
 .image-a{
-    background-image: url('../img-product/18.jpg');
+    background-image: url('../img/img-product/18.jpg');
 }
 .image-b{
-    background-image: url('../img-product/21.jpg');
+    background-image: url('../img/img-product/21.jpg');
 }
 .image-c{
-    background-image: url('../img-product/1.jpg');
+    background-image: url('../img/img-product/1.jpg');
 }
 .image-d{
-    background-image: url('../img-product/7.jpg');
+    background-image: url('../img/img-product/7.jpg');
 }
 .image-e{
-    background-image: url('../img-product/37.jpg');
+    background-image: url('../img/img-product/37.jpg');
 }
 .image-f{
-    background-image: url('../img-product/38.jpg');
+    background-image: url('../img/img-product/38.jpg');
 }
 .instagram-flip-back{
     display: flex;
