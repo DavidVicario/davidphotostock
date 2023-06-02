@@ -168,10 +168,11 @@
                 <div class="instagram-flip">
                     <div class="instagram-flip-inner">
                         <div class="instagram-flip-front image-a">
-                            <h2>Front Side</h2>
+                            <h2>Iris de Madrid</h2>
                         </div>
                         <div class="instagram-flip-back">
-                            <a href="">Enlace instagram</a>
+                            <a href="">~Efímera. Se que ya no estas pero, tu recuerdo 
+                                quedó grabado en el sensor de mi cámara.~</a>
                         </div>
                     </div>
                 </div>
@@ -180,10 +181,10 @@
                 <div class="instagram-flip">
                     <div class="instagram-flip-inner">
                         <div class="instagram-flip-front image-b">
-                            <h2>Front Side</h2>
+                            <h2>Atardecer en un lugar de Madrid</h2>
                         </div>
                         <div class="instagram-flip-back">
-                            <a href="">Enlace instagram</a>
+                            <a href="">~Así terminó. Entre el mar de nubes y reflejos.~</a>
                         </div>
                     </div>
                 </div>
@@ -192,10 +193,11 @@
                 <div class="instagram-flip">
                     <div class="instagram-flip-inner">
                         <div class="instagram-flip-front image-c">
-                            <h2>Front Side</h2>
+                            <h2>Corteza de cerezo - Calavera</h2>
                         </div>
                         <div class="instagram-flip-back">
-                            <a href="">Enlace instagram</a>
+                            <a href="">~Buscar donde nadie busca. Ver lo que nadie 
+                                ve. Encontrar lo tetrico en lo bello.~</a>
                         </div>
                     </div>
                 </div>
@@ -204,10 +206,10 @@
                 <div class="instagram-flip">
                     <div class="instagram-flip-inner">
                         <div class="instagram-flip-front image-d">
-                            <h2>Front Side</h2>
+                            <h2>Mariquita de viaje en Málaga</h2>
                         </div>
                         <div class="instagram-flip-back">
-                            <a href="">Enlace instagram</a>
+                            <a href="">~Buscando de halle en un mar de espinas.~</a>
                         </div>
                     </div>
                 </div>
@@ -216,10 +218,11 @@
                 <div class="instagram-flip">
                     <div class="instagram-flip-inner">
                         <div class="instagram-flip-front image-e">
-                            <h2>Front Side</h2>
+                            <h2>Boda sintoísta en Japón</h2>
                         </div>
                         <div class="instagram-flip-back">
-                            <a href="">Enlace instagram</a>
+                            <a href="">~Mimo, perfección y cuidado al detalle. 
+                                Preciosa novia luciéndose.~</a>
                         </div>
                     </div>
                 </div>
@@ -228,10 +231,10 @@
                 <div class="instagram-flip">
                     <div class="instagram-flip-inner">
                         <div class="instagram-flip-front image-f">
-                            <h2>Front Side</h2>
+                            <h2>Lavanda de Brihuega</h2>
                         </div>
                         <div class="instagram-flip-back">
-                            <a href="">Enlace instagram</a>
+                            <a href="">~Lugares mágicos que nunca se olvidan.~</a>
                         </div>
                     </div>
                 </div>
