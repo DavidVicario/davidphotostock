@@ -2,7 +2,7 @@
     <form class="content-login ani-form" action="/UsersServlet?action=login" method="post">
         <div class="image-form">
             <span onclick="closeForm('login')" class="close-x">&times;</span>
-            <img src="/assets/img/color-2k.png" alt="Logo" class="logo-form">
+            <img src="/assets/img/img/color-2k.png" alt="Logo" class="logo-form">
         </div>
         <div class="container-login">
             <label for="user"><b>Username</b></label>

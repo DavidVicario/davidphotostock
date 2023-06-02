@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
-    <link rel="shortcut icon" href="/assets/img/DV-logo-favicon2.svg" type="image/svg+xml">
-    <link rel="shortcut icon" href="/assets/img/negro-2k.png" type="image/png">
+    <link rel="shortcut icon" href="/assets/img/img/DV-logo-favicon2.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/assets/img/img/negro-2k.png" type="image/png">
     <link rel="stylesheet" href="/assets/icons/bootstrap-icons.css">
     <link rel="stylesheet" href="/assets/css/general.css">
     <link rel="stylesheet" href="/assets/css/cart_style.css">
@@ -48,7 +48,7 @@
                         <ul>
                             <li class="buy-row">
                                 <div class="left-buy">
-                                    <img class="img-buy" src="/assets/img-product/${item.idProduct}.jpg" alt="${item.productName}"/>                             
+                                    <img class="img-buy" src="/assets/img/img-product/${item.idProduct}.jpg" alt="${item.productName}"/>                             
                                     <div class="detail-buy">
                                         <span>${item.productName}</span>
                                     </div>

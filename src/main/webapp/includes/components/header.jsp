@@ -7,7 +7,7 @@
     <div class="header-row">
         <div href="/pages/users/home.jsp" class="header-logo">
             <a href="/pages/users/home.jsp" class="link-logo">
-                <img src="/assets/img/DV-100px.png" alt="logo">
+                <img src="/assets/img/img/DV-100px.png" alt="logo">
                 <div class="name">
                     <h1>DAVID VICARIO</h1>
                     <span>PHOTOGRAPHY</span>
@@ -62,7 +62,7 @@
                             <ul>
                                 <li class="item-row">
                                     <div class="left-item">
-                                        <img class="img-item" src="/assets/img-product/${item.idProduct}.jpg" alt="${item.productName}"/>                             
+                                        <img class="img-item" src="/assets/img/img-product/${item.idProduct}.jpg" alt="${item.productName}"/>                             
                                         <div class="detail-item">
                                             <span>${item.productName}</span>
                                         </div>

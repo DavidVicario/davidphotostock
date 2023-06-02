@@ -9,8 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="shortcut icon" href="/assets/img/DV-logo-favicon2.svg" type="image/svg+xml">
-    <link rel="shortcut icon" href="/assets/img/negro-2k.png" type="image/png">
+    <link rel="shortcut icon" href="/assets/img/img/DV-logo-favicon2.svg" type="image/svg+xml">
+    <link rel="shortcut icon" href="/assets/img/img/negro-2k.png" type="image/png">
     <link rel="stylesheet" href="/assets/icons/bootstrap-icons.css">
     <link rel="stylesheet" href="/assets/css/general.css">
     <link rel="stylesheet" href="/assets/css/portfolio_style.css">
@@ -63,7 +63,7 @@
                 <c:forEach var="product" items="${products}">
                     <div class="column-pf ${product.idSubcategory.idCategory.categoryName} ${product.idSubcategory.subcategoryName}">
                         <div class="content-pf">
-                            <img src="/assets/img/img-prodruct/${product.idProduct}.jpg" class="id-image" alt="${product.productName}" style="width:100%">
+                            <img src="/assets/img/img-product/${product.idProduct}.jpg" class="id-image" alt="${product.productName}" style="width:100%">
                             <div class="content-info">
                                 <div class="pf-text">
                                     <h4 class="hpf">${product.productName}</h4>
