@@ -6,7 +6,7 @@ body{
 .header-admin{
     position: relative;
     background-size: cover;
-    background-image: url('../img/3103190454.jpg');
+    background-image: url('../img/img/3103190454.jpg');
     background-position: center center;
     display: flex;
     border: 1.5px solid var(--whiteBase);

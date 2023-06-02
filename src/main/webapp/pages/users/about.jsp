@@ -23,7 +23,7 @@
     <jsp:include page="/includes/components/subheader.jsp">
         <jsp:param name="title" value="ABOUT" />
         <jsp:param name="description1" value="Texto de prueba" />
-        <jsp:param name="image" value="/assets/img-me/MG_0265.jpeg" />
+        <jsp:param name="image" value="/assets/img/img-me/MG_0265.jpeg" />
     </jsp:include>
     <a class="btn-top" id="btn-top">
         <svg class="progress-ring" width="60" height="60">

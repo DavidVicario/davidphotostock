@@ -23,7 +23,7 @@
     <jsp:include page="/includes/components/subheader.jsp">
         <jsp:param name="title" value="CART" />
         <jsp:param name="description1" value="" />
-        <jsp:param name="image" value="/assets/img/2504211058-2.jpg" />
+        <jsp:param name="image" value="/assets/img/img/2504211058-2.jpg" />
     </jsp:include>
     <a class="btn-top" id="btn-top">
         <svg class="progress-ring" width="60" height="60">

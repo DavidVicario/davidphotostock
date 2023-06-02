@@ -23,7 +23,7 @@
     <jsp:include page="/includes/components/subheader.jsp">
         <jsp:param name="title" value="PORTFOLIO" />
         <jsp:param name="description1" value="My view of the world through the camera lens." />
-        <jsp:param name="image" value="/assets/img/3103190454.jpg" />
+        <jsp:param name="image" value="/assets/img/img/3103190454.jpg" />
     </jsp:include>
     <a class="btn-top" id="btn-top">
         <svg class="progress-ring" width="60" height="60">
@@ -63,7 +63,7 @@
                 <c:forEach var="product" items="${products}">
                     <div class="column-pf ${product.idSubcategory.idCategory.categoryName} ${product.idSubcategory.subcategoryName}">
                         <div class="content-pf">
-                            <img src="/assets/img/flowers(1).jpg" class="id-image" alt="Flower" style="width:100%">
+                            <img src="/assets/img/img-prodruct/${product.idProduct}.jpg" class="id-image" alt="${product.productName}" style="width:100%">
                             <div class="content-info">
                                 <div class="pf-text">
                                     <h4 class="hpf">${product.productName}</h4>
