@@ -23,7 +23,7 @@
     <jsp:include page="/includes/components/subheader.jsp">
         <jsp:param name="title" value="ABOUT" />
         <jsp:param name="description1" value="Texto de prueba" />
-        <jsp:param name="image" value="/assets/img/header3.png" />
+        <jsp:param name="image" value="/assets/img-me/MG_0265.jpeg" />
     </jsp:include>
     <a class="btn-top" id="btn-top">
         <svg class="progress-ring" width="60" height="60">
@@ -32,7 +32,7 @@
         </svg>
     </a>
     <main>
-        <h3 class="title-main hm">My Worldview</h3>
+        <h3 class="title-main hm">Unstoppable</h3>
         <p class="title-main pm">Printed on silk photography paper, 250 grm.<br>
         All images have a size of 100x70 cm.</p>
         

@@ -167,7 +167,7 @@
             <div class="observe">
                 <div class="instagram-flip">
                     <div class="instagram-flip-inner">
-                        <div class="instagram-flip-front image-insta">
+                        <div class="instagram-flip-front image-a">
                             <h2>Front Side</h2>
                         </div>
                         <div class="instagram-flip-back">
@@ -179,7 +179,7 @@
             <div class="observe">
                 <div class="instagram-flip">
                     <div class="instagram-flip-inner">
-                        <div class="instagram-flip-front image-insta">
+                        <div class="instagram-flip-front image-b">
                             <h2>Front Side</h2>
                         </div>
                         <div class="instagram-flip-back">
@@ -191,7 +191,7 @@
             <div class="observe">
                 <div class="instagram-flip">
                     <div class="instagram-flip-inner">
-                        <div class="instagram-flip-front image-insta">
+                        <div class="instagram-flip-front image-c">
                             <h2>Front Side</h2>
                         </div>
                         <div class="instagram-flip-back">
@@ -203,7 +203,7 @@
             <div class="observe">
                 <div class="instagram-flip">
                     <div class="instagram-flip-inner">
-                        <div class="instagram-flip-front image-insta">
+                        <div class="instagram-flip-front image-d">
                             <h2>Front Side</h2>
                         </div>
                         <div class="instagram-flip-back">
@@ -215,7 +215,7 @@
             <div class="observe">
                 <div class="instagram-flip">
                     <div class="instagram-flip-inner">
-                        <div class="instagram-flip-front image-insta">
+                        <div class="instagram-flip-front image-e">
                             <h2>Front Side</h2>
                         </div>
                         <div class="instagram-flip-back">
@@ -227,7 +227,7 @@
             <div class="observe">
                 <div class="instagram-flip">
                     <div class="instagram-flip-inner">
-                        <div class="instagram-flip-front image-insta">
+                        <div class="instagram-flip-front image-f">
                             <h2>Front Side</h2>
                         </div>
                         <div class="instagram-flip-back">

@@ -62,7 +62,7 @@
                             <ul>
                                 <li class="item-row">
                                     <div class="left-item">
-                                        <img class="img-item" src="/assets/img/flowers(1).jpg" alt="Flower"/>                             
+                                        <img class="img-item" src="/assets/img-product/${item.idProduct}.jpg" alt="${item.productName}"/>                             
                                         <div class="detail-item">
                                             <span>${item.productName}</span>
                                         </div>
