@@ -97,11 +97,10 @@
             </div>
             <div class="container-home observe">
                 <div class="ani-middle-txt">
-                    <h1 class="hh">ESTE TEXTO ES DE PRUEBA </h1>
+                    <h1 class="hh">EAGLE EYES</h1>
                     <p class="hp">
-                        Este texto es para probar los espacios y ver como quedan 
-                        los colores y los div. Este texto es para probar los 
-                        espacios y ver como quedan los colores y los div.
+                        It takes a lot of patience, calm and perseverance to find 
+                        the best specimens in its tiny landscapes.
                     </p>
                 </div>
             </div>
@@ -109,11 +108,11 @@
         <div class="content-home-dos observe">            
             <div class="container-home">
                 <div class="ani-middle-txt">
-                    <h1 class="hh">ESTE TEXTO ES DE PRUEBA </h1>
+                    <h1 class="hh">ORCHID HUNTING</h1>
                     <p class="hp">
-                        Este texto es para probar los espacios y ver como quedan 
-                        los colores y los div. Este texto es para probar los 
-                        espacios y ver como quedan los colores y los div.
+                        On the hunt for these strange flowers, which sometimes 
+                        look like something out of a horror story. Very delicate 
+                        and difficult to find plants. 
                     </p>
                 </div>
             </div>
@@ -127,11 +126,11 @@
             </div>            
             <div class="container-home">
                 <div class="ani-middle-txt">
-                    <h1 class="hh">ESTE TEXTO ES DE PRUEBA </h1>
+                    <h1 class="hh">WORLD INHABITANT</h1>
                     <p class="hp">
-                        Este texto es para probar los espacios y ver como quedan 
-                        los colores y los div. Este texto es para probar los 
-                        espacios y ver como quedan los colores y los div.
+                        The best thing about travel is that, even if you want to 
+                        control everything, it's not possible. Sometimes you have 
+                        real gifts for your lens.
                     </p>
                 </div>
             </div>
@@ -139,11 +138,11 @@
         <div class="content-home-dos observe">             
             <div class="container-home">
                 <div class="ani-middle-txt">
-                    <h1 class="hh">ESTE TEXTO ES DE PRUEBA </h1>
+                    <h1 class="hh">INFINITE IMAGINATION</h1>
                     <p class="hp">
-                        Este texto es para probar los espacios y ver como quedan 
-                        los colores y los div. Este texto es para probar los 
-                        espacios y ver como quedan los colores y los div.
+                        Seeing what no one else sees. Look for different ways of 
+                        seeing things. Change the focus of what is established. 
+                        These are factors that give you excellence. 
                     </p>
                 </div>
             </div>
@@ -171,7 +170,8 @@
                             <h2>Iris de Madrid</h2>
                         </div>
                         <div class="instagram-flip-back">
-                            <a href="">~Efímera. Se que ya no estas pero, tu recuerdo 
+                            <a href="https://www.instagram.com/p/Cornz99tHU_/" target="_blank">
+                                ~Efímera. Se que ya no estas pero, tu recuerdo 
                                 quedó grabado en el sensor de mi cámara.~</a>
                         </div>
                     </div>
@@ -184,7 +184,8 @@
                             <h2>Atardecer en un lugar de Madrid</h2>
                         </div>
                         <div class="instagram-flip-back">
-                            <a href="">~Así terminó. Entre el mar de nubes y reflejos.~</a>
+                            <a href="https://www.instagram.com/p/CoZLGx_NRpb/" target="_blank">
+                                ~Así terminó. Entre el mar de nubes y reflejos.~</a>
                         </div>
                     </div>
                 </div>
@@ -196,7 +197,8 @@
                             <h2>Corteza de cerezo - Calavera</h2>
                         </div>
                         <div class="instagram-flip-back">
-                            <a href="">~Buscar donde nadie busca. Ver lo que nadie 
+                            <a href="https://www.instagram.com/p/Caf7r2PNC1g/" target="_blank">
+                                ~Buscar donde nadie busca. Ver lo que nadie 
                                 ve. Encontrar lo tetrico en lo bello.~</a>
                         </div>
                     </div>
@@ -209,7 +211,8 @@
                             <h2>Mariquita de viaje en Málaga</h2>
                         </div>
                         <div class="instagram-flip-back">
-                            <a href="">~Buscando de halle en un mar de espinas.~</a>
+                            <a href="https://www.instagram.com/p/CfdnP-CNikI/" target="_blank">
+                                ~Buscando de halle en un mar de espinas.~</a>
                         </div>
                     </div>
                 </div>
@@ -221,7 +224,8 @@
                             <h2>Boda sintoísta en Japón</h2>
                         </div>
                         <div class="instagram-flip-back">
-                            <a href="">~Mimo, perfección y cuidado al detalle. 
+                            <a href="https://www.instagram.com/p/CfoGTfUt7xJ/" target="_blank">
+                                ~Mimo, perfección y cuidado al detalle. 
                                 Preciosa novia luciéndose.~</a>
                         </div>
                     </div>
@@ -234,7 +238,8 @@
                             <h2>Lavanda de Brihuega</h2>
                         </div>
                         <div class="instagram-flip-back">
-                            <a href="">~Lugares mágicos que nunca se olvidan.~</a>
+                            <a href="https://www.instagram.com/p/CjaWC8mtsPe/" target="_blank">
+                                ~Lugares mágicos que nunca se olvidan.~</a>
                         </div>
                     </div>
                 </div>
