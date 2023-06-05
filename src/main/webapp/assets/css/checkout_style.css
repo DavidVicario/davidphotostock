@@ -13,3 +13,136 @@ body{
     font-size: 20px;
     padding: 5px 0 15px 20px;
 }
+/*----- CHECKOUT -----*/
+.user-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--whiteBase);
+    background-color: var(--greyBase);
+    margin: 5% auto 0 auto;
+    border: 1px solid var(--whiteBase);
+    width: 80%;
+    padding: 10px 0 10px 0;
+}
+.content-checkout{
+    background-color: var(--blackBase);
+    margin: 5% auto 0 auto;
+    border: 1px solid var(--whiteBase);
+    width: 80%;
+}
+.container-checkout{
+    padding: 16px;
+    color: var(--whiteBase);
+}
+.container-checkout a{
+    color: var(--greyHovr);
+    font-weight: bold;
+}
+.container-checkout a:hover{
+    color: var(--orangeHovr);
+}
+.container-checkout > input[type=text],
+.container-checkout > input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: var(--greyBase);
+    color: var(--whiteBase);
+    display: inline-block;
+    border: 1.5px solid var(--whiteBase);
+    box-sizing: border-box;
+}
+input[type="text"]:focus,
+input[type="password"]:focus{
+    border: 1.5px solid var(--whiteBase);
+    background-color: var(--greyHovr);
+}
+input[type="checkbox"] + label:before{
+    content: "";
+    width: 12px;
+    height: 12px;
+    float: left;
+    margin: 2px 5px 0 0;
+    border: 1.5px solid var(--whiteBase);
+    background-color: var(--blackBase);
+}
+input[type="checkbox"]:checked + label:before{
+    border: 1.5px solid var(--whiteBase);
+    background-color: var(--greyBase);
+}
+input[type="checkbox"]{
+    display: none;
+}
+input[type="checkbox"]:checked + label:after{
+    content: "";
+    width: 6px;
+    height: 3px;
+    border: 2px solid var(--whiteBase);
+    float: left;
+    margin-left: -1.2em;
+    border-right: 0;
+    border-top: 0;
+    margin-top: 5.5px;
+    transform: rotate(-55deg);
+}
+input[type="checkbox"] + label{
+    line-height: 1.5em;
+    font-size: 13px;
+    cursor: pointer;
+}
+.forgot{
+    float: right;
+    margin: 0 0 5px;
+    font-size: 13px;
+}
+.btn-checkout{
+    background-color: var(--orangeBase);
+    color: var(--whiteBase);
+    padding: 15px 0;
+    margin: 12px 30% 12px 30%;
+    border: 1.5px solid var(--whiteBase);
+    cursor: pointer;
+    width: 40%;
+}
+.btn-checkout:hover{
+    background-color: var(--orangeHovr);
+}
+.no-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+}
+.adress-checkout > div > input[type=text],
+.adress-checkout > div > input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: var(--greyBase);
+    color: var(--whiteBase);
+    display: inline-block;
+    border: 1.5px solid var(--whiteBase);
+    box-sizing: border-box;
+}
+.adress-checkout > div > input[type=text]:focus,
+.adress-checkout > div > input[type=password]:focus{
+    border: 1.5px solid var(--whiteBase);
+    background-color: var(--greyHovr);
+}
+.btn-buy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--orangeBase);
+    color: var(--whiteBase);
+    padding: 15px 0;
+    margin: 15px auto 5% auto;
+    border: 1.5px solid var(--whiteBase);
+    cursor: pointer;
+    width: 80%;
+}
+.btn-buy:hover{
+    background-color: var(--orangeHovr);
+}

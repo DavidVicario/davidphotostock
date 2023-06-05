@@ -76,7 +76,7 @@
             </div>
             <div class="contain-btn">
                 <a href="/ProductServlet?action=allProduct" class="btn-buy">Continue</a>
-                <a href="" class="btn-buy">Checkout</a>
+                <a href="/pages/users/checkout.jsp" class="btn-buy">Checkout</a>
             </div>
         </div>
     </div>

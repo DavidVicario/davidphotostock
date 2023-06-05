@@ -7,6 +7,9 @@
     display: flex;
     border-bottom: 1.5px solid var(--whiteBase);
 }
+.checkout{
+    background-position: center top;
+}
 .subheader-text{
     height: 500px;
     width: 100%;
