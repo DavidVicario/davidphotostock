@@ -30,6 +30,7 @@
                     <h2 class="title-menu">MENU</h2>
                     <input type="text" class="search-admin" id="search-admin" onkeyup="menuSearch()" placeholder="Search.." title="Type in a category">
                     <ul class="menu-admin" id="menu-admin">
+                        <li><a href="/pages/admin/statistics.jsp">Statistics</a></li>
                         <li data-page="users-page"><a href="#">Users</a></li>
                         <li data-page="shipment-page"><a href="#">Shipment</a></li>
                         <li data-page="shipmentproduct-page"><a href="#">Shipment Product</a></li>
