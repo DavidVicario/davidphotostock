@@ -32,10 +32,53 @@
         </svg>
     </a>
     <main>
-        <h3 class="title-main hm">Unstoppable</h3>
-        <p class="title-main pm">Printed on silk photography paper, 250 grm.<br>
-        All images have a size of 100x70 cm.</p>
-        
+        <div class="title-check">
+            <div>
+                <h3 class="title-main hm">Passion</h3>
+                <p class="title-main pm">All my life with photography in my veins</p>
+            </div>
+            <div>
+                <h3 class="title-main hm">Creative</h3>
+                <p class="title-main pm">View from different points of view</p>
+            </div>
+            <div>
+                <h3 class="title-main hm">Patient</h3>
+                <p class="title-main pm">Observe quietly, the photograph appears by itself</p>
+            </div>
+        </div>
+        <h4 class="ha">BEGINNINGS</h4>
+        <div class="content-about-uno observe">            
+            <div class="container-about">
+                <div class="ani-about-txt">
+                    <h5 class="hh">ORCHID HUNTING</h5>
+                    <p class="hp">
+                        On the hunt for these strange flowers, which sometimes 
+                        look like something out of a horror story. Very delicate 
+                        and difficult to find plants. 
+                    </p>
+                </div>
+            </div>
+            <div class="image-about me-a">
+                <div class="image-content ani-about-img"></div>
+            </div>            
+        </div>
+        <h4 class="ha">BEGINNINGS</h4>
+        <p class="pa">skjadj asd asf g xnchkjhdsgf cxjfhkjds asgjh</p>
+        <div class="content-about-dos observe">
+            <div class="image-about me-b">
+                <div class="image-content ani-about-img"></div>
+            </div>
+            <div class="container-about">
+                <div class="ani-about-txt">
+                    <h5 class="hh">ORCHID HUNTING</h5>
+                    <p class="hp">
+                        On the hunt for these strange flowers, which sometimes 
+                        look like something out of a horror story. Very delicate 
+                        and difficult to find plants. 
+                    </p>
+                </div>
+            </div>
+        </div>
         
         <jsp:include page="/includes/forms/login.jsp"/>
         <jsp:include page="/includes/forms/signup.jsp"/>

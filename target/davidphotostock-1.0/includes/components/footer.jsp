@@ -1,7 +1,7 @@
 <footer>
     <div class="footer-container">
         <div class="footer-logo">
-            <img src="/assets/img/blanco-2k.png" alt="logo">
+            <img src="/assets/img/img/blanco-2k.png" alt="logo">
         </div>
         <p>All rights reserved 2010 <br> © 2010 David Vicario, Spain</p>
         <div class="networks">

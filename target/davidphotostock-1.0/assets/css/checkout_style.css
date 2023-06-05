@@ -1,0 +1,15 @@
+body{
+    background-color: var(--blackBase);
+}
+.title-main{
+    text-align: center;
+    color: var(--whiteBase);
+}
+.hm{
+    font-size: 25px;
+    padding: 25px 0 5px 20px;
+}
+.pm{
+    font-size: 20px;
+    padding: 5px 0 15px 20px;
+}
