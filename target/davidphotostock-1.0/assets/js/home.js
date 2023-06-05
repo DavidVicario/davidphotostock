@@ -39,10 +39,14 @@ function showSlides(n) {
     slides[slideIndex - 1].style.display = "block";
 }
 
-//Añade las animaciones.
+//Añade las animaciones a los Div del home.
+//Controlador de eventos que se ejecuta cuando toda la página HTML ha sido completamente cargada y parseada
 document.addEventListener("DOMContentLoaded", function () {
+    //Creamos un observador para vigilar los elementos que aparecen por pantalla. 
     let observer = new IntersectionObserver(entries => {
+        //Recorremos cada objeto vigilado por IntersectionObserver
         entries.forEach(entry => {
+            //Añadimos las clases para realizar las animaciones correcpondientes. 
             if (entry.isIntersecting) {
                 if (entry.target.querySelector('.ani-middle-img')) {
                     entry.target.querySelector('.ani-middle-img').classList.add('ani-middle-img-start');
@@ -53,12 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 if (entry.target.querySelector('.instagram-flip')) {
                     entry.target.classList.add('instagram-flip-animation');
                 }
-
+                //Hacemos que no se activen cada vez que salen por pantalla. 
+                //Sino solo la primera vez. 
                 observer.unobserve(entry.target);
             }
         });
     });
 
+    //Seleccionamos todas las clases observe, y las envia al observador.
     document.querySelectorAll('.observe').forEach(element => {
         observer.observe(element);
     });

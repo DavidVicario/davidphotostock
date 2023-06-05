@@ -39,7 +39,7 @@ function showPage(pageId) {
 document.getElementById("menu-admin").addEventListener("click", function (event) {
     //Cuando se hace clic en este elemento, el evento se activa y se verifica si 
     //el elemento clicado es un enlace <a>
-    const target = event.target;    
+    const target = event.target;
     if (target.tagName.toLowerCase() === "a") {
         //Si es un enlace, se obtiene el elemento <li>
         const li = target.parentElement;
@@ -51,24 +51,30 @@ document.getElementById("menu-admin").addEventListener("click", function (event)
 });
 
 // Función para cerrar sesión
-window.logout = function() {
-    fetch('/UsersAdminServlet?action=logout', { method: 'POST' })
-        .then(response => {
-            if (response.status === 200) {
-                
-                var loginLink = document.getElementById('login-link');
-                var signupLink = document.getElementById('signup-link');
-                
-                loginLink.textContent = 'LOGIN';
-                signupLink.textContent = 'SIGN UP';
-                
-                //Recargo la pagina para que se actulizen los datos.
-                window.location.href = "index.jsp";
-            } else {
-                console.log('Error logging out');
-            }
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+//Definimos una funcion global de la ventana del cliente.
+window.logout = function () {
+    //Mandamos la solicitud al servidor. 
+    fetch('/UsersAdminServlet?action=logout', {method: 'POST'})
+            //Iniciamos la promesa. 
+            .then(response => {
+                //La solicitus es exitosa en 200, asi que lo igualamos. 
+                if (response.status === 200) {
+
+                    //Volvemos a dejar el Header de forma "No usuario".
+                    var loginLink = document.getElementById('login-link');
+                    var signupLink = document.getElementById('signup-link');
+
+                    loginLink.textContent = 'LOGIN';
+                    signupLink.textContent = 'SIGN UP';
+
+                    //Recargo la pagina para que se actulizen los datos.
+                    window.location.href = "index.jsp";
+                } else {
+                    console.log('Error logging out');
+                }
+            })
+            //Promesa por si la operacion es rechazada.
+            .catch((error) => {
+                console.error('Error:', error);
+            });
 };

@@ -25,14 +25,15 @@ let shop = document.querySelector('.shop');
 let cart = document.querySelector('.contain-cart');
 
 // Agrega un controlador de eventos para cuando el mouse entra en el elemento
+//Con esto hacemos que el carrito aparezca y se oculte en funcion Hover
 shop.addEventListener('mouseenter', function () {
-    if(window.innerWidth > 1132) {
+    if (window.innerWidth > 1132) {
         cart.style.visibility = "visible";
     }
 });
 
 shop.addEventListener('mouseleave', function () {
-    if(window.innerWidth > 1132) {
+    if (window.innerWidth > 1132) {
         cart.style.visibility = "hidden";
     }
 });

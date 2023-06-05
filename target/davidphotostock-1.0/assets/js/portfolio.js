@@ -107,74 +107,31 @@ window.onload = function () {
 }
 
 //Zoom imagen
+//Pbtenemos los elementos correspondientes. 
 const modal = document.getElementById("zoom-modal");
-
 const images = document.getElementsByClassName("id-image");
 const modalImg = document.getElementById("zoom-image");
 
+//Iteramos cada imagen y se les añade a cada una funa funcion onclick. 
 for (let img of images) {
+    //Con esta funcion hacemos que al pulsar una imagen de abra el modal.
     img.onclick = function () {
+        //Se abre
         modal.style.display = "block";
+        //Introducimos la imagane.
         modalImg.src = this.src;
-        captionText.innerHTML = this.alt;
     }
-}
+} 
+//Obtenemos la referencia del primer elemento de la clase close-modal
 const span = document.getElementsByClassName("close-modal")[0];
 
+//Al pulsar en close-modal cerrara el modal.
 span.onclick = function () {
     modal.style.display = "none";
 }
+//Añado una funcion para que tambien se cierre se al pulsar fuera de la imagen. 
 modal.onclick = function(event) {
     if (event.target != modalImg) {
         modal.style.display = "none";
     }
 }
-
-// Dropdown Cascada -- En proceso...
-/*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_cascading_dropdown
- const subjectObject = {
- "Front-end": {
- "Author": ["Author", "Abstract"],
- "Macro": ["Insect", "Flora"],
- "Nature": ["Fauna", "Flora", "Landscape"],
- "Travel": ["Culture", "People", "Landscape", "Architecture"],
- "Social": ["Portrait", "People", "Street"],
- "Commercial": ["Product", "Foot"]
- }
- };
- 
- window.onload = function () {
- const categoryDiv = document.getElementById("cdd");
- for (const category in subjectObject) {
- const a = document.createElement("a");
- a.className = "btn-pf";
- a.onclick = function (category) {
- return function () {
- filterSelection(category.toLowerCase());
- showDrop("cdd");
- populateSubcategory(category);
- };
- }(category);
- a.textContent = category;
- categoryDiv.appendChild(a);
- }
- };
- 
- function populateSubcategory(category) {
- const subcategoryDiv = document.getElementById("sdd");
- subcategoryDiv.innerHTML = "";
- const subcategories = subjectObject[category];
- for (let i = 0; i < subcategories.length; i++) {
- const a = document.createElement("a");
- a.className = "btn-pf";
- a.onclick = function (subcategory) {
- return function () {
- filterSelection(subcategory.toLowerCase());
- showDrop("sdd");
- };
- }(subcategories[i]);
- a.textContent = subcategories[i];
- subcategoryDiv.appendChild(a);
- }
- }
- */
