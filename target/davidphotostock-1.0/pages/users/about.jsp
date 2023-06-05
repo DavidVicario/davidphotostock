@@ -46,15 +46,17 @@
                 <p class="title-main pm">Observe quietly, the photograph appears by itself</p>
             </div>
         </div>
-        <h4 class="ha">BEGINNINGS</h4>
+        <h4 class="ha">MYSELF</h4>
         <div class="content-about-uno observe">            
             <div class="container-about">
                 <div class="ani-about-txt">
-                    <h5 class="hh">ORCHID HUNTING</h5>
+                    <h5 class="hh">One With Nature</h5>
                     <p class="hp">
-                        On the hunt for these strange flowers, which sometimes 
-                        look like something out of a horror story. Very delicate 
-                        and difficult to find plants. 
+                        I feel alive in nature and that is why my path always leads 
+                        me to it. I love trekking, alpinism and climbing, 
+                        where I am always accompanied by photography.
+                        <br><br>
+                        Since the first cell phones had cameras.
                     </p>
                 </div>
             </div>
@@ -63,23 +65,70 @@
             </div>            
         </div>
         <h4 class="ha">BEGINNINGS</h4>
-        <p class="pa">skjadj asd asf g xnchkjhdsgf cxjfhkjds asgjh</p>
+        <p class="pa">
+            I started as always, problems are solved and solutions are 
+            adapted to your current self.
+        </p>
         <div class="content-about-dos observe">
             <div class="image-about me-b">
                 <div class="image-content ani-about-img"></div>
             </div>
             <div class="container-about">
                 <div class="ani-about-txt">
-                    <h5 class="hh">ORCHID HUNTING</h5>
+                    <h5 class="hh">First Macros</h5>
                     <p class="hp">
-                        On the hunt for these strange flowers, which sometimes 
-                        look like something out of a horror story. Very delicate 
-                        and difficult to find plants. 
+                        The beginnings of some of my macros were in low cost studios. 
+                        I used to support branches on the flagstones because I didn't 
+                        have supports. 
+                        <br><br>
+                        I was acquiring material and knowledge of how to use light to 
+                        my advantage. 
+                        <br><br>
+                        At present my approach is to adjust to the environment instead 
+                        of altering it to get a correctly composed photograph. I prefer 
+                        naturalness above all. 
                     </p>
                 </div>
             </div>
         </div>
-        
+        <div class="about-home">
+            <div class="about-image">
+                <div class="about-text">
+                    <h1>Strong Will</h1>
+                    <p>Always looking to the horizon.</p>
+                </div>
+            </div>
+        </div>
+        <h4 class="ha" style="margin-bottom: 50px;">FUTURE</h4>
+        <div class="content-about-uno observe">
+            <div class="image-about me-c">
+                <div class="image-content ani-about-img"></div>
+            </div>
+            <div class="container-about">
+                <div class="ani-about-txt">
+                    <p class="hp">
+                        My life has changed a lot, and now I have other aspirations. But the 
+                        essence has not changed, nor do I plan to change it. Photography and 
+                        alpinism will be around for a long time.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="content-about-dos observe">
+            <div class="image-about me-d">
+                <div class="image-content ani-about-img" style="background-position: center bottom;"></div>
+            </div>
+            <div class="container-about">
+                <div class="ani-about-txt">
+                    <p class="hp">
+                        The road will not be easy, I do not count on it. What's more, I don't 
+                        care. Always improving, always walking with a clear objective. The more 
+                        stones on the road, the more learning awaits me. 
+                    </p>
+                </div>
+            </div>
+        </div>
+        <h4 class="ha" style="margin-bottom: 50px;">NEVER SURRENDER</h4>
         <jsp:include page="/includes/forms/login.jsp"/>
         <jsp:include page="/includes/forms/signup.jsp"/>
     </main>

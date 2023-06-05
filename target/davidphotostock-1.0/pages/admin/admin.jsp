@@ -35,7 +35,7 @@
                         <li data-page="shipmentproduct-page"><a href="#">Shipment Product</a></li>
                         <li data-page="category-page"><a href="#">Category</a></li>
                         <li data-page="subcategory-page"><a href="#">Subcategory</a></li>
-                        <li data-page="product-page"><a href="#">Product</a></li>
+                        <li data-page="product-page"><a href="/ProductServlet?action=allProduct">Product</a></li>
                         <li data-page="ccaa-page"><a href="#">CCAA</a></li>
                         <li data-page="province-page"><a href="#">Province</a></li>
                         <li data-page="municipality-page"><a href="#">Municipality</a></li>
@@ -368,20 +368,24 @@
                         </div>                    
                         <div class="table-admin">
                             <table>
-                               <tr>
+                                <tr>
                                     <th>ID</th>
                                     <th>Product Name</th>
                                     <th>Stock</th>
                                     <th>Price</th>
                                     <th>Id Subcategory</th>
-                               </tr>
-                               <tr>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                               </tr>
+                                </tr>
+                                <c:if test="${not empty products}">
+                                    <c:forEach var="product" items="${products}">
+                                        <tr>
+                                            <td>${product.idProduct}</td>
+                                            <td>${product.productName}</td>
+                                            <td>${product.stock}</td>
+                                            <td>${product.price}</td>
+                                            <td>${product.idSubcategory}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </c:if>
                            </table>
                         </div>
                     </div>

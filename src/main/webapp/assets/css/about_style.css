@@ -39,11 +39,11 @@ body{
 .image-about.me-b .image-content{
     background-image: url('../img/img-me/20211121_103325.jpg');
 }
-.image-about.nature .image-content{
-    background-image: url('../img/img/3103180451.jpg');
+.image-about.me-c .image-content{
+    background-image: url('../img/img-me/IMG_20221009_115607_1.jpg');
 }
-.image-about.abstract .image-content{
-    background-image: url('../img/img/IMG_20221120_123853_2.jpg');
+.image-about.me-d .image-content{
+    background-image: url('../img/img-me/IMG_20230406_180315_1.jpg');
 }
 .content-about-uno,
 .content-about-dos {
@@ -149,4 +149,37 @@ body{
     to {
         transform: translateY(0);
     }
+}
+
+.about-image{
+    background-image: url('../img/img-me/IMG_20230409_114655_3.jpg');
+}
+.about-image{
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+}
+.about-text{
+    height: 450px;
+    width: 100%;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--whiteBase);    
+    text-shadow: 
+        -2px -2px 1px var(--blackBase), 
+        2px 2px 1px var(--blackBase), 
+        -2px 2px 1px var(--blackBase), 
+        2px -2px 1px var(--blackBase);
+    line-height: 1.8;
+}
+.about-text > h{
+    font-size: 30px;
+}
+.about-text > p{
+    font-size: 25px;
 }
