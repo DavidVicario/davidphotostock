@@ -253,8 +253,8 @@ public class UsersAdminServlet extends HttpServlet {
         
         String subcategoryName = request.getParameter("name");
         String idCategoryString = request.getParameter("idCategory");
-        int idCategoryInt = Integer.parseInt(idCategoryString);
         
+        int idCategoryInt = Integer.parseInt(idCategoryString);
         Category idCategory = cs.obtainCategoryById(idCategoryInt);
         
         Subcategory subcategory = new Subcategory(subcategoryName, idCategory);
@@ -278,10 +278,10 @@ public class UsersAdminServlet extends HttpServlet {
         String stockString = request.getParameter("stock");
         String priceString = request.getParameter("price");
         String idSubcategoryString = request.getParameter("id-subcategory");
+        
         int stock = Integer.parseInt(stockString);
         BigDecimal price = new BigDecimal(priceString);
         int idSubategoryInt = Integer.parseInt(idSubcategoryString);
-        
         Subcategory idSubategory = scs.obtainSubcategoryById(idSubategoryInt);
         
         Product product = new Product(productName, stock, price, idSubategory);
