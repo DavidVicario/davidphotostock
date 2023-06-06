@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface ProductService {
     
-    void createProduct(Product p);
+    Boolean createProduct(Product p);
 
     void updateProduct(Product p);
 

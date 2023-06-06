@@ -54,6 +54,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import java.util.List;
 
 @WebServlet(name = "UsersAdminServlet", urlPatterns = {"/UsersAdminServlet"})
@@ -199,7 +200,6 @@ public class UsersAdminServlet extends HttpServlet {
             throws ServletException, IOException{
         
         IUsersDao iud = new IUsersDaoImpl(getInstance());
-        
         us = new UsersServiceImpl(iud);
         
         String name = request.getParameter("name");
@@ -229,16 +229,68 @@ public class UsersAdminServlet extends HttpServlet {
     private void addNewCategory(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
         
+        ICategoryDao icd = new ICategoryDaoImpl(getInstance());
+        cs = new CategoryServiceImpl(icd);
+        
+        String categoryName = request.getParameter("name");
+        
+        Category category = new Category(categoryName);
+        
+        if (!cs.createCategory(category)){
+            request.getSession().setAttribute("errorActive", true);
+            request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
+        }
+        response.sendRedirect("pages/admin/admin.jsp");
     }
     //Metodo para agregar un usuario desde admin
     private void addNewSubcategory(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
         
+        ICategoryDao icd = new ICategoryDaoImpl(getInstance());
+        cs = new CategoryServiceImpl(icd);
+        ISubcategoryDao isd = new ISubcategoryDaoImpl(getInstance());
+        scs = new SubcategoryServiceImpl(isd);
+        
+        String subcategoryName = request.getParameter("name");
+        String idCategoryString = request.getParameter("idCategory");
+        int idCategoryInt = Integer.parseInt(idCategoryString);
+        
+        Category idCategory = cs.obtainCategoryById(idCategoryInt);
+        
+        Subcategory subcategory = new Subcategory(subcategoryName, idCategory);
+        
+        if (!scs.createSubcategory(subcategory)){
+            request.getSession().setAttribute("errorActive", true);
+            request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
+        }
+        response.sendRedirect("pages/admin/admin.jsp");
     }
     //Metodo para agregar un usuario desde admin
     private void addNewProduct(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
         
+        ISubcategoryDao isd = new ISubcategoryDaoImpl(getInstance());
+        scs = new SubcategoryServiceImpl(isd);
+        IProductDao ipd = new IProductDaoImpl(getInstance());
+        ps = new ProductServiceImpl(ipd);
+        
+        String productName = request.getParameter("name-product");
+        String stockString = request.getParameter("stock");
+        String priceString = request.getParameter("price");
+        String idSubcategoryString = request.getParameter("id-subcategory");
+        int stock = Integer.parseInt(stockString);
+        BigDecimal price = new BigDecimal(priceString);
+        int idSubategoryInt = Integer.parseInt(idSubcategoryString);
+        
+        Subcategory idSubategory = scs.obtainSubcategoryById(idSubategoryInt);
+        
+        Product product = new Product(productName, stock, price, idSubategory);
+        
+        if (!ps.createProduct(product)){
+            request.getSession().setAttribute("errorActive", true);
+            request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
+        }
+        response.sendRedirect("pages/admin/admin.jsp");
     }
     //Metodo para agregar un usuario desde admin
     private void addNewShipment(HttpServletRequest request, HttpServletResponse response)

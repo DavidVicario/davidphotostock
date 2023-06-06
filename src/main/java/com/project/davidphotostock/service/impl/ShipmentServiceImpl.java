@@ -20,8 +20,10 @@ public class ShipmentServiceImpl implements ShipmentService {
 
     //Metodo para crear un nuevo registro en la base de datos. Al no tener campo unico, creamos sin hacer filtro.
     @Override
-    public void createShipment(Shipment s) {
+    public Boolean createShipment(Shipment s) {
+        Boolean resul = true;
         isd.create(s);
+        return resul;
     }
 
     //Metodo para actualizar un registro en la base de datos si este existe.

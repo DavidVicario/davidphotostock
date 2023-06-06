@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface CategoryService {
     
-    void createCategory(Category c);
+    Boolean createCategory(Category c);
 
     void updateCategory(Category c);
 

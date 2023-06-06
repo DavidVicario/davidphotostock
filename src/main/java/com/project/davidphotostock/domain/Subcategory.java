@@ -66,6 +66,11 @@ public class Subcategory implements Serializable {
     public Subcategory(Integer idSubcategory) {
         this.idSubcategory = idSubcategory;
     }
+    
+    public Subcategory(String subcategoryName, Category idCategory) {
+        this.subcategoryName = subcategoryName;
+        this.idCategory = idCategory;
+    }
 
     //Getter and Setter
     public Integer getIdSubcategory() {

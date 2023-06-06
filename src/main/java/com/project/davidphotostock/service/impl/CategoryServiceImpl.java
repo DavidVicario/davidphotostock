@@ -20,16 +20,19 @@ public class CategoryServiceImpl implements CategoryService {
     
     //Metodo para crear un nuevo registro en la base de datos si este no existe.
     @Override
-    public void createCategory(Category c) {
+    public Boolean createCategory(Category c) {
+        Boolean resul = true;
         //Llamamos al metodo del Dao para realizar la busqueda de c.
         Category categoryN = icd.obtainByName(c.getCategoryName());
         //Si devuelve un registro, es que ya existe y saltara un mensaje.
         if (categoryN != null) {
             System.out.println("La categoria ya existe.");
+            resul = false;
         } else {
             //Si devuelve un null creara el registro nuevo. 
             icd.create(c);
         }
+        return resul;
     }
 
     //Metodo para actualizar un registro en la base de datos si este existe.

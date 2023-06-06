@@ -20,8 +20,10 @@ public class SubcategoryServiceImpl implements SubcategoryService {
 
     //Metodo para crear un nuevo registro en la base de datos. Al no tener campo unico, creamos sin hacer filtro.
     @Override
-    public void createSubcategory(Subcategory sc) {
+    public Boolean createSubcategory(Subcategory sc) {
+        Boolean resul = true;
         iscd.create(sc);
+        return resul;
     }
 
     //Metodo para actualizar un registro en la base de datos si este existe.

@@ -20,16 +20,19 @@ public class ProductServiceImpl implements ProductService {
 
     //Metodo para crear un nuevo registro en la base de datos si este no existe.
     @Override
-    public void createProduct(Product p) {
+    public Boolean createProduct(Product p) {
+        Boolean resul = true;
         //Llamamos al metodo del Dao para realizar la busqueda de p.
         Product productN = ipd.obtainByName(p.getProductName());
         //Si devuelve un registro, es que ya existe y saltara un mensaje.
         if (productN != null) {
             System.out.println("El producto ya existe.");
+            resul = false;
         } else {
             //Si devuelve un null creara el registro nuevo.
             ipd.create(p);
         }
+        return resul;
     }
 
     //Metodo para actualizar un registro en la base de datos si este existe.

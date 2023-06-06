@@ -7,7 +7,7 @@
             <label for="name"><b>Name *</b></label>
             <input id="name" type="text" placeholder="Enter Name" name="name" required>
             <label for="id-category"><b>Id Category *</b></label>
-            <input id="id-category" type="number" placeholder="Enter Id Category" name="id-category" required>
+            <input id="id-category" type="number" placeholder="Enter Id Category" name="idCategory" required>
             <button class="btn-add" type="submit">ADD</button>            
         </div>
     </form>

@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface SubcategoryService {
     
-    void createSubcategory(Subcategory sc);
+    Boolean createSubcategory(Subcategory sc);
 
     void updateSubcategory(Subcategory sc);
 

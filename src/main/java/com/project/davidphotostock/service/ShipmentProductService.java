@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ShipmentProductService {
         
-    void createShipmentProduct(ShipmentProduct sp);
+    Boolean createShipmentProduct(ShipmentProduct sp);
 
     void updateShipmentProduct(ShipmentProduct sp);
 
