@@ -16,7 +16,7 @@
     <header class="header-admin">
         <div class="title-admin">
             <h1>ADMINISTRATOR</h1>
-            <a class="logout-admin" href="/pages/admin/admin.jsp" onclick="logout()">Admin panel</a>
+            <a class="logout-admin" href="/UsersAdminServlet">Admin panel</a>
         </div>
     </header>
     <body>

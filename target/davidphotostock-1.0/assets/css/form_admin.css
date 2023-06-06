@@ -1,0 +1,136 @@
+.image-form{
+    text-align: center;
+    margin: 24px 0 1px 0;
+    position: relative;
+}
+.image-form > .close-x{
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: var(--whiteBase);
+    font-size: 35px;
+    font-weight: bold;
+}
+.close-x:hover,.close-x:focus{
+    color: var(--orangeHovr);
+    cursor: pointer;
+}
+.section-add{
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: var(--greyModal);
+    padding-top: 60px;
+}
+.section-add > .content-add{
+    background-color: var(--blackBase);
+    margin: 5% auto 15% auto;
+    border: 1px solid var(--whiteBase);
+    width: 600px;
+}
+.container-add{
+    padding: 16px;
+    color: var(--whiteBase);
+}
+.container-add a{
+    color: var(--greyHovr);
+    font-weight: bold;
+}
+.container-add a:hover{
+    color: var(--orangeHovr);
+}
+.add-two{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.add-three{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.add-two > div{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+}
+.add-three > div{
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+}
+.container-add > input[type=text],
+.container-add > input[type=number],
+.container-add > input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: var(--greyBase);
+    color: var(--whiteBase);
+    display: inline-block;
+    border: 1.5px solid var(--whiteBase);
+    box-sizing: border-box;
+}
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus{
+    border: 1.5px solid var(--whiteBase);
+    background-color: var(--greyHovr);
+}
+.add-two > div > input[type=text],
+.add-two > div > input[type=number],
+.add-two > div > input[type=password],
+.add-two > div > input[type=checkbox],
+.add-two > div > input[type=datetime-local]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: var(--greyBase);
+    color: var(--whiteBase);
+    display: inline-block;
+    border: 1.5px solid var(--whiteBase);
+    box-sizing: border-box;
+}
+.add-two > div > input[type=text]:focus,
+.add-two > div > input[type=number]:focus,
+.add-two > div > input[type=password]:focus,
+.add-two > div > input[type=checkbox]:focus,
+.add-two > div > input[type=datetime-local]:focus{
+    border: 1.5px solid var(--whiteBase);
+    background-color: var(--greyHovr);
+}
+.add-three > div > input[type=text],
+.add-three > div > input[type=number],
+.add-three > div > input[type=password]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: var(--greyBase);
+    color: var(--whiteBase);
+    display: inline-block;
+    border: 1.5px solid var(--whiteBase);
+    box-sizing: border-box;
+}
+.add-three > div > input[type=text]:focus,
+.add-three > div > input[type=number]:focus,
+.add-three > div > input[type=password]:focus{
+    border: 1.5px solid var(--whiteBase);
+    background-color: var(--greyHovr);
+}
+.btn-add{
+    background-color: var(--orangeBase);
+    color: var(--whiteBase);
+    padding: 15px 0;
+    margin: 30px 0 12px 0;
+    border: 1.5px solid var(--whiteBase);
+    cursor: pointer;
+    width: 100%;
+}
+.btn-add:hover{
+    background-color: var(--orangeHovr);
+}

@@ -12,17 +12,24 @@
     <title>Administrator</title>
     <link rel="shortcut icon" href="/assets/img/img/DV-logo-favicon2.svg" type="image/svg+xml">
     <link rel="shortcut icon" href="/assets/img/img/negro-2k.png" type="image/png">
-    <link rel="stylesheet" href="/assets/icons/bootstrap-icons.css">
+    <link rel="stylesheet" href="/assets/icons/bootstrap-icons.css">    
     <link rel="stylesheet" href="/assets/css/admin_style.css">
+    <link rel="stylesheet" href="/assets/css/form_admin.css">
     <link rel="stylesheet" href="/assets/css/general.css">
 </head>
-<body>
+<body>    
     <header class="header-admin">
         <div class="title-admin">
             <h1>ADMINISTRATOR</h1>
             <a class="logout-admin" href="index.jsp" onclick="logout()">LogOut</a>
         </div>
     </header>
+    <a class="btn-top" id="btn-top">
+        <svg class="progress-ring" width="60" height="60">
+            <circle class="progress-ring-circle" stroke="#ff8000" stroke-width="3" fill="#ffffff" r="28" cx="30" cy="30"/>
+            <text x="50%" y="50%" text-anchor="middle" stroke="#ff9934" fill="#ff9934" dy=".3em">TOP</text>
+        </svg>
+    </a>
     <main>
         <body>
             <div class="row-admin">
@@ -47,35 +54,38 @@
                 <div id="users-page" class="page-content">
                     <div class="title-add">
                         <h2>Users</h2>
-                        <button class="add-new" onclick="">Add New</button>
+                        <button class="add-new" onclick="openForm('user')">Add New</button>
                     </div>
-                    <div class="content-wrapper">                                                                
-                        <div class="container-user">
-                            <div class="container-search">
-                                <input type="text" class="search-data" name="search" placeholder="Search...">
-                                <button class="bi bi-search"></button>
-                            </div>
-                            <label for="name"><b>Name *</b></label>
-                            <input id="name" type="text" placeholder="Enter Name" name="name" required>                    
-                            <div class="surnames">
-                                <div>
-                                    <label for="fsurname"><b>First Surname *</b></label>
-                                    <input id="fsurname" type="text" placeholder="Enter First Surname" name="fsurname" required>
+                    <div class="content-wrapper">
+                        <c:if test="${not empty users}">
+                            <c:set var="user" value="${users}" />
+                            <div class="container-user">
+                                <div class="container-search">
+                                    <input type="text" class="search-data" name="search" placeholder="Search...">
+                                    <button class="bi bi-search"></button>
                                 </div>
-                                <div>
-                                    <label for="ssurname"><b>Second Surname</b></label>
-                                    <input id="ssurname" type="text" placeholder="Enter Second Surname" name="ssurname">
+                                <label for="name"><b>Name *</b></label>
+                                <input id="name" type="text" placeholder="Enter Name" name="name" required>                    
+                                <div class="surnames">
+                                    <div>
+                                        <label for="fsurname"><b>First Surname *</b></label>
+                                        <input id="fsurname" type="text" placeholder="Enter First Surname" name="fsurname" required>
+                                    </div>
+                                    <div>
+                                        <label for="ssurname"><b>Second Surname</b></label>
+                                        <input id="ssurname" type="text" placeholder="Enter Second Surname" name="ssurname">
+                                    </div>
                                 </div>
+                                <label for="mail"><b>Mail *</b></label>
+                                <input id="mail" type="text" placeholder="Enter Mail" name="mail" required>
+                                <label for="user"><b>Username *</b></label>
+                                <input id="user" type="text" placeholder="Enter Username" name="user" required>                            
+                                <label for="pass"><b>Password *</b></label>
+                                <input id="pass" type="password" placeholder="Enter Password" name="pass" required>
+                                <button class="button-ud" onclick="">Update</button>
+                                <button class="button-ud" onclick="">Delete</button>
                             </div>
-                            <label for="mail"><b>Mail *</b></label>
-                            <input id="mail" type="text" placeholder="Enter Mail" name="mail" required>
-                            <label for="user"><b>Username *</b></label>
-                            <input id="user" type="text" placeholder="Enter Username" name="user" required>                            
-                            <label for="pass"><b>Password *</b></label>
-                            <input id="pass" type="password" placeholder="Enter Password" name="pass" required>
-                            <button class="button-ud" onclick="">Update</button>
-                            <button class="button-ud" onclick="">Delete</button>
-                        </div>
+                        </c:if>
                     </div>                    
                     <div class="section-list">
                         <h3>List</h3>                   
@@ -112,7 +122,7 @@
                 <div id="shipment-page" class="page-content">
                     <div class="title-add">
                         <h2>Shipment</h2>
-                        <button class="add-new" onclick="">Add New</button>
+                        <button class="add-new" onclick="openForm('shipment')">Add New</button>
                     </div>
                     <div class="content-wrapper">                                                                
                         <div class="container-shipment">
@@ -193,8 +203,8 @@
                                     
                 <div id="shipmentproduct-page" class="page-content">
                     <div class="title-add">
-                        <h2>Users</h2>
-                        <button class="add-new" onclick="">Add New</button>
+                        <h2>ShipmentProduct</h2>
+                        <button class="add-new" onclick="openForm('shipmentproduct')">Add New</button>
                     </div>
                     <div class="content-wrapper">                                                                
                         <div class="container-shipmentproduct">
@@ -248,7 +258,7 @@
                 <div id="category-page" class="page-content">                    
                     <div class="title-add">
                         <h2>Category</h2>
-                        <button class="add-new" onclick="">Add New</button>
+                        <button class="add-new" onclick="openForm('category')">Add New</button>
                     </div>
                     <div class="content-wrapper">                                                                
                         <div class="container-category">
@@ -290,7 +300,7 @@
                 <div id="subcategory-page" class="page-content">
                     <div class="title-add">
                         <h2>Subcategory</h2>
-                        <button class="add-new" onclick="">Add New</button>
+                        <button class="add-new" onclick="openForm('subcategory')">Add New</button>
                     </div>
                     <div class="content-wrapper">                                                                
                         <div class="container-subcategory">
@@ -336,7 +346,7 @@
                 <div id="product-page" class="page-content">
                     <div class="title-add">
                         <h2>Product</h2>
-                        <button class="add-new" onclick="">Add New</button>
+                        <button class="add-new" onclick="openForm('product')">Add New</button>
                     </div>                    
                     <div class="content-wrapper">                                                                  
                         <div class="container-product">
@@ -491,6 +501,14 @@
             </div>         
         </body>
     </main>
+    <jsp:include page="/includes/formsAdmin/addShipmentProduct.jsp"/>
+    <jsp:include page="/includes/formsAdmin/addSubcategory.jsp"/>
+    <jsp:include page="/includes/formsAdmin/addCategory.jsp"/>
+    <jsp:include page="/includes/formsAdmin/addShipment.jsp"/>
+    <jsp:include page="/includes/formsAdmin/addProduct.jsp"/>
+    <jsp:include page="/includes/formsAdmin/addUser.jsp"/>    
+    <script src="/assets/js/top.js"></script>
     <script src="/assets/js/admin.js"></script>
+    <script src="/assets/js/forms_admin.js"></script>
 </body>
 </html>

@@ -87,9 +87,24 @@ public class UsersAdminServlet extends HttpServlet {
                 case "logout":
                     this.logoutUser(request, response);
                     break;
-                case "createAdmin":
+                case "addUser":
                     this.addNewUser(request, response);
-                    break;                    
+                    break;
+                case "addCategory":
+                    this.addNewCategory(request, response);
+                    break;
+                case "addSubcategory":
+                    this.addNewSubcategory(request, response);
+                    break;
+                case "addProduct":
+                    this.addNewProduct(request, response);
+                    break;
+                case "addShipment":
+                    this.addNewShipment(request, response);
+                    break;
+                case "addShipmentProduct":
+                    this.addNewShipmentProduct(request, response);
+                    break;
                 case "update":
                     this.updateUser(request, response);
                     break;
@@ -104,7 +119,7 @@ public class UsersAdminServlet extends HttpServlet {
         }
     }
     
-        // Método para comprobar si un usuario ha iniciado sesión
+    // Método para comprobar si un usuario ha iniciado sesión
     private void checkLogin(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
@@ -130,23 +145,10 @@ public class UsersAdminServlet extends HttpServlet {
         HttpSession session = request.getSession();
         session.invalidate(); 
 
-        response.setStatus(HttpServletResponse.SC_OK); 
+        response.sendRedirect("index.jsp"); 
     }
     
-    //Acción por defecto para el usuario Admin.
-    private void actionDefaultAdmin(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException{
-        
-        IUsersDao iud = new IUsersDaoImpl(getInstance());
-        
-        us = new UsersServiceImpl(iud);
-        
-        List<Users> users = us.obtainAllUsers();
-        request.setAttribute("users", users);
-        request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
-    }
-    
-    //Metodo para listar los usuarios. 
+    //METODO LISTAR
     private void listAll(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
         
@@ -169,7 +171,6 @@ public class UsersAdminServlet extends HttpServlet {
         IShipmentProductDao ispd = new IShipmentProductDaoImpl(getInstance());
         sps = new ShipmentProductServiceImpl(ispd);
         
-        
         List<Users> users = us.obtainAllUsers();
         List<Category> categories = cs.obtainAllCategories();
         List<Subcategory> subcategories = scs.obtainAllSubcategories();
@@ -179,7 +180,6 @@ public class UsersAdminServlet extends HttpServlet {
         List<Municipality> municipalities = ms.obtainAllMunicipalities();       
         List<Shipment> shipments = ss.obtainAllShipments();
         List<ShipmentProduct> shipmentProducts = sps.obtainAllShipmentProducts();
-        
         
         request.setAttribute("users", users);
         request.setAttribute("categories", categories);
@@ -193,6 +193,7 @@ public class UsersAdminServlet extends HttpServlet {
         request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
     }
     
+    //METODOS AGREGAR
     //Metodo para agregar un usuario desde admin
     private void addNewUser(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
@@ -212,7 +213,7 @@ public class UsersAdminServlet extends HttpServlet {
         if (!password.equals(cPassword)) {
             request.getSession().setAttribute("errorMessage", "Las contraseñas no coinciden.");
             request.getSession().setAttribute("errorActive", true);
-            request.getRequestDispatcher("includes/forms/errorPage.jsp").forward(request, response);
+            request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
             return;
         }
         
@@ -220,16 +221,43 @@ public class UsersAdminServlet extends HttpServlet {
         
         if (!us.createUser(user)){
             request.getSession().setAttribute("errorActive", true);
-            request.getRequestDispatcher("includes/forms/errorPage.jsp").forward(request, response);
+            request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
         }
         response.sendRedirect("pages/admin/admin.jsp");
     }
+    //Metodo para agregar un usuario desde admin
+    private void addNewCategory(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        
+    }
+    //Metodo para agregar un usuario desde admin
+    private void addNewSubcategory(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        
+    }
+    //Metodo para agregar un usuario desde admin
+    private void addNewProduct(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        
+    }
+    //Metodo para agregar un usuario desde admin
+    private void addNewShipment(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        
+    }
+    //Metodo para agregar un usuario desde admin
+    private void addNewShipmentProduct(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        
+    }
     
+    //METODOS ACTUALIZAR
     //Metodo para actualizar un usuario desde admin
     private void updateUser(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{       
     }
     
+    //MOTODOS BORRAR
     //Metodo para borrar un usuario desde admin
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
