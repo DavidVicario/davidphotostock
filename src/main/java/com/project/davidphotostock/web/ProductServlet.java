@@ -24,8 +24,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -152,37 +150,8 @@ public class ProductServlet extends HttpServlet {
         }
         
     }
-    
-    
-    private void signUpProduct(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        /*
-        IProductDao ipd = new IProductDaoImpl(getInstance());
-        
-        ps = new ProductServiceImpl(ipd);
-        
-        String name = request.getParameter("name-product");
-        int stock = Integer.parseInt(request.getParameter("stock"));
-        BigDecimal price = new BigDecimal(request.getParameter("price"));
-        Integer idSub = Integer.parseInt(request.getParameter("id-subcategory"));
-                
-        Product product = new Product(name, stock, price, idSub);
-        
-        if (!ps.createProduct(product)){
-            request.getSession().setAttribute("errorActive", true);
-            request.getRequestDispatcher("includes/forms/errorPage.jsp").forward(request, response);
-        }
-        response.sendRedirect("pages/admin/admin.jsp");
-         */
-    }
 
     private void updateProduct(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-
-        response.sendRedirect("portfolio.jsp");
-    }
-
-    private void deleteProduct(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         response.sendRedirect("portfolio.jsp");

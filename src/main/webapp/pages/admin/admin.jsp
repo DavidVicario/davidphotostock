@@ -36,7 +36,7 @@
                         <li data-page="shipmentproduct-page"><a href="#">Shipment Product</a></li>
                         <li data-page="category-page"><a href="#">Category</a></li>
                         <li data-page="subcategory-page"><a href="#">Subcategory</a></li>
-                        <li data-page="product-page"><a href="/ProductServlet?action=allProduct">Product</a></li>
+                        <li data-page="product-page"><a href="#">Product</a></li>
                         <li data-page="ccaa-page"><a href="#">CCAA</a></li>
                         <li data-page="province-page"><a href="#">Province</a></li>
                         <li data-page="municipality-page"><a href="#">Municipality</a></li>
@@ -78,12 +78,8 @@
                         </div>
                     </div>                    
                     <div class="section-list">
-                        <h3>List</h3>
-                        <div class="button-list">                        
-                            <button class="list" action="allUsers" onclick="obtainAllUsers()">All Users</button>
-                        </div>                    
+                        <h3>List</h3>                   
                         <div class="table-admin">
-                            <input type="hidden" action="allUsers">
                             <table>
                                 <tr>
                                     <th>Id</th>
@@ -94,24 +90,19 @@
                                     <th>Username</th>
                                     <th>Password</th>
                                 </tr>                                
-                                <tr>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                </tr>
-                                <tr>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                </tr>
+                                <c:if test="${not empty users}">
+                                    <c:forEach var="user" items="${users}">
+                                        <tr>
+                                            <td>${user.idUser}</td>
+                                            <td>${user.name}</td>
+                                            <td>${user.firstSurname}</td>
+                                            <td>${user.secondSurname}</td>
+                                            <td>${user.mail}</td>
+                                            <td>${user.username}</td>
+                                            <td>${user.password}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </c:if>
                            </table>
                         </div>
                     </div>
@@ -173,7 +164,6 @@
                             <button class="list" action="" onclick="">All</button>
                         </div>                    
                         <div class="table-admin">
-                            <input type="hidden" action="">
                             <table>
                                 <tr>
                                     <th>Id</th>
@@ -183,14 +173,18 @@
                                     <th>Id User</th>
                                     <th>Id Municipality</th>
                                 </tr>
-                                <tr>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                </tr>
+                                <c:if test="${not empty shipments}">
+                                    <c:forEach var="shipment" items="${shipments}">
+                                        <tr>
+                                            <td>${shipment.idShipment}</td>
+                                            <td>${shipment.finished}</td>
+                                            <td>${shipment.address}</td>
+                                            <td>${shipment.shipmentDate}</td>
+                                            <td>${shipment.idUser.idUser}</td>
+                                            <td>${shipment.idMunicipality.idMunicipality}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </c:if>
                            </table>
                         </div>
                     </div>
@@ -228,7 +222,6 @@
                             <button class="list" action="" onclick="">All</button>
                         </div>                       
                         <div class="table-admin">
-                            <input type="hidden" action="">
                             <table>
                                 <tr>
                                     <th>Id</th>
@@ -236,12 +229,16 @@
                                     <th>Id Shipment</th>
                                     <th>Id Product</th>
                                 </tr>
-                                <tr>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                </tr>
+                                <c:if test="${not empty shipmentProducts}">
+                                    <c:forEach var="shipmentProduct" items="${shipmentProducts}">
+                                        <tr>
+                                            <td>${shipmentProduct.shipmentProductPK.idShipmentProduct}</td>
+                                            <td>${shipmentProduct.amount}</td>
+                                            <td>${shipmentProduct.shipmentProductPK.idShipment}</td>
+                                            <td>${shipmentProduct.idProduct.idProduct}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </c:if>
                            </table>
                         </div>
                     </div>                    
@@ -271,16 +268,19 @@
                             <button class="list" action="" onclick="">All</button>
                         </div>                    
                         <div class="table-admin">
-                            <input type="hidden" action="">
                             <table>
                                 <tr>
                                     <th>Id</th>
                                     <th>Name</th>
                                 </tr>
-                                <tr>
-                                    <td>#</td>
-                                    <td>#</td>
-                                </tr>                                
+                                <c:if test="${not empty categories}">
+                                    <c:forEach var="category" items="${categories}">
+                                        <tr>
+                                            <td>${category.idCategory}</td>
+                                            <td>${category.categoryName}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </c:if>                                
                            </table>
                         </div>
                     </div>
@@ -312,18 +312,21 @@
                             <button class="list" action="" onclick="">All</button>
                         </div>                       
                         <div class="table-admin">
-                            <input type="hidden" action="">
                             <table>
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>ID Category</th>
                                 </tr>                                
-                                <tr>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                </tr>                                
+                                <c:if test="${not empty subcategories}">
+                                    <c:forEach var="subcategory" items="${subcategories}">
+                                        <tr>
+                                            <td>${subcategory.idSubcategory}</td>
+                                            <td>${subcategory.subcategoryName}</td>
+                                            <td>${subcategory.idCategory.idCategory}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </c:if>                               
                            </table>
                         </div>
                     </div>
@@ -383,7 +386,7 @@
                                             <td>${product.productName}</td>
                                             <td>${product.stock}</td>
                                             <td>${product.price}</td>
-                                            <td>${product.idSubcategory}</td>
+                                            <td>${product.idSubcategory.idSubcategory}</td>
                                         </tr>
                                     </c:forEach>
                                 </c:if>
@@ -403,16 +406,19 @@
                             <button class="list" action="" onclick="">All</button>
                         </div>                       
                         <div class="table-admin">
-                            <input type="hidden" action="">
                             <table>
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
                                 </tr>                
-                                <tr>
-                                    <td>#</td>
-                                    <td>#</td>
-                                </tr>                
+                                <c:if test="${not empty ccaas}">
+                                    <c:forEach var="ccaa" items="${ccaas}">
+                                        <tr>
+                                            <td>${ccaa.idCcaa}</td>
+                                            <td>${ccaa.ccaa}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </c:if>               
                            </table>
                         </div>
                     </div>
@@ -429,18 +435,21 @@
                             <button class="list" action="" onclick="">All</button>
                         </div>                       
                         <div class="table-admin">
-                            <input type="hidden" action="">
                             <table>
                                 <tr>
                                     <th>Id</th>
                                     <th>Name</th>
                                     <th>Id Ccaa</th>
                                 </tr>                
-                                <tr>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                </tr>                
+                                <c:if test="${not empty provinces}">
+                                    <c:forEach var="province" items="${provinces}">
+                                        <tr>
+                                            <td>${province.idProvince}</td>
+                                            <td>${province.province}</td>
+                                            <td>${province.idCcaa.idCcaa}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </c:if>               
                            </table>
                         </div>
                     </div>
@@ -456,7 +465,6 @@
                             <button class="list" action="" onclick="">All</button>
                         </div>                       
                         <div class="table-admin">
-                            <input type="hidden" action="">
                             <table>
                                 <tr>
                                     <th>ID</th>
@@ -465,13 +473,17 @@
                                     <th>Cod Municipality</th>
                                     <th>DC</th>
                                 </tr>                
-                                <tr>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                    <td>#</td>
-                                </tr>                
+                                <c:if test="${not empty municipalities}">
+                                    <c:forEach var="municipality" items="${municipalities}">
+                                        <tr>
+                                            <td>${municipality.idMunicipality}</td>
+                                            <td>${municipality.municipality}</td>
+                                            <td>${municipality.idProvince.idProvince}</td>
+                                            <td>${municipality.codMunicipality}</td>
+                                            <td>${municipality.dc}</td>
+                                        </tr>
+                                    </c:forEach>
+                                </c:if>               
                            </table>
                         </div>
                     </div>
