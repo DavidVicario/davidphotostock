@@ -7,7 +7,7 @@
     String image = request.getParameter("image");
 %>
 
-<div class="subheader-image checkout" style="background-image:url('<%= image %>');">
+<div class="subheader-image" style="background-image:url('<%= image %>');">
     <div class="subheader-text">
         <h1><%= title %></h1>
         <p><%= description1 %></p>

@@ -171,10 +171,10 @@ body{
     align-items: center;
     color: var(--whiteBase);    
     text-shadow: 
-        -2px -2px 1px var(--blackBase), 
-        2px 2px 1px var(--blackBase), 
-        -2px 2px 1px var(--blackBase), 
-        2px -2px 1px var(--blackBase);
+        -1px -1px 1px var(--blackBase), 
+        1px 1px 1px var(--blackBase), 
+        -1px 1px 1px var(--blackBase), 
+        1px -1px 1px var(--blackBase);
     line-height: 1.8;
 }
 .about-text > h{

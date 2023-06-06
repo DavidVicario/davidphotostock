@@ -64,7 +64,7 @@
                 <div class="image-content ani-about-img"></div>
             </div>            
         </div>
-        <h4 class="ha">BEGINNINGS</h4>
+        <h4 class="ha" style="margin: 0 20px 0 20px">BEGINNINGS</h4>
         <p class="pa">
             I started as always, problems are solved and solutions are 
             adapted to your current self.
@@ -76,7 +76,7 @@
             <div class="container-about">
                 <div class="ani-about-txt">
                     <h5 class="hh">First Macros</h5>
-                    <p class="hp">
+                    <p class="hp" style="line-height: 1">
                         The beginnings of some of my macros were in low cost studios. 
                         I used to support branches on the flagstones because I didn't 
                         have supports. 
@@ -91,15 +91,23 @@
                 </div>
             </div>
         </div>
+        <h4 class="ha" style="margin: 0 10% 50px 10%">
+            My philosophy when taking photographs is clear, minimal alteration 
+            of the environment. I prefer to sacrifice composition for naturalness.
+        </h4>
         <div class="about-home">
             <div class="about-image">
                 <div class="about-text">
                     <h1>Strong Will</h1>
-                    <p>Always looking to the horizon.</p>
+                    <p>Always looking to the horizon</p>
                 </div>
             </div>
         </div>
-        <h4 class="ha" style="margin-bottom: 50px;">FUTURE</h4>
+        <h4 class="ha">FUTURE</h4>
+        <p class="pa"  style="margin-bottom: 50px;">
+            I don't know what's in store for me, but I'll keep moving forward, 
+            and if I take a step back, it will only be to catch my breath. 
+        </p>
         <div class="content-about-uno observe">
             <div class="image-about me-c">
                 <div class="image-content ani-about-img"></div>

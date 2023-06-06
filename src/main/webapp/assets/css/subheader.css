@@ -7,9 +7,6 @@
     display: flex;
     border-bottom: 1.5px solid var(--whiteBase);
 }
-.checkout{
-    background-position: center top;
-}
 .subheader-text{
     height: 500px;
     width: 100%;
@@ -19,6 +16,11 @@
     justify-content: center;
     align-items: center;
     color: var(--whiteBase);
+    text-shadow: 
+        -1px -1px 1px var(--blackBase), 
+        1px 1px 1px var(--blackBase), 
+        -1px 1px 1px var(--blackBase), 
+        1px -1px 1px var(--blackBase);
 }
 @media (max-width:700px) {
     .subheader-text h1{
