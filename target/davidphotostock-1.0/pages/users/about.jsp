@@ -138,6 +138,7 @@
         </div>
         <h4 class="ha" style="margin-bottom: 50px;">NEVER SURRENDER</h4>
         <jsp:include page="/includes/forms/login.jsp"/>
+        <jsp:include page="/includes/forms/forgot.jsp"/>
         <jsp:include page="/includes/forms/signup.jsp"/>
     </main>
     <jsp:include page="/includes/components/footer.jsp"/>

@@ -11,7 +11,7 @@
             <input id="pass-l" type="password" placeholder="Enter Password" name="pass" required>
             <input id="remember" type="checkbox" checked="checked" name="remember">
             <label class="me" for="remember"> Remember Me</label>
-            <span class="forgot">Forgot <a href="#">password?</a></span>
+            <span class="forgot">Forgot <a href="#" onclick="closeForm('login'); openForm('forgot')">password?</a></span>
             <button class="btn-login" type="submit">Login</button>
             <span class="no-user">Not a member? &nbsp;<a href="#" onclick="closeForm('login'); openForm('signup')">Sign Up</a></span>
         </div>

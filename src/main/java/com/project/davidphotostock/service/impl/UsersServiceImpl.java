@@ -43,7 +43,8 @@ public class UsersServiceImpl implements UsersService {
 
     //Metodo para actualizar un registro en la base de datos si este existe.
     @Override
-    public void updateUser(Users u) {
+    public Boolean updateUser(Users u) {
+        Boolean resul = true;
         /*
         Tuve que crear una Excepcion ya que se tendria que comprobar tres valores unicos
         y que no eche para atras si alguno falta pero otro no.
@@ -52,19 +53,24 @@ public class UsersServiceImpl implements UsersService {
             iud.update(u);
         } catch (Exception ex) {
             System.out.println("No se ha podido actualizar los datos del usuario.");
+            resul = false;
         }
+        return resul;
     }
 
     //Metodo para borrar un registro si este existe. 
     @Override
-    public void deleteUser(Users u) {
+    public Boolean deleteUser(Users u) {
+        Boolean resul = true;
         Users userI = iud.obtainById(u.getIdUser());
         if (userI != null) {
             //Si el Id existe se elimina el registro. 
             iud.delete(u);
         } else {
             System.out.println("El ID del usuario no existe.");
+            resul = false;
         }
+        return resul;
     }
 
     //Metodo para obtener todos los registros.

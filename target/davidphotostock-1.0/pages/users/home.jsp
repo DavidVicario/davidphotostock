@@ -272,6 +272,7 @@
             </p>
         </div>
         <jsp:include page="/includes/forms/login.jsp"/>
+        <jsp:include page="/includes/forms/forgot.jsp"/>
         <jsp:include page="/includes/forms/signup.jsp"/>    
         <!-- REVISAR -->
         <c:if test="${not empty errorMessage}">

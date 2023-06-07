@@ -51,9 +51,12 @@ public class UsersServlet extends HttpServlet {
                 case "logout":
                     this.logoutUser(request, response);
                     break;
+                case "forgot":
+                    this.forgotPass(request, response);
+                    break;
                 case "contact":
                     this.contactForm(request, response);
-                    break;                
+                    break;
                 default:
                     this.actionDefault(request, response);
             }
@@ -136,7 +139,7 @@ public class UsersServlet extends HttpServlet {
     // Método para comprobar si un usuario ha iniciado sesión
     private void checkLogin(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         HttpSession session = request.getSession();
         Users user = (Users) session.getAttribute("user");
 
@@ -162,9 +165,118 @@ public class UsersServlet extends HttpServlet {
         response.sendRedirect("index.jsp");
     }
 
+    private void forgotPass(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        
+        
+        
+        
+        
+        
+        IUsersDao iud = new IUsersDaoImpl(getInstance());
+    us = new UsersServiceImpl(iud);
+
+    String username = request.getParameter("user");
+    HttpSession session = request.getSession();
+    PrintWriter out = response.getWriter();
+    response.setContentType("application/json");
+    response.setCharacterEncoding("UTF-8");
+
+    if ("false".equals(request.getParameter("username-verified"))) {
+        Users user = us.obtainUserByUsername(username);
+        if (user != null) {
+            session.setAttribute("username-verified", "true");
+            session.setAttribute("user", user);
+            out.print("{\"usernameVerified\": \"true\"}");
+        } else {
+            // Usuario no encontrado
+            out.print("{\"usernameVerified\": \"false\"}");
+        }
+    } else {
+        Users user = us.obtainUserByUsername(username);
+            // Cambiar contraseña
+            String newPassword = request.getParameter("pass");
+            String confirmPassword = request.getParameter("cpass");
+
+            // Comprobar que las contraseñas son iguales
+            if (newPassword.equals(confirmPassword)) {
+                user.setPassword(newPassword);
+                if (us.updateUser(user)) {
+                    // La contraseña se cambió con éxito
+                    response.sendRedirect("index.jsp");
+                } else {
+                    // Error al actualizar la contraseña
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                }
+            } else {
+                // Las contraseñas no coinciden
+                request.setAttribute("error", "Las contraseñas no coinciden.");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
+    }
+
+    out.flush();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*
+        IUsersDao iud = new IUsersDaoImpl(getInstance());
+        us = new UsersServiceImpl(iud);
+
+        String username = request.getParameter("user");
+
+        if ("false".equals(request.getParameter("username-verified"))) {
+            Users user = us.obtainUserByUsername(username);
+            if (user != null) {
+                request.setAttribute("username-verified", "true");
+                request.setAttribute("user", user);
+            } else {
+                // Usuario no encontrado
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
+        } else {
+            Users user = us.obtainUserByUsername(username);
+            // Cambiar contraseña
+            String newPassword = request.getParameter("pass");
+            String confirmPassword = request.getParameter("cpass");
+
+            // Comprobar que las contraseñas son iguales
+            if (newPassword.equals(confirmPassword)) {
+                user.setPassword(newPassword);
+                if (us.updateUser(user)) {
+                    // La contraseña se cambió con éxito
+                    response.sendRedirect("index.jsp");
+                } else {
+                    // Error al actualizar la contraseña
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                }
+            } else {
+                // Las contraseñas no coinciden
+                request.setAttribute("error", "Las contraseñas no coinciden.");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
+            }
+        }
+        */
+    }
+
     private void contactForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         String name = request.getParameter("name");
         String mail = request.getParameter("mail");
         String phone = request.getParameter("phone");
@@ -208,5 +320,5 @@ public class UsersServlet extends HttpServlet {
             throw ex;
         }
     }
-    
+
 }

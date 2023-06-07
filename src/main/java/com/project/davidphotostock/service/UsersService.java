@@ -9,9 +9,9 @@ public interface UsersService {
     
     Boolean createUser(Users u);
 
-    void updateUser(Users u);
+    Boolean updateUser(Users u);
 
-    void deleteUser(Users u);
+    Boolean deleteUser(Users u);
 
     List<Users> obtainAllUsers();
     

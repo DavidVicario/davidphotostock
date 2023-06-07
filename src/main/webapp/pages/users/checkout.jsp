@@ -62,6 +62,7 @@
         <button class="btn-buy" type="submit">BUY</button>
     </section>
     <jsp:include page="/includes/forms/login.jsp"/>
+    <jsp:include page="/includes/forms/forgot.jsp"/>
     <jsp:include page="/includes/forms/signup.jsp"/>
     </main>
     <jsp:include page="/includes/components/footer.jsp"/>

@@ -223,7 +223,7 @@ public class UsersAdminServlet extends HttpServlet {
             request.getSession().setAttribute("errorActive", true);
             request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
         }
-        response.sendRedirect("pages/admin/admin.jsp");
+        this.listAll(request, response);
     }
     //Metodo para agregar un usuario desde admin
     private void addNewCategory(HttpServletRequest request, HttpServletResponse response)
@@ -240,7 +240,7 @@ public class UsersAdminServlet extends HttpServlet {
             request.getSession().setAttribute("errorActive", true);
             request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
         }
-        response.sendRedirect("pages/admin/admin.jsp");
+        this.listAll(request, response);
     }
     //Metodo para agregar un usuario desde admin
     private void addNewSubcategory(HttpServletRequest request, HttpServletResponse response)
@@ -263,7 +263,7 @@ public class UsersAdminServlet extends HttpServlet {
             request.getSession().setAttribute("errorActive", true);
             request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
         }
-        response.sendRedirect("pages/admin/admin.jsp");
+        this.listAll(request, response);
     }
     //Metodo para agregar un usuario desde admin
     private void addNewProduct(HttpServletRequest request, HttpServletResponse response)
@@ -290,29 +290,35 @@ public class UsersAdminServlet extends HttpServlet {
             request.getSession().setAttribute("errorActive", true);
             request.getRequestDispatcher("pages/admin/admin.jsp").forward(request, response);
         }
-        response.sendRedirect("pages/admin/admin.jsp");
+        this.listAll(request, response);
     }
     //Metodo para agregar un usuario desde admin
     private void addNewShipment(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
-        
+                
+        this.listAll(request, response);
     }
     //Metodo para agregar un usuario desde admin
     private void addNewShipmentProduct(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
         
+        this.listAll(request, response);
     }
     
     //METODOS ACTUALIZAR
     //Metodo para actualizar un usuario desde admin
     private void updateUser(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{       
+        
+        this.listAll(request, response);
     }
     
     //MOTODOS BORRAR
     //Metodo para borrar un usuario desde admin
     private void deleteUser(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
+        
+        this.listAll(request, response);
     }
 
 }

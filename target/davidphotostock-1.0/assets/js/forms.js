@@ -14,6 +14,8 @@ function openForm(formName) {
         document.getElementById('section-login').style.display = 'block';
     } else if (formName == 'signup') {
         document.getElementById('section-signup').style.display = 'block';
+    } else if (formName == 'forgot') {
+        document.getElementById('section-forgot').style.display = 'block';
     } else if (formName == 'message') {
         document.getElementById('section-message').style.display = 'block';
     }
@@ -29,6 +31,8 @@ function closeForm(formName) {
         document.getElementById('section-login').style.display = 'none';
     } else if (formName == 'signup') {
         document.getElementById('section-signup').style.display = 'none';
+    } else if (formName == 'forgot') {
+        document.getElementById('section-forgot').style.display = 'none';
     } else if (formName == 'message') {
         document.getElementById('section-message').style.display = 'none';
     }
@@ -37,6 +41,7 @@ function closeForm(formName) {
 //Cierre de formulario al hacer click fuera de él
 const login = document.getElementById('section-login');
 const signup = document.getElementById('section-signup');
+const forgot = document.getElementById('section-forgot');
 const message = document.getElementById('section-message');
 
 window.onclick = function (event) {
@@ -45,6 +50,9 @@ window.onclick = function (event) {
     }
     if (event.target == signup) {
         signup.style.display = "none";
+    }
+    if (event.target == forgot) {
+        forgot.style.display = "none";
     }
     if (event.target == message) {
         signup.style.display = "none";
@@ -173,6 +181,30 @@ validate.onsubmit = function () {
     return true;
 }
 
+const validateForgot = document.querySelector('.content-forgot');
+validateForgot.onsubmit = function () {
+    //Impedimos que se guarde la tabulacion
+    if (validateForgot.user.value == "") {
+        alert("Debe escribir su nombre de usuario");
+        validateForgot.user.focus();
+        return false;
+    }
+    //Comprobamos que no han tabulado y que las dos contraseñas son iguales.
+    if (validateForgot.pass.value != "" && validateForgot.pass.value == validateForgot.cpass.value) {
+        //Llamamos a nuetsra funcion para comprobar la contraseña.
+        if (!checkPassword(validateForgot.pass.value)) {
+            alert("La contraseña al menos debe de tener una letra, un número y una mayuscula. Mínimo 6 caracteres.");
+            validateForgot.pass.focus();
+            return false;
+        }
+    } else {
+        alert("Las contraseñas deben de ser iguales.");
+        validateForgot.pass.focus();
+        return false;
+    }
+    return true;
+}
+
 //Funcion para recuperar el username de la Cookie
 function getCookie(cname) {
     //Almacenamos el nombre de la cookie mas su valor. 
@@ -209,5 +241,37 @@ document.querySelectorAll('input[type="number"]').forEach(input => {
         if (input.value > max) {
             input.value = max;
         }
+    });
+});
+
+
+
+//FORGOT
+/*
+document.querySelector("[name='verify']").addEventListener("click", function(event){
+    event.preventDefault();
+    document.querySelector(".pass-forgot").style.display = "block";
+});*/
+
+document.querySelector("[name='verify']").addEventListener("click", function(event){
+    event.preventDefault();
+    var username = document.getElementById("user-forgot").value;
+    
+    fetch('/UsersServlet?action=forgotPass', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: `user=${username}&username-verified=false`
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        if (data.usernameVerified === "true") {
+            document.querySelector(".pass-forgot").style.display = "block";
+        }
+    })
+    .catch((error) => {
+        console.error('Error:', error);
     });
 });

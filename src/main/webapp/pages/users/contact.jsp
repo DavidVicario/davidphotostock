@@ -60,6 +60,7 @@
             </form>
         </div>
         <jsp:include page="/includes/forms/login.jsp"/>
+        <jsp:include page="/includes/forms/forgot.jsp"/>
         <jsp:include page="/includes/forms/signup.jsp"/>
     </main>
     <% if (request.getAttribute("message") != null) { %>
