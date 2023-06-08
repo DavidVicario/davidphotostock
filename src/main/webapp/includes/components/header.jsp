@@ -85,7 +85,7 @@
                         </form>
                     </c:forEach>
                     <div class="total-price" style="color: white">
-                        <p id="total-price-header" style="color: white">Total: </p>
+                        <!--<p id="total-price-header" style="color: white">Total: </p>  -->
                     </div>
                     <a href="/pages/users/cart.jsp" class="btn-item">Cart</a>
                 </c:if>
