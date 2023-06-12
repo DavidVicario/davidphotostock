@@ -55,7 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     entry.target.querySelector('.ani-middle-txt').classList.add('ani-middle-txt-start');
                 }
                 if (entry.target.querySelector('.instagram-flip')) {
-                    entry.target.classList.add('instagram-flip-animation');
+                    let instaFlip = entry.target.querySelector('.instagram-flip');
+                    instaFlip.classList.add('show');
                 }
                 //Hacemos que no se activen cada vez que salen por pantalla. 
                 //Sino solo la primera vez. 

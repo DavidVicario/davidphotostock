@@ -377,6 +377,12 @@ body{
     width: 350px;
     height: 220px;
     perspective: 1000px;
+    will-change: transform;
+    transform: scale(0);
+    transition: transform 2s ease-in-out;
+}
+.instagram-flip.show {
+    transform: scale(1);
 }
 .instagram-flip-inner{
     position: relative;
@@ -407,22 +413,22 @@ body{
     background-repeat: no-repeat;
 }
 .image-a{
-    background-image: url('../img/img-product/18.jpg');
+    background-image: url('../img/img/18.jpg');
 }
 .image-b{
-    background-image: url('../img/img-product/21.jpg');
+    background-image: url('../img/img/21.jpg');
 }
 .image-c{
-    background-image: url('../img/img-product/1.jpg');
+    background-image: url('../img/img/1.jpg');
 }
 .image-d{
-    background-image: url('../img/img-product/7.jpg');
+    background-image: url('../img/img/7.jpg');
 }
 .image-e{
-    background-image: url('../img/img-product/37.jpg');
+    background-image: url('../img/img/37.jpg');
 }
 .image-f{
-    background-image: url('../img/img-product/38.jpg');
+    background-image: url('../img/img/38.jpg');
 }
 .instagram-flip-back{
     display: flex;
@@ -465,14 +471,14 @@ body{
 }
 /*----- ANIMATIONS INSTA-----*/
 .instagram-flip-animation{
-    animation: show 2s;
+    animation: show 2s forwards;
 }
 @keyframes show{
     from {
-        transform: scale(0)
+        transform: scale(0);
     }
     to {
-        transform: scale(1)
+        transform: scale(1);
     }
 }
 .thankyou{

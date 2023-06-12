@@ -220,20 +220,6 @@ public class UsersServlet extends HttpServlet {
         
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         /*
         IUsersDao iud = new IUsersDaoImpl(getInstance());
         us = new UsersServiceImpl(iud);
