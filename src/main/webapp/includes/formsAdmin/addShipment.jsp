@@ -25,7 +25,7 @@
                 </div>
                 <div class="finish">
                     <label for="finished"><b>Finished *</b></label>
-                    <input id="finished" type="checkbox" name="name" required>
+                    <input id="finished" type="checkbox" name="finished" required>
                 </div>
             </div>
             <div class="add-two">

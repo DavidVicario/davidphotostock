@@ -88,6 +88,13 @@ public class Shipment implements Serializable {
         this.idShipment = idShipment;
     }
 
+    public Shipment(String address, Date shipmentDate, Municipality idMunicipality, Users idUser) {
+        this.address = address;
+        this.idMunicipality = idMunicipality;
+        this.idUser = idUser;
+        this.shipmentDate = shipmentDate;
+    }
+
     //Getter and Setter
     public Integer getIdShipment() {
         return idShipment;

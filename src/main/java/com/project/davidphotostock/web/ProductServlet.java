@@ -19,8 +19,14 @@ import com.project.davidphotostock.data.impl.IShipmentProductDaoImpl;
 import com.project.davidphotostock.data.impl.ISubcategoryDaoImpl;
 import com.project.davidphotostock.data.impl.IUsersDaoImpl;
 import com.project.davidphotostock.domain.Category;
+import com.project.davidphotostock.domain.Ccaa;
+import com.project.davidphotostock.domain.Municipality;
 import com.project.davidphotostock.domain.Product;
+import com.project.davidphotostock.domain.Province;
+import com.project.davidphotostock.domain.Shipment;
+import com.project.davidphotostock.domain.ShipmentProduct;
 import com.project.davidphotostock.domain.Subcategory;
+import com.project.davidphotostock.domain.Users;
 import com.project.davidphotostock.service.CategoryService;
 import com.project.davidphotostock.service.CcaaService;
 import com.project.davidphotostock.service.MunicipalityService;
@@ -50,6 +56,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @WebServlet(name = "ProductServlet", urlPatterns = {"/ProductServlet"})
@@ -209,8 +216,39 @@ public class ProductServlet extends HttpServlet {
         IShipmentProductDao ispd = new IShipmentProductDaoImpl(getInstance());
         sps = new ShipmentProductServiceImpl(ispd);
         
+        Integer userId = (Integer) request.getSession().getAttribute("user_id");
+        Users user = us.obtainUserById(userId);
         
+        String ccaaName = request.getParameter("ccaa");
+        String provinceName = request.getParameter("province");
+        String municipalityName = request.getParameter("municipality");
+
+        Ccaa ccaa = cas.obtainCcaaByName(ccaaName);
+        Province province = prs.obtainProvinceByName(provinceName);
+        Municipality municipality = ms.obtainMunicipalityByName(municipalityName);
         
+        String address = ccaa + ", " + province + ", " + municipality;
+        
+        Shipment shipment = new Shipment(address, new Date(), municipality, user);
+        shs.createShipment(shipment);
+        
+        List<Product> cart = (List<Product>) request.getSession().getAttribute("cart");
+
+        if (cart != null) {
+            for (Product product : cart) {
+                
+                String amountString = request.getParameter("amount");
+                int amout = Integer.parseInt(amountString);
+                
+                ShipmentProduct shipmentProduct = new ShipmentProduct(amout, product, shipment);
+                sps.createShipmentProduct(shipmentProduct);
+            }
+        }
+
+        
+        request.getSession().removeAttribute("cart");
+
+        response.sendRedirect("checkoutSuccess.jsp");
     }
 
 }

@@ -296,11 +296,58 @@ public class UsersAdminServlet extends HttpServlet {
     private void addNewShipment(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
                 
+        IUsersDao iud = new IUsersDaoImpl(getInstance());
+        us = new UsersServiceImpl(iud);
+        IMunicipalityDao imd = new IMunicipalityDaoImpl(getInstance());
+        ms = new MunicipalityServiceImpl(imd);
+        IShipmentDao issd = new IShipmentDaoImpl(getInstance());
+        ss = new ShipmentServiceImpl(issd);
+        
+        
+        String dateString = request.getParameter("shipment-date");
+        String finisString = request.getParameter("finished");
+        String idUserString = request.getParameter("id-user");
+        String idMuniString = request.getParameter("id-municipality");
+        
+        
+        Boolean finished = Boolean.parseBoolean(finisString);
+        int idUserInt = Integer.parseInt(idUserString);
+        int idMuniInt = Integer.parseInt(idMuniString);
+        Users idUser = us.obtainUserById(idUserInt);
+        Municipality idMuni = ms.obtainMunicipalityById(idMuniInt);
+        
+        String ccaaString = request.getParameter("ccaa");
+        String provinceString = request.getParameter("province");
+        String municipalityString = request.getParameter("municipality");
+        Ccaa ccaa = cas.obtainCcaaByName(ccaaString);
+        Province province = prs.obtainProvinceByName(provinceString);
+        Municipality municipality = ms.obtainMunicipalityByName(municipalityString);
+        
+        String ccaaName = ccaa.getCcaa();
+        String provinceName = province.getProvince();
+        String municipalityName = municipality.getMunicipality();
+        
+        String address = ccaaName + ", " + provinceName + ", " + municipalityName;
+        
+        
+        
+        
+        
+        
+        
+        
         this.listAll(request, response);
     }
     //Metodo para agregar un usuario desde admin
     private void addNewShipmentProduct(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException{
+        
+        IShipmentProductDao ispd = new IShipmentProductDaoImpl(getInstance());
+        sps = new ShipmentProductServiceImpl(ispd);
+        IShipmentDao issd = new IShipmentDaoImpl(getInstance());
+        ss = new ShipmentServiceImpl(issd);
+        IProductDao ipd = new IProductDaoImpl(getInstance());
+        ps = new ProductServiceImpl(ipd);
         
         this.listAll(request, response);
     }
