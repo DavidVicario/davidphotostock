@@ -108,17 +108,19 @@ public class UsersServlet extends HttpServlet {
             throws ServletException, IOException {
 
         IUsersDao iud = new IUsersDaoImpl(getInstance());
-
         us = new UsersServiceImpl(iud);
 
         String username = request.getParameter("user");
         String password = request.getParameter("pass");
 
         Users user = us.obtainUserByUsernameAndPass(username, password);
-
+        
+        String currentUrl = request.getParameter("currentUrl");
+        
         if (user != null) {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
+            session.setAttribute("idUser", user.getIdUser());
             //Si el usuario selecciona "Recordarme", guarda su nombre de usuario en una Cookie.
             if ("on".equals(request.getParameter("remember"))) {
                 Cookie usernameCookie = new Cookie("username", username);
@@ -128,7 +130,11 @@ public class UsersServlet extends HttpServlet {
             if (username.equals("admin")) {
                 response.sendRedirect("UsersAdminServlet");
             } else {
-                response.sendRedirect("index.jsp");
+                if (currentUrl != null && currentUrl.contains("checkout")) {
+                    response.sendRedirect(currentUrl);
+                } else {
+                    response.sendRedirect("index.jsp");
+            }
             }
         } else {
             request.setAttribute("message", "Compruebe su usuario o contraseña.");

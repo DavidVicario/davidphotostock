@@ -43,8 +43,9 @@
                 </form>
             </c:if>
             <c:if test="${not empty cart}">
-                <c:forEach var="item" varStatus="row" items="${cart}">
-                    <form class="container-buy">
+                
+                <form class="container-buy" action="/ProductServlet?action=checkout" method="post">
+                        <c:forEach var="item" varStatus="row" items="${cart}">
                         <ul>
                             <li class="buy-row">
                                 <div class="left-buy">
@@ -56,7 +57,7 @@
                                 <div class="right-buy">
                                     <div class="detail-buy">
                                         <div class="amout-buy">
-                                            <input type="number" id="quantity-${item.idProduct}" name="name" value="1" min="1" max="${item.stock}" autocomplete="off">
+                                            <input type="number" id="quantity-${item.idProduct}" name="quantity-${item.idProduct}" value="1" min="1" max="${item.stock}" autocomplete="off">
                                         </div>
                                         <div class="price-buy">
                                             <p class="price" id="price-${item.idProduct}">€${item.price}</p>
@@ -68,8 +69,9 @@
                                 </div>
                             </li>
                         </ul>
+                        </c:forEach>
                     </form>
-                </c:forEach>
+                
             </c:if>
             <div class="total-price" style="color: white">
                 <p class="total-price" id="total-price" style="color: white"></p>

@@ -164,7 +164,6 @@ public class ProductServlet extends HttpServlet {
             }
         }
         session.setAttribute("cart", cart);
-        
         showAllProduct(request, response);
     }
     
@@ -216,39 +215,58 @@ public class ProductServlet extends HttpServlet {
         IShipmentProductDao ispd = new IShipmentProductDaoImpl(getInstance());
         sps = new ShipmentProductServiceImpl(ispd);
         
-        Integer userId = (Integer) request.getSession().getAttribute("user_id");
+        Integer userId = (Integer) request.getSession().getAttribute("idUser");
         Users user = us.obtainUserById(userId);
         
-        String ccaaName = request.getParameter("ccaa");
-        String provinceName = request.getParameter("province");
-        String municipalityName = request.getParameter("municipality");
+        String ccaaO = request.getParameter("ccaa");
+        String provinceO = request.getParameter("province");
+        String municipalityO = request.getParameter("municipality");
 
-        Ccaa ccaa = cas.obtainCcaaByName(ccaaName);
-        Province province = prs.obtainProvinceByName(provinceName);
-        Municipality municipality = ms.obtainMunicipalityByName(municipalityName);
+        Ccaa ccaa = cas.obtainCcaaByName(ccaaO);
+        Province province = prs.obtainProvinceByName(provinceO);
+        Municipality municipality = ms.obtainMunicipalityByName(municipalityO);
         
-        String address = ccaa + ", " + province + ", " + municipality;
+        String nameCa = ccaa.getCcaa();
+        String namePr = province.getProvince();
+        String nameMu = municipality.getMunicipality();
+        
+        String address = nameCa + ", " + namePr + ", " + nameMu;
+        System.out.println(address);
+        
         
         Shipment shipment = new Shipment(address, new Date(), municipality, user);
         shs.createShipment(shipment);
+        System.out.println(shipment);
+        
         
         List<Product> cart = (List<Product>) request.getSession().getAttribute("cart");
-
+        System.out.println(cart);
+        
         if (cart != null) {
             for (Product product : cart) {
                 
-                String amountString = request.getParameter("amount");
-                int amout = Integer.parseInt(amountString);
+                String amountString = request.getParameter("quantity-" + product.getIdProduct());
+                System.out.println(amountString);
                 
-                ShipmentProduct shipmentProduct = new ShipmentProduct(amout, product, shipment);
+                int amount;
+                if (amountString != null) {
+                    amount = Integer.parseInt(amountString);
+                } else {
+                    amount = 1;
+                }
+                
+                ShipmentProduct shipmentProduct = new ShipmentProduct(amount, product, shipment);
                 sps.createShipmentProduct(shipmentProduct);
             }
         }
+        
+        
+        
 
         
         request.getSession().removeAttribute("cart");
 
-        response.sendRedirect("checkoutSuccess.jsp");
+        response.sendRedirect("index.jsp");
     }
 
 }

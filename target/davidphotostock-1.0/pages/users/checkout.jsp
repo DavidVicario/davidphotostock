@@ -25,23 +25,29 @@
     </jsp:include>
     <section class="section-checkout" id="section-checkout">
         
-        <h2 class="user-name">DAVID</h2>
-        
-        <form class="content-checkout" action="/UsersServlet?action=login" method="post">
-            <div class="container-checkout">
-                <label for="user"><b>Username</b></label>
-                <input id="user-checkout" type="text" placeholder="Enter Username" name="user" required>
-                <label for="pass"><b>Password</b></label>
-                <input id="pass-checkout" type="password" placeholder="Enter Password" name="pass" required>
-                <input id="remember" type="checkbox" checked="checked" name="remember">
-                <label class="me" for="remember"> Remember Me</label>
-                <span class="forgot">Forgot <a href="#">password?</a></span>
-                <button class="btn-checkout" type="submit">Login</button>
-                <span class="no-user">Not a member? &nbsp;<a href="#" onclick="openForm('signup')">Sign Up</a></span>
-            </div>
-        </form>
-                
-        <form class="content-checkout" style="margin-top: 0;" action="/UsersServlet?action=create" method="post">
+        <c:choose >
+            <c:when test="${not empty sessionScope.user}">
+                <h2 class="user-name">${sessionScope.user.username}</h2>
+            </c:when>
+            <c:otherwise>
+                <form class="content-checkout" action="/UsersServlet?action=login" method="post">
+                    <input type="hidden" name="currentUrl" value="${pageContext.request.requestURI}">
+                    <div class="container-checkout">
+                        <label for="user"><b>Username</b></label>
+                        <input id="user-checkout" type="text" placeholder="Enter Username" name="user" required>
+                        <label for="pass"><b>Password</b></label>
+                        <input id="pass-checkout" type="password" placeholder="Enter Password" name="pass" required>
+                        <input id="remember" type="checkbox" checked="checked" name="remember">
+                        <label class="me" for="remember"> Remember Me</label>
+                        <span class="forgot">Forgot <a href="#">password?</a></span>
+                        <button class="btn-checkout" type="submit">Login</button>
+                        <span class="no-user">Not a member? &nbsp;<a href="#" onclick="openForm('signup')">Sign Up</a></span>
+                    </div>
+                </form>
+            </c:otherwise>
+        </c:choose>
+        <form class="content-checkout" action="/ProductServlet?action=checkout" style="margin-top: 0;" method="post">
+            
             <div class="container-checkout">
                 <div class="adress-checkout">
                     <div>
@@ -50,16 +56,17 @@
                     </div>
                     <div>
                         <label for="province"><b>Province *</b></label>
-                        <input id="province" type="text" placeholder="Enter Province" name="province">
+                        <input id="province" type="text" placeholder="Enter Province" name="province" required>
                     </div>
                     <div>
                         <label for="municipality"><b>Municipality *</b></label>
-                        <input id="municipality" type="text" placeholder="Enter Municipality" name="municipality">
+                        <input id="municipality" type="text" placeholder="Enter Municipality" name="municipality" required>
                     </div>
                 </div>
             </div>
+            <button class="btn-buy" type="submit">BUY</button>
         </form>
-        <button class="btn-buy" type="submit">BUY</button>
+        
     </section>
     <jsp:include page="/includes/forms/login.jsp"/>
     <jsp:include page="/includes/forms/forgot.jsp"/>
