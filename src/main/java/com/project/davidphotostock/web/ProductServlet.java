@@ -7,6 +7,7 @@ import com.project.davidphotostock.data.IProductDao;
 import com.project.davidphotostock.data.IProvinceDao;
 import com.project.davidphotostock.data.IShipmentDao;
 import com.project.davidphotostock.data.IShipmentProductDao;
+import com.project.davidphotostock.data.IShipmentProductPKDao;
 import com.project.davidphotostock.data.ISubcategoryDao;
 import com.project.davidphotostock.data.IUsersDao;
 import com.project.davidphotostock.data.impl.ICategoryDaoImpl;
@@ -16,6 +17,7 @@ import com.project.davidphotostock.data.impl.IProductDaoImpl;
 import com.project.davidphotostock.data.impl.IProvinceDaoImpl;
 import com.project.davidphotostock.data.impl.IShipmentDaoImpl;
 import com.project.davidphotostock.data.impl.IShipmentProductDaoImpl;
+import com.project.davidphotostock.data.impl.IShipmentProductPKDaoImpl;
 import com.project.davidphotostock.data.impl.ISubcategoryDaoImpl;
 import com.project.davidphotostock.data.impl.IUsersDaoImpl;
 import com.project.davidphotostock.domain.Category;
@@ -73,6 +75,8 @@ public class ProductServlet extends HttpServlet {
     MunicipalityService ms;
     ShipmentService shs;
     ShipmentProductService sps;
+    
+    IShipmentProductPKDao isppk;
     
 
     @Override
@@ -216,6 +220,8 @@ public class ProductServlet extends HttpServlet {
         IShipmentProductDao ispd = new IShipmentProductDaoImpl(getInstance());
         sps = new ShipmentProductServiceImpl(ispd);
         
+        isppk = new IShipmentProductPKDaoImpl(getInstance());
+        
         Integer userId = (Integer) request.getSession().getAttribute("idUser");
         Users user = us.obtainUserById(userId);
         
@@ -232,27 +238,25 @@ public class ProductServlet extends HttpServlet {
         String nameMu = municipality.getMunicipality();
         
         String address = nameCa + ", " + namePr + ", " + nameMu;
-        System.out.println(address);
-        
         
         Shipment shipment = new Shipment(address, new Date(), municipality, user);
         shs.createShipment(shipment);
         int idShipment = shipment.getIdShipment();
-        System.out.println(idShipment);
         
         
         List<Product> cart = (List<Product>) request.getSession().getAttribute("cart");
         System.out.println(cart);
         
+        /*
         if (cart != null) {
             for (Product product : cart) {
                 
-                int idShipmentProduct = 1;
-                
-                ShipmentProductPK shipmentProductPK = new ShipmentProductPK(idShipmentProduct++, idShipment);
-
                 String amountString = request.getParameter("quantity-" + product.getIdProduct());
                 System.out.println(amountString);
+                
+                ShipmentProductPK shipPK = new ShipmentProductPK(product.getIdProduct());
+                isppk.create(shipPK);
+                int shipmentPK = shipPK.getIdShipmentProduct();
                 
                 int amount;
                 if (amountString != null) {
@@ -261,18 +265,15 @@ public class ProductServlet extends HttpServlet {
                     amount = 1;
                 }
                 
-                ShipmentProduct shipmentProduct = new ShipmentProduct(amount, product, shipment);
+                ShipmentProduct shipmentProduct = new ShipmentProduct(shipPK, amount, product, shipment);
                 sps.createShipmentProduct(shipmentProduct);
             }
         }
-        
-        
-        
-
-        
+        */
         request.getSession().removeAttribute("cart");
 
-        response.sendRedirect("index.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("includes/components/success.jsp");
+        dispatcher.forward(request, response);
     }
 
 }

@@ -28,7 +28,7 @@ body{
 }
 .content-checkout{
     background-color: var(--blackBase);
-    margin: 5% auto 0 auto;
+    margin: 5% auto 5% auto;
     border: 1px solid var(--whiteBase);
     width: 80%;
 }

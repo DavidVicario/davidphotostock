@@ -81,6 +81,13 @@ public class ShipmentProduct implements Serializable {
         this.shipment = shipment;
     }
 
+    public ShipmentProduct(ShipmentProductPK shipmentProductPK, int amount, Product idProduct, Shipment shipment) {
+        this.shipmentProductPK = shipmentProductPK;
+        this.amount = amount;
+        this.idProduct = idProduct;
+        this.shipment = shipment;
+    }
+    
     //Getter and Setter
     public ShipmentProductPK getShipmentProductPK() {
         return shipmentProductPK;

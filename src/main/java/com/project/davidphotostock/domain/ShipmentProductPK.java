@@ -11,6 +11,8 @@ import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 /*
 ShipmentProductPK no es una entidad completa. Si no que forma parte de ShipmentProduct.
@@ -27,6 +29,7 @@ de bytes. Para poder enviar, guardar y almacenar objetos en la base de datos.
  */
 public class ShipmentProductPK implements Serializable {
 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     //Impedimos que el valor sea Null
     @Basic(optional = false)
     //Especificamos en que columna debe de mapearse.
@@ -40,6 +43,10 @@ public class ShipmentProductPK implements Serializable {
     public ShipmentProductPK() {
     }
 
+    public ShipmentProductPK(int idShipmentProduct) {
+        this.idShipmentProduct = idShipmentProduct;
+    }
+    
     public ShipmentProductPK(int idShipmentProduct, int idShipment) {
         this.idShipmentProduct = idShipmentProduct;
         this.idShipment = idShipment;

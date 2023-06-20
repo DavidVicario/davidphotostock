@@ -1,4 +1,5 @@
 C:\Users\LotoB\Documents\NetBeansProjects\davidphotostock\src\main\java\com\project\davidphotostock\data\impl\IUsersDaoImpl.java
+C:\Users\LotoB\Documents\NetBeansProjects\davidphotostock\src\main\java\com\project\davidphotostock\data\IShipmentProductPKDao.java
 C:\Users\LotoB\Documents\NetBeansProjects\davidphotostock\src\main\java\com\project\davidphotostock\service\CategoryService.java
 C:\Users\LotoB\Documents\NetBeansProjects\davidphotostock\src\main\java\com\project\davidphotostock\service\ShipmentService.java
 C:\Users\LotoB\Documents\NetBeansProjects\davidphotostock\src\main\java\com\project\davidphotostock\web\ProductServlet.java
@@ -44,6 +45,7 @@ C:\Users\LotoB\Documents\NetBeansProjects\davidphotostock\src\main\java\com\proj
 C:\Users\LotoB\Documents\NetBeansProjects\davidphotostock\src\main\java\com\project\davidphotostock\service\impl\CcaaServiceImpl.java
 C:\Users\LotoB\Documents\NetBeansProjects\davidphotostock\src\main\java\com\project\davidphotostock\data\impl\IMunicipalityDaoImpl.java
 C:\Users\LotoB\Documents\NetBeansProjects\davidphotostock\src\main\java\com\project\davidphotostock\service\impl\UsersServiceImpl.java
+C:\Users\LotoB\Documents\NetBeansProjects\davidphotostock\src\main\java\com\project\davidphotostock\data\impl\IShipmentProductPKDaoImpl.java
 C:\Users\LotoB\Documents\NetBeansProjects\davidphotostock\src\main\java\com\project\davidphotostock\util\ConectionUtil.java
 C:\Users\LotoB\Documents\NetBeansProjects\davidphotostock\src\main\java\com\project\davidphotostock\data\impl\IShipmentProductDaoImpl.java
 C:\Users\LotoB\Documents\NetBeansProjects\davidphotostock\src\main\java\com\project\davidphotostock\domain\Province.java
