@@ -46,6 +46,7 @@ import com.project.davidphotostock.service.impl.ShipmentServiceImpl;
 import com.project.davidphotostock.service.impl.SubcategoryServiceImpl;
 import com.project.davidphotostock.service.impl.UsersServiceImpl;
 import static com.project.davidphotostock.util.ConectionUtil.getInstance;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -55,6 +56,10 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @WebServlet(name = "UsersAdminServlet", urlPatterns = {"/UsersAdminServlet"})
@@ -111,6 +116,9 @@ public class UsersAdminServlet extends HttpServlet {
                     break;
                 case "delete":
                     this.deleteUser(request, response);
+                    break;
+                case "statistics":
+                    this.statistics(request, response);
                     break;
                 default: 
                     this.listAll(request, response);
@@ -329,13 +337,6 @@ public class UsersAdminServlet extends HttpServlet {
         
         String address = ccaaName + ", " + provinceName + ", " + municipalityName;
         
-        
-        
-        
-        
-        
-        
-        
         this.listAll(request, response);
     }
     //Metodo para agregar un usuario desde admin
@@ -368,4 +369,40 @@ public class UsersAdminServlet extends HttpServlet {
         this.listAll(request, response);
     }
 
+    private void statistics(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException{
+        
+        IShipmentDao issd = new IShipmentDaoImpl(getInstance());
+        ss = new ShipmentServiceImpl(issd);
+        
+        List<Shipment> finishedShipments = ss.obtainShipmentsByFinished();
+        List<Shipment> unfinishedShipments = ss.obtainShipmentsByUnfinished();
+
+        request.setAttribute("finishedShipments", finishedShipments.size());
+        request.setAttribute("unfinishedShipments", unfinishedShipments.size());
+
+        String start = request.getParameter("startDate");
+        String end = request.getParameter("endDate");
+        
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        Date startDate = null;
+        Date endDate = null;
+        try {
+            if (start != null) {
+                startDate = formatter.parse(start);
+            }
+            if (end != null) {
+                endDate = formatter.parse(end);
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        List<Shipment> shipmentsInRange = ss.obtainShipmentsByDateRange(startDate, endDate);
+
+        request.setAttribute("shipmentsInRangeCount", shipmentsInRange.size());
+        request.setAttribute("shipmentsInRange", shipmentsInRange);
+        
+        RequestDispatcher dispatcher = request.getRequestDispatcher("pages/admin/statistics.jsp");
+        dispatcher.forward(request, response);
+    }
 }
