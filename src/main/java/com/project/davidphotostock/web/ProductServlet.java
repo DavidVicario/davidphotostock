@@ -25,6 +25,7 @@ import com.project.davidphotostock.domain.Product;
 import com.project.davidphotostock.domain.Province;
 import com.project.davidphotostock.domain.Shipment;
 import com.project.davidphotostock.domain.ShipmentProduct;
+import com.project.davidphotostock.domain.ShipmentProductPK;
 import com.project.davidphotostock.domain.Subcategory;
 import com.project.davidphotostock.domain.Users;
 import com.project.davidphotostock.service.CategoryService;
@@ -236,7 +237,8 @@ public class ProductServlet extends HttpServlet {
         
         Shipment shipment = new Shipment(address, new Date(), municipality, user);
         shs.createShipment(shipment);
-        System.out.println(shipment);
+        int idShipment = shipment.getIdShipment();
+        System.out.println(idShipment);
         
         
         List<Product> cart = (List<Product>) request.getSession().getAttribute("cart");
@@ -245,6 +247,10 @@ public class ProductServlet extends HttpServlet {
         if (cart != null) {
             for (Product product : cart) {
                 
+                int idShipmentProduct = 1;
+                
+                ShipmentProductPK shipmentProductPK = new ShipmentProductPK(idShipmentProduct++, idShipment);
+
                 String amountString = request.getParameter("quantity-" + product.getIdProduct());
                 System.out.println(amountString);
                 
