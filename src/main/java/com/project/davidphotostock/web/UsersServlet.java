@@ -224,7 +224,7 @@ public class UsersServlet extends HttpServlet {
 
     out.flush();
         
-        
+        //Hay que cambiar la FUNCION DE CARRITO.
         
         /*
         IUsersDao iud = new IUsersDaoImpl(getInstance());
